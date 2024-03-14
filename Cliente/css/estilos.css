@@ -1,0 +1,959 @@
+/*-----------------------------------------PROGRAMA ESPECIAL Alumnos------------------------------------------*/
+/*SI se USAN: */
+/*Fondo de imagen: siempre iran en el contenedor padre Cubrir todo el fondo con 'size center-top'*/
+/*Fondo de imagenes sobre elementos, se jugara con la position y el z index de los elementos*/
+/*Las medidas 'vw' toma en cuenta el ancho del viewport (dispositivo)  y 'vh' toma en cuenta el alto del viewport  VIEWPORT toma en cuenta el ancho o alto total de la pantalla, NO/NADA de contenedores,rows,cols, etc*/
+/*Letras: se debe utiliza rem para asignar tamaño responsive*/
+/*Display-Flex: /*Hace que todos los elementos se queden en una sola fila*/
+/*Flex- no wrap: /*Hace que cuando es espacio se reduzca no salte a mas filas los elementos*/
+/*White-espace no wrap: /*Espacio en blanco no enter, se usa solo para dejarlo en una linea y no dividir el texto por espacio en */
+
+/*paleta de colores:
+grisazulado :  rgba(64, 145, 199, 0.774);*/
+
+/*CLASES GENERALES personales*/
+/*Este tipo de clases se utilizan para poder ser reutilizables en cualquier elemento y no declarar el mismo estilo una y otra vez a cada elemento
+haciendo mas reciclabe el codigo*/
+
+/*Cambiar de dise;o a todo el Scroll en toda la interfaz*/
+::-webkit-scrollbar {
+  width: 5px; /* Grosor de la barra */
+  height: 10px; /* Grosor de la barra */
+  background-color: #dfffdb; /* Color de la pista */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Color del thumb */
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Displays +++++++++++++++++++++*/
+/*Asigna al elemento que tenga esta clase un display especifico para poder tomar herramientas de display sin tener que escribir display en cada unoa de ellas*/
+.display-f {
+  display: flex;
+}
+
+/*Utilzado para poder acomodar todos los elementos y se vayan recorriendo para abajo si es que se excede del contenedor*/
+.display-l {
+  display: inline;
+}
+
+/*Utilzado para poder acomodar todos los elementos y se vayan recorriendo para abajo si es que se excede del contenedor*/
+.display-b {
+  display: block;
+}
+
+/*Utilzado para poder acomodar todos los elementos y se vayan recorriendo para abajo si es que se excede del contenedor*/
+.display-no {
+  display: none;
+}
+
+/*Have que un nav o cualquier otra cosa horizontal se haga vertical*/
+.flex-column {
+  flex-direction: column;
+}
+
+/*Have que un nav o cualquier otra cosa horizontal se haga vertical*/
+.flex-row {
+  flex-direction: row;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Tipos de centrado +++++++++++++++++++++*/
+/*Centra elemenetos que esten dentro de un contenedor/elemento padre (se pone al contenedor padre inmediato) en medio de ellos HORIZONTAL*/
+.centrar {
+  display: flex; /*alinea los componenetes*/
+  align-items: center; /*Alinea horizontalmente en medio*/
+  justify-content: center; /*Alinea verticalmenete en medio*/
+}
+
+/* Centra elemenetos que esten dentro de un contenedor/elemento padre (se pone al contenedor padre inmediato) en medio de ellos Vertical*/
+.centrar-v {
+  align-items: center;
+}
+
+/*Centra horizontlmente a los elmentos hijos que tenga ese contenedoor/seccion*/
+.centrar-h {
+  justify-content: center;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Fondo de todas las interfaces +++++++++++++++++++++*/
+.fondo {
+  background-image: url("../imagenes/fondos/fondo-gusano.gif");
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Texto Alinear +++++++++++++++++++++*/
+/*Alinea el texto en medio/ Justificado enmedio*/
+.alinear-center {
+  text-align: center;
+}
+
+/*Alinear texto a la izq*/
+.alinear-left {
+  text-align: left;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Espacios verticales +++++++++++++++++++++*/
+/*Deja un espacio en vertical*/
+.espacio-top-g {
+  margin-top: 8vh;
+}
+
+/*Deja un espacio en vertical*/
+.espacio-top-m {
+  margin-top: 60px;
+}
+
+/*Clase que deja un espacio en vertical pequeño*/
+.espacio-top-c {
+  margin-top: 25px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Espacios horizontales +++++++++++++++++++++*/
+/*Deja un espacio en h*/
+.espacio-left-g {
+  margin-left: 90px;
+}
+
+/*Deja un espacio en h*/
+.espacio-left-m {
+  margin-left: 25px;
+}
+
+/*Clase que deja un espacio en h pequeño*/
+.espacio-left-c {
+  margin-left: 10px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Espacios horizontales +++++++++++++++++++++*/
+/*Deja un espacio en h*/
+.espacio-right-g {
+  padding-right: 125px;
+}
+
+/*Deja un espacio en h*/
+.espacio-right-m {
+  padding-right: 60px;
+}
+
+/*Clase que deja un espacio en h pequeño*/
+.espacio-right-c {
+  padding-right: 30px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Botones/btn +++++++++++++++++++++*/
+/*Hace a los botones redondos*/
+.btn-circular {
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+/*Hace el tamano de un boton grande*/
+.btn-g {
+  width: 300px;
+  height: 60px;
+  transition: 0.2s ease;
+}
+
+/*Hace el tamano de un boton mediano*/
+.btn-m {
+  width: 250px;
+  height: 50px;
+  transition: 0.2s ease;
+}
+
+/*Asigna a un elemento de boton/imagen fondo transparente y sin bordes*/
+.btn-transparente {
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+}
+
+/*Asigna el fondo y forma de boton*/
+.btn-azul {
+  background-color: rgb(15, 134, 253);
+}
+
+/*Asigna el fondo y forma de boton*/
+.btn-naranja {
+  background-color: rgb(255, 110, 32);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Dropdowns +++++++++++++++++++++*/
+/*Asigna a todos los dropdowns el mismo tamaño para que no tome el ancho segun la letra y esten todos disparejos*/
+.drop-m {
+  width: 80px;
+}
+
+/*Asigna a todos los dropdowns el mismo tamaño para que no tome el ancho segun la letra y esten todos disparejos*/
+.drop-g {
+  width: 160px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Bordes +++++++++++++++++++++*/
+/*Normalmente es asigando a las cards/botones borde c*/
+.borde-r-c {
+  border-radius: 15px;
+}
+
+/*Normalmente es asigando a las cards/botones borde c*/
+.borde-r-m {
+  border-radius: 25px;
+}
+
+/*Normalmente es asigando a las cards/botones borde c*/
+.borde-r-g {
+  border-radius: 30px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Texto/Titulos +++++++++++++++++++++*/
+/*titulos (h1,h2,etc)*/
+.titulo-g {
+  font-size: 3rem;
+}
+
+/*titulos (h1,h2,etc)*/
+.titulo-m {
+  font-size: 2rem;
+}
+
+/*titulos (h1,h2,etc)*/
+.titulo-c {
+  font-size: 1rem;
+}
+
+/*Texto comun/descripciones (a,p,span,etc)*/
+.text-g {
+  font-size: 2rem;
+}
+
+/*Texto comun/descripciones (a,p,span,etc)*/
+.text-m {
+  font-size: 1.2rem;
+}
+
+/*Texto comun/descripciones (a,p,span,etc)*/
+.text-c {
+  font-size: 1rem;
+}
+
+/*Clase que pone letras en muy negritas*/
+.negritam {
+  font-weight: bolder;
+}
+
+/*Clase que pone letras en nergita normal*/
+.negrita {
+  font-weight: bold;
+}
+
+/*colores predeterminados de las interfaces*/
+.txt-blanco {
+  color: aliceblue;
+}
+
+/*colores predeterminados de las interfaces*/
+.txt-azul {
+  color: dodgerblue;
+}
+
+/*colores predeterminados de las interfaces*/
+.txt-negro {
+  color: black;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Logos +++++++++++++++++++++*/
+/*clase que asigna el tamaño de una img.. comumente los logos*/
+.logo-g {
+  width: 400px;
+}
+
+/*clase que asigna el tamaño de una img.. comumente los logos*/
+.logo-m {
+  width: 310px;
+  margin-top: -30%;
+}
+
+/*clase que asigna el tamaño de una img.. comumente los logos*/
+.logo-c {
+  width: 150px;
+}
+
+/*Clase que hace que cualquier img logo se sobreponga arriba a la izq*/
+.logotopleft {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width: 7%; /* El logotipo no superará el ancho del contenedor */
+  height: auto;
+  z-index: 5; /*Para que este logo aparezca arriba de todas las interfaz*/
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Iconos +++++++++++++++++++++*/
+/*Clase que se utiliza cuando quiere poner el tama;oa un icono*/
+.icono-g {
+  width: 109px;
+  height: 109px;
+}
+
+/*Clase que se utiliza cuando quiere poner el tama;oa un icono*/
+.icono-m {
+  width: 50px;
+  height: 50px;
+}
+
+/*Clase que se utiliza cuando quiere poner el tama;oa un icono*/
+.icono-c {
+  width: 30px;
+  height: 30px;
+}
+
+/*Este tipo de icono involucra al vatar y para darle formato circular al avatar le ponemos el border de 100% como el de su contenedor padre*/
+.icono-btn {
+  width: 100%; /*Obtiene el 100 del tamaño de su contenedor padre que es el boton(El 1005 del tamaño del bopto y asi actura junto con el boton)*/
+  border-radius: 100%;
+}
+
+/*Icono que lleva una card abajo derecha*/
+.icono-card-rb {
+  /*Para que funcione es necesario que el contenedor padre tenga una position relative*/
+  position: absolute;
+  width: 80px;
+  right: 0vw;
+  bottom: 14px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Avatares +++++++++++++++++++++*/
+/*Clase que se utiliza cuando quiere poner el tama;oa un icono*/
+.avatar-g {
+  width: 200px;
+  height: 200px;
+}
+
+/*Clase que se utiliza cuando quiere poner el tamano a un icono*/
+.avatar-m {
+  width: 150px;
+  height: 150px;
+}
+
+/*Clase que se utiliza cuando quiere poner el tamano a un icono*/
+.avatar-c {
+  width: 134px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Cuadros contenedores +++++++++++++++++++++*/
+/*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
+.cuadro-v {
+  /*Ideal CALC para cuando se hace el cuadro blanco para resolucion de movil/telefono*/
+  height: calc(72vh + 180px);
+  /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
+  width: calc(35vh + 230px);
+}
+
+/*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
+.cuadro-h {
+  position: relative;
+  /*Ideal CALC para cuando se hace el cuadro blaco para resolucion de movil/telefono*/
+  height: calc(75vh + 180px);
+  /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
+  width: calc(1500px - 15vw);
+}
+
+/*Este hara un cuadro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
+.cuadro-fondo {
+  height: 98%; /*Ideal CALC para cuando se hace el cuadro blaco para resolucion de movil/telefono*/
+  width: 100%;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Input ++++++++++++++++++++++++*/
+/*Input grande*/
+.input-g {
+  transform: scale(1);
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  .input-g {
+    transform: scaleX(
+      0.95
+    ); /*Si es resolucion phone, se hace mas pequeño el input*/
+  }
+}
+
+/*Utilizado para que los links no tengan esa linea subrayada*/
+.decoracion-no {
+  text-decoration: none;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Colores Fondos +++++++++++++++++++++++++++++++++++++*/
+/*Asigna un color blanco translucido de fondo a cualquier elemento*/
+.blanco-transparente {
+  background-color: rgba(240, 248, 255, 0.836);
+}
+
+/*Asigna un color blanco solido de fondo a cualquier elemento*/
+.blanco-solido {
+  background-color: rgb(255, 255, 255);
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Scroll ++++++++++++++++++++++++++++++++++++++++++++++*/
+/*Scroll*/
+.scroll-body-no {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.scroll-x {
+  /*Haces que el contenedor de escroll sea aun mas largo que ne resolucion de pc*/
+  overflow-y: hidden; /*Activa el scroll en y arriba abajo*/
+  overflow-x: auto; /*Bloquea el scroll en x izq der*/
+  width: 90vw; /*Este es el que cambia respecto a pc para ser mas grande*/
+}
+
+.scroll-y {
+  /*Haces que el contenedor de escroll sea aun mas largo que ne resolucion de pc*/
+  overflow-y: auto; /*Activa el scroll en y arriba abajo*/
+  overflow-x: hidden; /*Bloquea el scroll en x izq der*/
+  height: 90vh; /*Este es el que cambia respecto a pc para ser mas grande*/
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  .scroll-y {
+    /*Haces que el contenedor de escroll sea aun mas largo que ne resolucion de pc*/
+    overflow-y: auto; /*Activa el scroll en y arriba abajo*/
+    overflow-x: hidden; /*Bloquea el scroll en x izq der*/
+    height: 90vh; /*Este es el que cambia respecto a pc para ser mas grande*/
+  }
+}
+
+/********************************************************************************* Animaciones/rotar *****************************/
+/*Clase para poder voltear/rotar en 90 grados*/
+.rotar-90 {
+  transform: rotate(90deg);
+}
+
+/*Clase para poder voltear/rotar en 180 grados*/
+.rotar-180 {
+  transform: rotate(90deg);
+}
+
+/*************************************************************************************** Hover/sobreponer ****************************/
+/*Hover para que todos los botones que la utilizen cambien de tamano como iniciar sesion/recuperarpass, etc*/
+.hover-btn:hover {
+  transform: scale(1.05);
+}
+
+/*Hover para que todos los links que la utilizen cambien color y tamano*/
+.hover-link:hover {
+  color: rgb(76, 165, 255);
+}
+
+/*----------------------------------------------------------------------------------------------Pantalla de ESPERA---------------------------------*/
+/*Agregar un background al body logra que este aparezca de tras del contenido, como una pintura y no un elemento
+Asi logras evadir lo de position y z index en los elementos*/
+/*No repeat es indispensable solo para que aparezca 1*/
+/*Background size logra que este cubra todo el body*/
+#contenedor-espera {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Asigna un tamaño predeterminado para hacer el circulo y no ovalo ademas los botones para mantener el mismo tamaño en todas las relaciones*/
+/*Aqui ambos botones son afectados con estops estilos*/
+.btn-espera {
+  height: 100px;
+  width: 100px;
+}
+
+/*Controla el btntutoriaespera redondo y separacion de los 2 btn de etutoria y btniniciar*/
+#btntutoriaespera {
+  background-color: rgba(240, 248, 255, 0);
+  border: 3px solid aliceblue; /*Se utiliza para separar a los botones uno de otro horizontal*/
+  transition: 0.3s ease;
+}
+
+/*Controla estilos del btntutoriaespera*/
+#btninicioespera {
+  background-color: rgba(0, 136, 255, 0.675);
+  border: 3px solid aliceblue;
+  transition: 0.3s ease;
+}
+
+/*La animacion hover (sobre poner el mouse encima)*/
+/*Controla animacion cuando se hace grande el btn al sobreponer el mouse*/
+#btntutoriaespera:hover {
+  transform: scale(1.1);
+  background-image: url("../imagenes/iconos/bmoia.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center left -43px;
+  border: 5px solid aliceblue;
+}
+
+/*Dezaparece la letra del boton iaespera*/
+#btntutoriaespera:hover span {
+  opacity: 0;
+}
+
+/*Dezaparece la letra del boton iaespera*/
+#btntutoriaespera:hover img {
+  opacity: 0;
+}
+
+/*Controla estilos del btntutoriaespera*/
+#btninicioespera:hover {
+  background-color: rgb(10, 132, 255);
+  transform: scale(1.1);
+  font-weight: 400;
+  border: 5px solid aliceblue;
+}
+
+/*Dezaparece la letra del boton si es que se quiere poner un img como en de btnesperaia (esconde las letras dentro del span que esten en el btn al hacer hover)
+#btninicioespera:hover span {
+  opacity: 1;
+}*/
+
+/*Se deja aqui por si depues se quiere poner una imagen al btn(esconde las imagenes que esten en el btn al hacer hover)/
+#btninicioespera:hover img {
+  opacity: 0;
+}*/
+
+/*---------------------------------------------------------------------------Tiposesiom------------------------------------------------------------*/
+/*Asigan a el contenedor principal de esta interfaz el fondo y demas caracteristicas*/
+#contenedor-tiposesion {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; /*Darle un tamaño predeterminado al contendor para que aparezca el background*/
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/*Tarjetas/cards que tendran el mismo formato*/
+.opciontiposesion {
+  position: relative;
+  background-image: url("../imagenes/fondos/fondo-gusano.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  height: calc(25vh + 350px);
+  /*Controla el alto de las tarjetas en * la resolucion de 780px queda muy pequeña y si se ocupa hv en la resolucion de telefono se vera muy alargado por eso en px "La combinacion de vh y px podria ser una de las mejores soluciones para poder acomodar el tamaño de las cards en todas las resoluciones"*/
+  width: calc(25vw + 100px);
+  /*Controla el ancho de las cards/ se utiliza calc para adaptarse a cada tipo de pantalla*/
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.257);
+  margin: 5px; /*Separa a las 2 cards de tipo de sesion una de otra*/
+  transition: 0.3s ease; /*Elimina las lineas del texto tipo link*/
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  /*Tarjetas/cards que tendran el mismo formato*/
+  .opciontiposesion {
+    height: 400px;
+    width: 46vw;
+  }
+}
+
+/*Hace que cuando el mouse se sobrepone el cuadro contenedor de cada opcion de tipo de sesion sea mas visible, aparte de ponerle una sombra de color verde */
+.opciontiposesion:hover {
+  opacity: 1;
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
+  z-index: 1;
+  cursor: pointer; /*Cambia el cursor a una mano para decir que se puede seleccionar*/
+}
+
+/*Hace que el texto este abajo de cada card de tipo de inicio de sesion*/
+.filatextotiposesion {
+  position: absolute;
+  bottom: 25px;
+  left: 3vh;
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------------------------INICIO NORMAL alum--------------------*/
+/*Contendor principal de inicio que asigna el fondo*/
+.contenedor-inicionormal {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Manda a un lugar adecuado (mas a la izq) al label de olvidaste*/
+#olvidasteinicionormal {
+  margin-left: -30px;
+}
+
+/*-------------------------------------------------------------------------------------------INICIO dinamico alum(escanear)--------------------*/
+/*Contendor principal de inicio que asigna el fondo*/
+.contenedor-iniciodinamico {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Asigna el tamaño de el lector qr(que tan grande es)*/
+.camaraqr {
+  height: auto;
+  width: 800px;
+}
+
+@media (min-width: 760px) {
+  .escanear-qr {
+    border: 20px solid #d8fff1;
+    font-size: 5rem;
+  }
+}
+
+/*-------------------------------------------------------------------------------------INICIO dinamico alum--------------------*/
+
+/*------------------------------------------------------------------------------------------------------------- RECUPERAR PASS*/
+/*Aun no fueron necesarios estilos propios pero si se ocupan aqui ponerlos*/
+/*Cierre recuperar pas*/
+
+/*-------------------------------------------------------------------------------------------------------------- ELEGIR AVATAR alum --------------------------*/
+/*Utilizado para darle fondo a la interfaz de elegir avatar*/
+.contenedor-elegiravatar {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*Le da formato a todas las opciones de img de avatar*/
+.avatar-elegir {
+  width: calc(5vw + 100px);
+  height: calc(5vw + 100px);
+  background-color: rgba(0, 255, 81, 0.399);
+  border-radius: 50%;
+  opacity: 0.7;
+  border: 6px solid rgb(70, 255, 165);
+  margin-right: 10px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/*Hace que cuando se sobreponga el mouse elos avatar se amplien y se les cambie el borde */
+.hover-avatar:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
+  border: 8px solid rgb(76, 247, 165);
+}
+
+/*-------------------------------------------------------------------------------------------------------------- ELEGIR fondo alum --------------------------*/
+/*Asigna una transition para todas las opciones de fondos (hace que sea mas fluido)*/
+.fondo-elegir {
+  transition: 0.3s ease;
+  width: 50%; /*Asigna un tama;o de medio ancho contenedor padre al estar en resolucion pc*/
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .fondo-elegir {
+    width: 100%; /*Asigna un tama;o completo ancho del contenedor padre al estar en resolucion pc*/
+  }
+}
+
+/*************************************************************************************  Plantilla menus */
+/*Contenedor que asigan ek fondo de imagen de la interfas*/
+#contenedor-plantillaalm {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /*Centra a el fondo siempre en medio en cualquier medida que tome*/
+  height: 100vh;
+  transition: 0.25s ease-in;
+}
+
+/*Asigna el tamano de la columna izq/menualm de forma predeterminada*/
+#colmenuplantillaalm {
+  width: 300px; /*Este tamano solo se utilizara provisionlamnete mientras se desarrolla para pon tener que estra abre y cierra el menu, se pone ya que si no abre de mas el menu, y asi mantiene la coherencia con el tamano asignado en el js logica menu*/
+  transition: 0.25s ease-in;
+  background-color: rgba(120, 233, 178, 0.863);
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  /*Entonces la columna principal se sobre pondra y dejara de ser relativa a el copntenido*/
+  #colmenuplantillaalm {
+    position: fixed; /*Se desancla de toda la iterfaz y se vuelve independiente*/
+    z-index: 2; /*Enviamos al frente de todo (todo el cotenido esta en entre z-0 y z-1) entonces se pone encima de todo eso*/
+    width: 300px; /*Le asignamos un valor de ancho determinado, ya que no tiene contenedor padre y esta solo*/
+    height: 100vh; /*Le asignamos un valor de alto determinado, ya que no tiene contenedor padre y esta solo*/
+  }
+}
+
+/*Columna de configuraciones de alm*/
+#colconfigplantillaalm {
+  position: fixed; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
+  z-index: 1; /*Se asigna un index 1 para poner encima/enfrente de toda la interfaz*/
+  background-color: rgba(80, 163, 218, 0.938);
+  height: 100vh; /*Asigna todo el tama;o heiht/vertical de toda la panatalla usando el viweport*/
+  width: 100vw; /*Asigna todo el tama;o width/horizontal de toda la panatalla usando el viweport*/
+  transition: 0.25s ease-in; /*Se asigna una transicion para que cuando sufra cambios la animacion sea mas suave*/
+}
+
+/*Posicio relative para que otros elementos que sean absolutes partan de esta refrencia a la hora de hacer left o rigth (en fin de ubicar a un elemento de esta forma estatico por lo regular)*/
+#plantillaalm-cuadro {
+  position: relative; /*Relative para que los elementos que utilicen absolute tomen como referencia a este (que es el padre)*/
+  width: 100%;
+}
+
+/*Boton de menu que esta en la interfaz principalalm que maneja posicion y duracion de transisioones de el boton*/
+#btn-menu-plantillaalm {
+  position: absolute; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
+  z-index: 2; /*Se asigna un index 1 para poner encima/enfrente de todos los componentes la interfaz y siempre este arriba*/
+  left: 5px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
+  /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
+  top: calc(45vh - 30px);
+  transition: 0.4s ease-out;
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  #btn-menu-plantillaalm {
+    width: 50px;
+  }
+}
+
+/*Boton de extras que esta en la interfaz principalalm que maneja posicion y duracion de transisioones de el boton*/
+#btn-extras-plantillaalm {
+  position: absolute; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
+  z-index: 3; /*Se asigna un index 3 para poner encima/enfrente de toda la interfaz y de la columna extras quer tiene un z index 2*/
+  right: 17px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
+  top: 10px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
+  width: 65px;
+  height: 65px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  transition: 0.35s;
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 800px) {
+  /*Boton de extras que esta en la interfaz principalalm que maneja posicion y duracion de transisioones de el boton*/
+  #btn-extras-plantillaalm {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/*Logo aliados top izq principalalm*/
+#plantillaalm-logo {
+  position: absolute; /*Absolute para tener como refrencia al contenedor padre que deberia tener una position relative*/
+  top: -50px;
+  left: 10px;
+  z-index: 1; /*Mantiene arriba del contenido pero denajo de los menus/configuraciones*/
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  /*Logo aliados top izq principalalm*/
+  #plantillaalm-logo {
+    top: -20px;
+    width: 20%;
+  }
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  #plantillaalm-main-principal {
+    height: 86%; /*Para que tenga un tama;o y posicion de contenedor adecuado y haga el efecto que salgan debajo de la barra de busqueda*/
+  }
+}
+
+/*----------------------------------------------------------------------------------------- principalalm -------------*/
+/*Contenedor donde va el contenido de enmedio, cards normalmente */
+#main-principalalm {
+  position: absolute;
+  bottom: 70px; /*Hace que el contenedor se fije desde abajo*/
+  height: 80%; /*Para que tenga u n tama;o y posicion de contenedor adecuado y haga el efecto que salgan debajo de la barra de busqueda*/
+  width: 95%;
+  margin-left: 35px;
+}
+
+/*Tarjeta de opciones grande*/
+.card-principalalm {
+  position: relative; /*Se asigna posicion para que el elemento icono de la card se pueda poner abajo derecha de manera fija con rigth 0 y left 0*/
+  /*Asigna un tama;o responsivo a que tipo de resolucion de pantalla tenga, para que entre mas resolucion o sea mas alto*/
+  height: calc(90px + 20vh);
+  width: 300px; /*Asigan el tama;o de la card*/
+  margin-top: 15px;
+  margin-left: 2.5vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+  background-color: rgba(131, 205, 255, 0.884);
+}
+
+/*Hover para las cards que tienen las opciones al inicio de principalalm*/
+.card-principalalm:hover {
+  transform: scale(1.05);
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 500px) {
+  .card-principalalm {
+    /*Las tarjetas para  resolucion telefono se haran mas delgadas y altas*/
+    width: 130px;
+    height: 200px;
+  }
+}
+
+/*Barra de busqueda/consulta de principalalm alm*/
+#principalalm-barra-busqueda {
+  position: absolute;
+  bottom: 0vh;
+  z-index: 1;
+  height: 10vh; /*Se utilizo vh para que en la resolucion de telefono se suba mas*/
+  width: 100%; /*Para que ocupe todo el tamaño de su contenedor padre(el cuadro blanco)*/
+  background-color: rgba(91, 224, 160, 0.863);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 0px 25px 5px rgba(156, 156, 156, 0.399);
+}
+
+/*Asigna a el input de busqueda principal la altura deseada en version pc*/
+#principalalm-input-busqueda {
+  height: 48px;
+}
+
+/*Asigna a el icono junto al input de busqueda principal el tama;o y posicion adecuados deseada en version pc*/
+#principalalm-icono-busqueda {
+  width: 35px;
+  height: 35px;
+  margin-left: -40px;
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+@media (max-width: 768px) {
+  /*Asigna a el icono junto al input de busqueda principal el tama;o y posicion adecuados deseada en version pc*/
+  #principalalm-icono-busqueda {
+    width: 25px;
+    height: 25px;
+    margin-right: -30px; /*Se hace asi y no left para que no afcete a las col (si tuviese left tomaria parte del input como parte del boton)*/
+  }
+}
+
+/******************************************************************************************* Menualm/include **************/
+/*Maneja lod drops que cuando se abran las opciones esten mas a la derecha y no debajo*/
+.menualmdrop {
+  margin-left: 213px;
+}
+
+/*************************************************************************************** Configsusuavatar *****************************/
+/*Contenedor que contiene las opciones de configuracion*/
+#contenedor-configusuariosalm {
+  height: 100vh;
+  width: 100vw;
+  padding-top: 26vh;
+}
+
+/*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
+/*Hace que para telefonos este mas arriba el contenedor*/
+@media (max-width: 500px) {
+  #contenedor-configusuariosalm {
+    padding-top: 23vh; /*Asigna un espacio arriba dependiendo el dispositivo*/
+  }
+}
+
+/*Asigna el tama;o a todas las opciones de configuraciones*/
+.opcionconfigusu {
+  width: 200px;
+  height: 200px;
+}
+
+/*Hace que las opciones para telefono sean mas peque;as*/
+@media (max-width: 500px) {
+  .opcionconfigusu {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/*Hace Asigna el contenedor que se abre de todas las opciones el mismo ta*/
+.opcionconfigusualm {
+  position: absolute;
+  left: 14.5vw;
+  height: 45vh;
+  width: 70vw;
+  background-color: rgba(255, 255, 255, 0.13);
+  margin-top: -50px;
+}
+
+/*Hace que el contenedor en telefonos sea mas largo y tenga un ancho especial*/
+@media (max-width: 500px) {
+  /*Hace Asigna el contenedor que se abre de todas las opciones el mismo ta*/
+  .opcionconfigusualm {
+    left: 17vw;
+    margin-top: 4vh;
+    height: 60vh;
+    width: 70vw;
+  }
+}
+
+/*Estos componenentes se utilizan apartir(despues) de el menu principal y avatares*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Componentes php ++++++++++++++++++++++++*/
+
+/*-------------------------------------------- Reportes ---------------------------------------*/
+/*Contenedor principal de la estcutura reportes que es exportada a la interfaz reportes*/
+#main-reportealm {
+  width: 75vw;
+}
+
+@media (max-width: 500px) {
+  /*Contenedor principal de la estcutura reportes que es exportada a la interfaz reportes*/
+  #main-reportealm {
+    width: 87%;
+  }
+}
+
+/*Asigna al text area de todas las interfaces que lo manden a traer el mismo tamaño (modificando este modificas todos)*/
+.form-floating .textarea-reporte {
+  height: 150px;
+  width: 800px;
+}
+
+@media (max-width: 500px) {
+  /*Asigna al text area de todas las interfaces que lo manden a traer el mismo tamaño (Telefono) (modificando este modificas todos)*/
+  .form-floating .textarea-reporte {
+    height: 150px;
+    width: 300px;
+  }
+}
+
+/*Todos los select dee componentes se rigen bajo esta clase*/
+.select-reporte {
+  width: 400px;
+}
+
+@media (max-width: 600px) {
+  /*Todos los select dee componentes se rigen bajo esta clase*/
+  .select-reporte {
+    width: 150px;
+  }
+}
+
+/*Asigna al boton de submit reporte de todas las interfaces que lo manden a traer el mismo tamaño (modificando este modificas todos)*/
+.btn-reporte {
+  background-color: rgba(91, 224, 160, 0.863);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+}
+
+/*Asigna al boton de submit reporte una animacion de crecer cuando se sobrepone de todas las interfaces que lo manden a traer el mismo tamaño (modificando este modificas todos)*/
+.btn-reporte:hover {
+  background-color: rgba(50, 218, 137, 0.863);
+  transform: scale(1.1);
+}
+
+/*Asigan un estilo al btn para grabar reportes */
+#btn-grabar-reporte {
+  width: 100px;
+  height: 100px;
+}
