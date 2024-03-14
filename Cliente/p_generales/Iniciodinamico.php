@@ -57,7 +57,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!--Script perzonalizado que manda a traer la alerta si es alumno-->
-    <script src="js/alerta_autenticacion.js"></script>
+    <script src="../js/alerta_autenticacion.js"></script>
 </body>
 
 </html>
