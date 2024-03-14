@@ -19,7 +19,7 @@ if (mysqli_num_rows($consulta1) > 0) { /*si devuelve valores */
     $tipo = $row1['nombre_tipo_usuario']; /*pasamos a una variable para comparar mas facil en los if()*/
 
     if ($tipo !== "Alumno") { /*Si no es un alumno envia a inicio normal*/
-        header("Location: ../Cliente/Inicionormal.php?autres=noalumno"); /* Manda a inicionormal.php(usuario y contraseña)*/
+        header("Location: Inicionormal.php?autres=noalumno"); /* Manda a inicionormal.php(usuario y contraseña)*/
     } else {
         /*Si el alumno: te quedas en la interfaz*/
         /*y activa la notificacion de que hacer para iniciar sesion*/

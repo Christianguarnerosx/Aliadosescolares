@@ -3,13 +3,13 @@ $alert = "";
 //Comenzamos una sesion de una vez
 session_start();
 
-if (!empty($_SESSION['active'])) { //Si es diferente de activa
+if (!empty($_SESSION['active'])) { //Si es diferente de vacia
     header("Location: ../Cliente/Principal.php");
 } else {
     //Verificar los datos que ingresan en los input sean diferentes de vacios
     if (!empty($_POST)) {
         if (empty($_POST['usuario']) && empty($_POST['contraseña'])) {
-            header("Location: ../Cliente/Iniciodinamico.php?autres=vacio");
+            header("Location: ../Cliente/p_generales/Inicionormal.php?autres=vacio");
         } else {
             //incluimos la conexion hacia la base de datos 
             include_once("Conexion.php");
@@ -22,18 +22,14 @@ if (!empty($_SESSION['active'])) { //Si es diferente de activa
             $resultado = mysqli_fetch_array($consulta); //Guardamos la consulta en una variable resultado para poder acceder a los elementos obtenidos del query mediante ella
 
             if ($resultado > 0) { //Si devuelve algun resultado es que si existe la informacion entonces realizas:
-                $userid = $resultado['id_usuario'];
-                $query2 = "SELECT avatar FROM usuarios WHERE id_usuario = '$userid'";
-                $consulta2 = mysqli_query($conexion, $query2);
-                $resultado2 = mysqli_fetch_array($consulta2);
 
-                if ($resultado2['avatar'] > 0) {
-                    header("Location: ../Cliente/Principalalm.php");
+                if ($resultado['avatar'] != "") {
+                    header("Location: ../Cliente/p_alumnos/Principalalm.php");
                 } else {
-                    header("Location: ../Cliente/Elegiravatar.php");
+                    header("Location: ../Cliente/p_generales/Elegiravatar.php");
                 }
             } else {
-                header("Location: ../Cliente/Iniciodinamico.php?autres=fracaso");
+                header("Location: ../Cliente/p_generales/Inicionormal.php?autres=fracaso");
 
                 session_destroy();
             }
