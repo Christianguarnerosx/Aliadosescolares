@@ -54,11 +54,9 @@
 
                     <!-- Este es el contendor de las card/opciones que muestras acciones de la app en la interfaz principal-->
                     <!-- A este main se le aplicara un scroll en y cuando el contenido se deborde, solo se oculta el scroll x y se asigna un tama;o-->
-                    <main id="main-reportealm" class="row scroll-y centrar"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
+                    <main id="main-reportealm" class="row centrar"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
                         <div class="col"> <!-- AQUI VA EL CONTENIDO PROPIO-->
-                            <form class=" centrar" action="../../Servidor/subirreporte.php" method="POST">
-                                <?php include_once("../componentes_php/componente_reporte.php");?>
-                            </form>
+                            <?php include_once("../componentes_php/componente_reportes_dinamicos.php"); ?>
                         </div>
                     </main>
 

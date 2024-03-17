@@ -417,7 +417,7 @@ haciendo mas reciclabe el codigo*/
   /*Haces que el contenedor de escroll sea aun mas largo que ne resolucion de pc*/
   overflow-y: auto; /*Activa el scroll en y arriba abajo*/
   overflow-x: hidden; /*Bloquea el scroll en x izq der*/
-  height: 90vh; /*Este es el que cambia respecto a pc para ser mas grande*/
+  height: 90%; /*Este es el que cambia respecto a pc para ser mas grande*/
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -682,7 +682,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   /*Entonces la columna principal se sobre pondra y dejara de ser relativa a el copntenido*/
   #colmenuplantillaalm {
     position: fixed; /*Se desancla de toda la iterfaz y se vuelve independiente*/
-    z-index: 2; /*Enviamos al frente de todo (todo el cotenido esta en entre z-0 y z-1) entonces se pone encima de todo eso*/
+    z-index: 20; /*Enviamos al frente de todo (todo el cotenido esta en entre z-0 y z-1) entonces se pone encima de todo eso (si se cambia aqui tambien en el js se debera ca,biar el z index del btn hamburguesa)*/
     width: 300px; /*Le asignamos un valor de ancho determinado, ya que no tiene contenedor padre y esta solo*/
     height: 100vh; /*Le asignamos un valor de alto determinado, ya que no tiene contenedor padre y esta solo*/
   }
@@ -691,7 +691,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Columna de configuraciones de alm*/
 #colconfigplantillaalm {
   position: fixed; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
-  z-index: 1; /*Se asigna un index 1 para poner encima/enfrente de toda la interfaz*/
+  z-index: 22; /*Se asigna un index 1 para poner encima/enfrente de toda la interfaz*/
   background-color: rgba(80, 163, 218, 0.938);
   height: 100vh; /*Asigna todo el tama;o heiht/vertical de toda la panatalla usando el viweport*/
   width: 100vw; /*Asigna todo el tama;o width/horizontal de toda la panatalla usando el viweport*/
@@ -707,7 +707,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Boton de menu que esta en la interfaz principalalm que maneja posicion y duracion de transisioones de el boton*/
 #btn-menu-plantillaalm {
   position: absolute; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
-  z-index: 2; /*Se asigna un index 1 para poner encima/enfrente de todos los componentes la interfaz y siempre este arriba*/
+  z-index: 21; /*Se asigna un index 1 para poner encima/enfrente de todos los componentes la interfaz y siempre este arriba*/
   left: 5px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   top: calc(45vh - 30px);
@@ -717,14 +717,14 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
 @media (max-width: 500px) {
   #btn-menu-plantillaalm {
-    width: 50px;
+    width: 60px;
   }
 }
 
 /*Boton de extras que esta en la interfaz principalalm que maneja posicion y duracion de transisioones de el boton*/
 #btn-extras-plantillaalm {
   position: absolute; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
-  z-index: 3; /*Se asigna un index 3 para poner encima/enfrente de toda la interfaz y de la columna extras quer tiene un z index 2*/
+  z-index: 23; /* (Zindex mas alto)Se asigna un index 3 para poner encima/enfrente de toda la interfaz y de la columna extras quer tiene un z index 2*/
   right: 17px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   top: 10px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   width: 65px;
@@ -956,4 +956,132 @@ Asi logras evadir lo de position y z index en los elementos*/
 #btn-grabar-reporte {
   width: 100px;
   height: 100px;
+}
+
+/*-------------------------------------------- Reportes ---------------------------------------*/
+/*Este contenedor hace que con su position sea parte para hacer el 'tarjetero'*/
+#contenedor-tarjetas {
+  position: relative; /*Para hacer referente al contenedor y sea utilizado para todas las cards*/
+  height: 90vh;
+  overflow: hidden;
+}
+
+/*Asigna tamaño y posicion a las cards*/
+.cardreporte {
+  position: absolute; /*Se utiliza absolute para poder tomara como refrencia el relative y ubicar las cards una sobre otra (con los zindices)*/
+  height: 70vh;
+  width: 34vw;
+  border-radius: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 1s ease;
+}
+
+@media (max-width: 500px) {
+  .cardreporte {
+    height: 60vh;
+    width: 70vw;
+  }
+}
+
+/*La card que esta hasta el frente, por eso tiene el z index mas alto (entre mas alto zindex, mas al frente)*/
+/*Card opcion1 parte del tarjetero de reportes*/
+#card1 {
+  z-index: 7; /*El primer indice dira cuantas cards habra entre el y el 0 (entre mas alto zindex, mas al frente)*/
+  background-color: #ffffff;
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card2 {
+  z-index: 6; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 7, 7);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card3 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 251, 7);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card4 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(57, 255, 7);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card5 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(7, 255, 234);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card6 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(114, 7, 255);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card7 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(125, 255, 131);
+}
+
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card8 {
+  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 255, 255);
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card9 {
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 255, 255);
+  transform: rotate(-15deg);
+  box-shadow: -5px -5px 40px rgb(34, 148, 255),
+    /* Sombras para la parte superior e izquierda */ 5px 5px 40px
+      rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
+}
+
+/*Card opcion2 parte del tarjetero de reportes*/
+#card10 {
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 255, 255);
+  transform: rotate(15deg);
+  box-shadow: -5px -5px 40px rgb(34, 148, 255),
+    /* Sombras para la parte superior e izquierda */ 5px 5px 40px
+      rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
+}
+
+
+.opcion-reporte {
+  background-color: #72f1b6;
+  width: 23vh;
+  height: 150px;
+  margin: 5px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.opcion-reporte:hover {
+  transform: scale(1.1);
+}
+
+
+/* Agrega una animación para que la tarjeta se mueva hacia abajo */
+.animacionbajar {
+  animation: animacionbajar 1s forwards;
+}
+
+/* Define la animación de mover hacia abajo */
+@keyframes animacionbajar {
+  from {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  to {
+      transform: translateY(100%);
+      opacity: 0;
+  }
 }

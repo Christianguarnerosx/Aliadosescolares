@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class=" scroll-body-no">
     <div class="container-fluid">
         <div class="row">
 
