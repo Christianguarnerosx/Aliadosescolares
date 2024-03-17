@@ -2,13 +2,19 @@
 /*Para el ajax/json para conectar con el js de reportesdinamicos*/
 
 //incluimos la conexion hacia la base de datos 
-include_once("../../Servidor/Conexion.php");
+include_once("Conexion.php");
+
+$jsondata = $_POST['data'];
+$Array = json_decode($jsondata);
 
 // Obtener grado y grupo seleccionados
-$grado = $_POST['grado'];
-$grupo = $_POST['grupo'];
+$grado = $Array[0];
+$grupo = $Array[1];
 
-// Consulta SQL para obtener usuarios según grado y grupo
+$info = "El alumno Christian esta en el " . $grado . "grado" . "Grupo" . $grupo;
+echo $info;
+
+/* Consulta SQL para obtener usuarios según grado y grupo
 $query = "SELECT u.id_usuario,
                  u.nombre,
                  u.apellidop,
@@ -39,3 +45,4 @@ if (mysqli_num_rows($consulta) > 0) {
 } else {
     echo "No se encontraron usuarios para el grado $grado, grupo $grupo";
 }
+*/

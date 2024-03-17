@@ -154,7 +154,7 @@
     <div class="cardreporte centrar" id="card5">
         <div class="row centrar alinear-center espacio-top-g">
             <h1 class=" espacio-top-c">¿Quien?</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
-            
+
         </div>
     </div>
 
@@ -191,5 +191,6 @@
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="../js/JSEstructuras/estructura_reporte_dinamico.js"></script>

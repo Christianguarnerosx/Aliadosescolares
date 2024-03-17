@@ -75,6 +75,18 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('card5').style.zIndex = 6;
 
             animarcard(tarjetaActual); // Llama a la función para animar la tarjeta
+
+            const valoresmandados = [datos[2], datos[3]];
+            const json = JSON.stringify(valoresmandados);
+
+            $.ajax({
+                type: "POST",
+                url: "../../Servidor/filtrarusuarios.php",
+                data: { data: json },
+                success: function (response) {
+                    console.log("La respuesta del servidor fue", response);
+                }
+            });
         });
     });
 
@@ -103,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
             animarcard(tarjetaActual); // Llama a la función para animar la tarjeta
         });
     });
-
 
 });
 
