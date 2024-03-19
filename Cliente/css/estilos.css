@@ -417,7 +417,7 @@ haciendo mas reciclabe el codigo*/
   /*Haces que el contenedor de escroll sea aun mas largo que ne resolucion de pc*/
   overflow-y: auto; /*Activa el scroll en y arriba abajo*/
   overflow-x: hidden; /*Bloquea el scroll en x izq der*/
-  height: 90%; /*Este es el que cambia respecto a pc para ser mas grande*/
+  height: 90vh; /*Este es el que cambia respecto a pc para ser mas grande*/
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -978,64 +978,70 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 @media (max-width: 500px) {
+  /*Asigna tamaño y posicion a las cards que muestran las opciones y elecciones de reportes*/
   .cardreporte {
-    height: 60vh;
+    height: 80vh;
     width: 70vw;
   }
 }
 
 /*La card que esta hasta el frente, por eso tiene el z index mas alto (entre mas alto zindex, mas al frente)*/
-/*Card opcion1 parte del tarjetero de reportes*/
+/*Card opcion1 (tiporeporte) parte del tarjetero de reportes*/
 #card1 {
   z-index: 7; /*El primer indice dira cuantas cards habra entre el y el 0 (entre mas alto zindex, mas al frente)*/
   background-color: #ffffff;
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion2 (tipousuario) parte del tarjetero de reportes*/
 #card2 {
   z-index: 6; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(255, 7, 7);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion3 (grado) parte del tarjetero de reportes*/
 #card3 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(255, 251, 7);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion4 (grupo) parte del tarjetero de reportes*/
 #card4 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(57, 255, 7);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion5 (usuario elegido) parte del tarjetero de reportes*/
 #card5 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(7, 255, 234);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion6 (reporte imagen) parte del tarjetero de reportes*/
 #card6 {
-  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(114, 7, 255);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion7 (reporte texto) parte del tarjetero de reportes*/
 #card7 {
-  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(125, 255, 131);
 }
 
-
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card opcion8 (reporte audio) parte del tarjetero de reportes*/
 #card8 {
-  z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(255, 255, 255);
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
+/*Card 9 de enviar reporte*/
 #card9 {
+  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
+  background-color: rgb(255, 255, 255);
+}
+
+/*Card de fondo parte del tarjetero de reportes*/
+#card10 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(255, 255, 255);
   transform: rotate(-15deg);
@@ -1044,8 +1050,8 @@ Asi logras evadir lo de position y z index en los elementos*/
       rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
 }
 
-/*Card opcion2 parte del tarjetero de reportes*/
-#card10 {
+/*Card de fondo parte del tarjetero de reportes*/
+#card11 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: rgb(255, 255, 255);
   transform: rotate(15deg);
@@ -1054,7 +1060,7 @@ Asi logras evadir lo de position y z index en los elementos*/
       rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
 }
 
-
+/*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
 .opcion-reporte {
   background-color: #72f1b6;
   width: 23vh;
@@ -1064,24 +1070,24 @@ Asi logras evadir lo de position y z index en los elementos*/
   cursor: pointer;
 }
 
+/*Si se sobrepone el mouse, crecera el elemento*/
 .opcion-reporte:hover {
   transform: scale(1.1);
 }
 
-
-/* Agrega una animación para que la tarjeta se mueva hacia abajo */
+/*Agrega una animación para que la tarjeta se mueva hacia abajo */
 .animacionbajar {
   animation: animacionbajar 1s forwards;
 }
 
-/* Define la animación de mover hacia abajo */
+/* Define/Declara la animación de mover hacia abajo cuando desaparezcan las cards*/
 @keyframes animacionbajar {
   from {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-      transform: translateY(100%);
-      opacity: 0;
+    transform: translateY(100%);
+    opacity: 0;
   }
 }
