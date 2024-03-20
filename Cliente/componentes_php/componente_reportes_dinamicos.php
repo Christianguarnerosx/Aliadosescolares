@@ -225,27 +225,19 @@
     </div>
 
     <!-- Card 8 donde se dira el reporte el usuario de lo que paso -->
-    <div class="cardreporte" id="card8">
+    <div class="cardreporte centrar" id="card8">
         <!-- Reporte tipo de audio -->
         <!-- Componentes btn's,select -->
         <div class="row centrar alinear-center espacio-top-m">
-            <!-- Es el componente para generar reportes de tipo verbal -->
-            <div class="col">
-                <h1 class=" titulo-m negritam">Presiona para grabar tu reporte</h1>
-                <p class=" text-g">Tienes 30 segundos para decirme que ocurre</p>
-            </div>
-            <div class="col">
-                <button class="btn-circular" id="btn-grabar-reporte">Grabar</button>
-            </div>
+            <button class="btn-g btn-azul borde-r-c text-g txt-blanco hover-btn" id="btngrabarreporteaudio">Comenzar</button>
         </div>
-        <button class="btn-g btn-azul borde-r-c text-g txt-blanco hover-btn" id="btnenviarreporteaudio">Enviar reporte</button>
     </div>
 
-    <!-- Card 10 utuilizada de fondo/adorno -->
+    <!-- Card 11 utilizada de fondo/adorno -->
     <div class="cardreporte" id="card10">
     </div>
 
-    <!-- Card 11 utuilizada de fondo/adorno -->
+    <!-- Card 11 utilizada de fondo/adorno -->
     <div class="cardreporte" id="card11">
     </div>
 
@@ -253,6 +245,9 @@
 
 <!-- JQuery para utilizar en jsestructura_reportes_dinamico las funciones/ajax de jquery en js -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Api de rawgit para poder grabar audio en el navegador -->
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
 
 <!-- js que logra el comportamiento de obtener datos seleccionados, forma de aparecer y desaparecer cards y solicitudes ajax para filtros e inserciones -->
 <script src="../js/JSEstructuras/estructura_reporte_dinamico.js"></script>

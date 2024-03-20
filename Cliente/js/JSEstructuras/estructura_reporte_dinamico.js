@@ -240,7 +240,75 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Espacio para Codigo para enviar reporte de audio */
+    /* Se obtiene el boton de submit de el html con su id/ para agregarle un listenner y saber cuando es presionado*/
+    var btnenviarreporte = document.getElementById('btngrabarreporteaudio');
+
+    /* Se le agrega un listenner para esperar a cuando le den click hacer algo */
+    btnenviarreporte.addEventListener('click', function () {
+        iniciarGrabacion();
+    });
+
+    // Variables para manejar la grabación de audio
+    let audioContext; // Almacena una instancia de AudioContext para la manipulación de audio
+    let recorder; // Almacena una instancia del objeto encargado de la grabación de audio
+
+    /* Para guardar el audio obtenido y poder enviarlo con ajax al back/server */
+    var audioobtenido;
+
+    /* Para poder utilizar esta funcion GRABAR es IMPORTANTE/NECESARIO API en el html donde se utilice: SCRIPT : cdn.rawgit*/
+    /* Se crea la funcion iniciargrabacion para mandarla a llamar cuando se le de click a un boton con event listenner*/
+    function iniciarGrabacion() {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        })
+            .then(function (stream) {
+                audioContext = new AudioContext();
+                const input = audioContext.createMediaStreamSource(stream);
+                recorder = new Recorder(input);
+
+                recorder.record();
+
+                setTimeout(function () {
+                    recorder.stop();
+                    recorder.exportWAV(function (blob) {
+                        audioobtenido = blob;
+                        console.log("audio obtenido");
+                        insertaraudio(audioobtenido);
+                    });
+                }, 15000); // Detener la grabación después de 15 segundos
+            })
+            .catch(function (err) {
+                console.log('Error al acceder al dispositivo de audio: ' + err); /* Si no se encuentra algun dispositivo (microfono) */
+            });
+    }
+
+    /* Subfuncion que sera utilizada en la funcion de inicar grabacion, para que cuando termine se mande con ajax al server/back*/
+    /* y asi poder hacer el insert en la base de datos y guardar el audio en una ruta (sonido/reportes) */
+    function insertaraudio(audioainsertar) {
+        var formData = new FormData(); /* Creamos un almacenamiento para guardar diferentes tipos de datos text y blob (es como un tipo de array o hashmap) */
+        formData.append('id_tiporeporte', datos[0]); /* guardamos en la ruta 'id_tiporeporte' el tipo de reporte*/
+        formData.append('id_tipousuario', datos[1]); /* guardamos en la ruta 'id_tipousuario' el tipo de usuario*/
+        formData.append('id_grado', datos[2]); /* guardamos en la ruta 'grado' el grado donde va el reportado*/
+        formData.append('id_grupo', datos[3]); /* guardamos en la ruta 'grupo' el grupo donde va el reportado*/
+        formData.append('id_usuarioreportado', datos[4]); /* guardamos en la ruta 'id_usuario_reportado' al usuario reportado jaja*/
+        formData.append('audio', audioainsertar); /* guardamos en la ruta 'audio' la grabacion hecha de reporte*/
+
+        /* Se mandan los datos (obtenidos en las cards/opciones anteriores) + mas el blob */
+        $.ajax({
+            type: 'POST',
+            url: "../../Servidor/ajax_php/ajax_insertar_reporte.php",
+            data: formData,
+            processData: false, /* Indispensable para enviar datos tipo blob */
+            contentType: false, /* Indispensable para enviar datos tipo blob */
+            success: function (response) {
+                console.log("La respuesta del servidor fue:", response); //(Se puede borrar)imprimimos para ver que regresa el back/server
+
+                sessionStorage.setItem("mensajeExito", "Reporte enviado"); /* Envia el url "mensaje de ecito que un js (Esta esperado siempre que lllega ese mensaje para activar la alerta pero necesita un parametro (el mensaje a decir, el segundo dato "Reporte enviado"))"*/
+                window.location.href = 'Reportealm.php'; /* Mandamos a la pagina que queremos despues de insertar el reporte */
+            }
+        });
+    }
+
 
 });
 
