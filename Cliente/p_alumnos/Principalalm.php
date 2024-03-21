@@ -69,16 +69,16 @@
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Reportealm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
                                     <div class="row espacio-top-m"><!--Fila de texto de la card-->
-                                        <h1 class="text-m txt-negro">Comunidad</h1>
-                                        <p class="text-c txt-negro">Reporte aliado</p>
+                                        <h1 class="text-m">Comunidad</h1>
+                                        <p class="text-c">Reporte aliado</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/iconoplay.png" alt="">
                                     </div>
                                 </a>
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
                                     <div class="row espacio-top-m"><!--Fila de texto de la card-->
-                                        <h1 class="text-m txt-negro">Rendimiento</h1>
-                                        <p class="text-c txt-negro">Estadisticas</p>
+                                        <h1 class="text-m">Rendimiento</h1>
+                                        <p class="text-c">Estadisticas</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/iconoplay.png" alt="">
                                     </div>
                                 </a>

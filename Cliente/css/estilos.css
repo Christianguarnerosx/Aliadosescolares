@@ -652,12 +652,19 @@ Asi logras evadir lo de position y z index en los elementos*/
   transition: 0.3s ease;
   width: 50%; /*Asigna un tama;o de medio ancho contenedor padre al estar en resolucion pc*/
   cursor: pointer;
+  opacity: 0.7;
 }
 
 @media (max-width: 500px) {
   .fondo-elegir {
     width: 100%; /*Asigna un tama;o completo ancho del contenedor padre al estar en resolucion pc*/
   }
+}
+
+/*Asigna una transition para todas las opciones de fondos (hace que sea mas fluido)*/
+.fondo-elegir:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /*************************************************************************************  Plantilla menus */
@@ -674,7 +681,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 #colmenuplantillaalm {
   width: 300px; /*Este tamano solo se utilizara provisionlamnete mientras se desarrolla para pon tener que estra abre y cierra el menu, se pone ya que si no abre de mas el menu, y asi mantiene la coherencia con el tamano asignado en el js logica menu*/
   transition: 0.25s ease-in;
-  background-color: rgba(120, 233, 178, 0.863);
+  background-color: rgba(51, 160, 233, 0.822);
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -692,7 +699,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 #colconfigplantillaalm {
   position: fixed; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
   z-index: 22; /*Se asigna un index 1 para poner encima/enfrente de toda la interfaz*/
-  background-color: rgba(80, 163, 218, 0.938);
+  background-color: rgba(51, 160, 233, 0.822);
   height: 100vh; /*Asigna todo el tama;o heiht/vertical de toda la panatalla usando el viweport*/
   width: 100vw; /*Asigna todo el tama;o width/horizontal de toda la panatalla usando el viweport*/
   transition: 0.25s ease-in; /*Se asigna una transicion para que cuando sufra cambios la animacion sea mas suave*/
@@ -785,9 +792,10 @@ Asi logras evadir lo de position y z index en los elementos*/
   width: 300px; /*Asigan el tama;o de la card*/
   margin-top: 15px;
   margin-left: 2.5vh;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 10px rgba(39, 39, 39, 0.295);
   transition: 0.2s ease;
-  background-color: rgba(131, 205, 255, 0.884);
+  background-color: rgba(31, 155, 238, 0.884);
+  color: aliceblue;
 }
 
 /*Hover para las cards que tienen las opciones al inicio de principalalm*/
@@ -913,16 +921,16 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /*Asigna al text area de todas las interfaces que lo manden a traer el mismo tamaño (modificando este modificas todos)*/
-.form-floating .textarea-reporte {
+.textarea-reporte {
   height: 150px;
-  width: 800px;
+  width: 300px;
 }
 
 @media (max-width: 500px) {
   /*Asigna al text area de todas las interfaces que lo manden a traer el mismo tamaño (Telefono) (modificando este modificas todos)*/
-  .form-floating .textarea-reporte {
+  .textarea-reporte {
     height: 150px;
-    width: 300px;
+    width: 250px;
   }
 }
 
@@ -989,61 +997,61 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Card opcion1 (tiporeporte) parte del tarjetero de reportes*/
 #card1 {
   z-index: 7; /*El primer indice dira cuantas cards habra entre el y el 0 (entre mas alto zindex, mas al frente)*/
-  background-color: #ffffff;
+  background-color: aliceblue;
 }
 
 /*Card opcion2 (tipousuario) parte del tarjetero de reportes*/
 #card2 {
   z-index: 6; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 7, 7);
+  background-color: #ceffe8;
 }
 
 /*Card opcion3 (grado) parte del tarjetero de reportes*/
 #card3 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 251, 7);
+  background-color: #a0ffd3;
 }
 
 /*Card opcion4 (grupo) parte del tarjetero de reportes*/
 #card4 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(57, 255, 7);
+  background-color: #49f1a3;
 }
 
 /*Card opcion5 (usuario elegido) parte del tarjetero de reportes*/
 #card5 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(7, 255, 234);
+  background-color: #57dfb6;
 }
 
 /*Card opcion6 (reporte imagen) parte del tarjetero de reportes*/
 #card6 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(114, 7, 255);
+  background-color: #3dd8a9;
 }
 
 /*Card opcion7 (reporte texto) parte del tarjetero de reportes*/
 #card7 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(125, 255, 131);
+  background-color: #3dd8a9;
 }
 
 /*Card opcion8 (reporte audio) parte del tarjetero de reportes*/
 #card8 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 255, 255);
+  background-color: #3dd8a9;
 }
 
 /*Card 9 de enviar reporte*/
 #card9 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 255, 255);
+  background-color: #1fc2a7;
 }
 
 /*Card de fondo parte del tarjetero de reportes*/
 #card10 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 255, 255);
+  background-color: aliceblue;
   transform: rotate(-15deg);
   box-shadow: -5px -5px 40px rgb(34, 148, 255),
     /* Sombras para la parte superior e izquierda */ 5px 5px 40px
@@ -1053,7 +1061,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Card de fondo parte del tarjetero de reportes*/
 #card11 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: rgb(255, 255, 255);
+  background-color: aliceblue;
   transform: rotate(15deg);
   box-shadow: -5px -5px 40px rgb(34, 148, 255),
     /* Sombras para la parte superior e izquierda */ 5px 5px 40px
@@ -1070,12 +1078,33 @@ Asi logras evadir lo de position y z index en los elementos*/
   cursor: pointer;
 }
 
+@media (max-width: 500px) {
+  /*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
+  .opcion-reporte {
+    height: 100px;
+  }
+}
+
 /*Si se sobrepone el mouse, crecera el elemento*/
 .opcion-reporte:hover {
   transform: scale(1.1);
 }
 
-/*Agrega una animación para que la tarjeta se mueva hacia abajo */
+/* boton que envia los reportes audio/texto sean de un tamaño en especifico*/
+.btn-reporte-submit {
+  width: 200px;
+  height: 50px;
+}
+
+@media (max-width: 500px) {
+  /*Asigna un tamaño diferente al boton de enviar cuando sea interfaz movil*/
+  .btn-reporte-submit {
+    width: 170px;
+    height: 50px;
+  }
+}
+
+/*Agrega una animación para que la tarjeta se mueva hacia abajo con js y fucnion animartarje */
 .animacionbajar {
   animation: animacionbajar 1s forwards;
 }

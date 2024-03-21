@@ -30,8 +30,8 @@ $consulta = mysqli_query($conexion, $query); // Se ejecuta la consulta
 
 /* Al ajax regresara todo lo que este con 'echo' para despues insertar el en codigo (con js) de tipo html*/
 /* Asi que se crea el componente de html desde aqui*/
-echo "<div class='row centrar alinear-center espacio-top-g'>";
-echo "<h1 class='espacio-top-c'>¿Quien?</h1>";
+echo "<h1 class='espacio-top-g txt-blanco'>¿Quien?</h1>";
+echo "<div class='row centrar alinear-center espacio-top-c'>";
 
 // Verificar si se obtuvieron resultados
 if (mysqli_num_rows($consulta) > 0) {

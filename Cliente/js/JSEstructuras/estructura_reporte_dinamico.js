@@ -243,9 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
     /* Se obtiene el boton de submit de el html con su id/ para agregarle un listenner y saber cuando es presionado*/
     var btnenviarreporte = document.getElementById('btngrabarreporteaudio');
 
+    var anuncio = document.getElementById('contadorgrabando');
+
     /* Se le agrega un listenner para esperar a cuando le den click hacer algo */
     btnenviarreporte.addEventListener('click', function () {
         iniciarGrabacion();
+        animarcard(btnenviarreporte);
+        anuncio.innerText = "Te estoy escuchando";
     });
 
     // Variables para manejar la grabación de audio
