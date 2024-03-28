@@ -272,8 +272,7 @@ haciendo mas reciclabe el codigo*/
 
 /*clase que asigna el tamaño de una img.. comumente los logos*/
 .logo-m {
-  width: 310px;
-  margin-top: -30%;
+  width: 230px;
 }
 
 /*clase que asigna el tamaño de una img.. comumente los logos*/
@@ -353,6 +352,16 @@ haciendo mas reciclabe el codigo*/
   height: calc(72vh + 180px);
   /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
   width: calc(35vh + 230px);
+}
+
+@media (max-height: 700px){
+/*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
+.cuadro-v {
+  /*Ideal CALC para cuando se hace el cuadro blanco para resolucion de movil/telefono*/
+  height: 550px;
+  /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
+  width: 350px;
+}
 }
 
 /*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
@@ -592,7 +601,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /*Manda a un lugar adecuado (mas a la izq) al label de olvidaste*/
 #olvidasteinicionormal {
-  margin-left: -30px;
+  margin-left: -15px;
 }
 
 /*-------------------------------------------------------------------------------------------INICIO dinamico alum(escanear)--------------------*/
