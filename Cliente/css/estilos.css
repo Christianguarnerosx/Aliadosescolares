@@ -91,6 +91,11 @@ haciendo mas reciclabe el codigo*/
   text-align: left;
 }
 
+/*Alinear texto a la izq*/
+.alinear-right {
+  text-align: right;
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Espacios verticales +++++++++++++++++++++*/
 /*Deja un espacio en vertical*/
 .espacio-top-g {
@@ -832,9 +837,10 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /*Asigna a el icono junto al input de busqueda principal el tama;o y posicion adecuados deseada en version pc*/
 #principalalm-icono-busqueda {
+  position: fixed;
   width: 35px;
   height: 35px;
-  margin-left: -40px;
+  margin-top: -12px;
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -966,7 +972,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   height: 100px;
 }
 
-/*-------------------------------------------- Reportes ---------------------------------------*/
+/*-------------------------------------------- Reportes dinamicos ---------------------------------------*/
 /*Este contenedor hace que con su position sea parte para hacer el 'tarjetero'*/
 #contenedor-tarjetas {
   position: relative; /*Para hacer referente al contenedor y sea utilizado para todas las cards*/
@@ -1118,5 +1124,95 @@ Asi logras evadir lo de position y z index en los elementos*/
   to {
     transform: translateY(100%);
     opacity: 0;
+  }
+}
+
+/* ------------------------------------------------ Tutorias -------------------------------- */
+/* Clases que se ocupan en todos los chats (como son lo mismo, se utilizan las misma) */
+/* Contenedor donde iran imprimiendose los a generados de la entrada de usuario y los que genere la AI gemini*/
+.textareaconversacion {
+  max-height: 69vh; /* El contenedor/textarea comienza comprimido y se expande hasta este alto */
+  max-width: 70%; /* El contenedor/textarea comienza comprimido y se expande hasta este ancho */
+  height: 1.5px; /* El contenedor/textarea comienza comprimido (como si fuera una linea/subrayado del titulo) con un alto pequeño */
+  overflow-y: auto; /* Permite que aparezca un scroll a lo vertical si se besborda el texto*/
+  overflow-x: hidden; /* No permite que aparezca un scroll a lo horizontal y que se desborde el texto mas alla de el ancho indicado */
+  background-color: rgba(236, 246, 255, 0.959);
+  border: none;
+  transition: 0.5s ease-out; /* Hace mas fluido cuando cambia de tamaño */
+  box-shadow: 0 0px 10px 0.5px rgba(146, 146, 146, 0.815); /* Le da un pequeño sombredo para parecer que esta flotando*/
+  padding-left: 40px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+  padding-right: 40px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+}
+
+/* Para cuando sea resolucion del *
+/* Contenedor donde iran imprimiendose los a generados de la entrada de usuario y los que genere la AI gemini*/
+/* Si las pantallas son como de telefono*/
+@media (max-width: 500px) {
+  .textareaconversacion {
+    max-width: 85%; /* Tamaño del textarea sera siempre el mismo (hace que sea un cuadro) no tiene la animacion como de pc*/
+    padding-left: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+    padding-right: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+  }
+}
+
+/* Sirve para que el input y el boton sean parte de la misma barra y no esten separados */
+.barrabusqueda {
+  margin-bottom: 20px; /* Para que no se vaya para abajo (medio desaparezca) cuando se abre el contenedor del chat */
+  width: 80%; /* Asigna el tamaño de la barra al 80% de la row en la que esta que es el tamaño de todo el contenedor-contenido */
+  height: 50px; /* que tan ancha este la barra a lo alto*/
+  background-color: aliceblue; /* Fondo de la barra */
+  border-radius: 15px; /* Contornos recortados de la barra */
+  padding: 0; /* hace que la barra no sobresalga mas alla del input y del boton */
+  margin-left: 10px; /* Para alinear segun el contenedor de chat */
+}
+
+/* Si las pantallas son como de telefono*/
+@media (max-width: 500px) {
+  .barrabusqueda {
+    height: 70%; /* Cambiamos la barra que sea mas pequeña a lo alto (ancho arriba y abajo)*/
+  }
+}
+
+/*  */
+.inputconversacion {
+  border: none; /* Estilisa el input y le quita el borde de adentro*/
+  margin: 0; /* Elimina los posibles margenes que haya a lo alto izq y der*/
+  margin-left: -20px; /* Para que cubra toda la barra al 100 sin este dejara un espacion la barra y saldra (se vera la barra) */
+  width: 90%; /* Ancho segun el ancho de la barra */
+  height: 100%; /* Ancho segun el ancho de la barra */
+  background-color: aliceblue; /* El mismo tono que la barra para que se vean como si fueran uno */
+  font-size: 1.8rem; /* Tamaño de las letras que ingresen y del placeholder */
+  padding-inline-start: 10px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+  padding-inline-end: 7px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+}
+
+/* Si las pantallas son como de telefono... Cambiara esto del normal */
+@media (max-width: 500px) {
+  .inputconversacion {
+    width: 80%; /* Ancho segun el ancho de la barra */
+    font-size: 1.2rem; /* Tamaño de las letras que ingresen y del placeholder */
+    padding-top: 5px; /* Que sea mas alto el input */
+    padding-bottom: 7px; /* Que sea mas alto el input */
+    padding-inline-start: 2px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+    padding-inline-end: 2px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
+  }
+}
+
+/* Si presionan para escribir en el input y se queda seleccionado (focus)*/
+.inputconversacion:focus {
+  outline: none; /* Se quita el borde de seleccionado interior*/
+  box-shadow: 0 0 5px 3px #72f1b6; /* Se hace un contorno verde para que se vea que esta seleccionado */
+}
+
+/* Icono (imagen) que va dentro del boton */
+.iconobtnpreguntar {
+  margin-bottom: -5px; /* Para que se aline mas al centro del boton*/
+}
+
+/* Si las pantallas son como de telefono... Cambiara esto del normal */
+@media (max-width: 500px) {
+  .iconobtnpreguntar {
+    transform: scale(0.7); /* Se haga mas pequeño */
+    margin-bottom: -10px; /* Para que se aline mas al centro del boton*/
   }
 }
