@@ -1,41 +1,41 @@
 <div class="container-fluid"> <!-- contenedor de todo el componente (para solo traerlo y no configurar nada) -->
     <div class="row centrar">
-        <div class="row centrar">
-            <a class="cardtutoria centrar" id="cardpsicologia" href="">
+        <div class="row centrar" id="contenedorcardsia">
+            <div class="cardtutoria centrar" id="cardpsicologia" data-id="Psicologia" href="">
                 <div class="row">
                     <h1 class="titulocardia">Psicologia</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Tutoria especializada en psicologia</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
-            </a>
-            <a class="cardtutoria centrar" id="cardtutoria" href="">
+            </div>
+            <div class="cardtutoria centrar" id="cardtutoria" data-id="Tutoria" href="">
                 <div class="row">
                     <h1 class="titulocardia">Tutoria</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Tutoria especializada en Tutoria</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
-            </a>
-            <a class="cardtutoria centrar" id="cardentrenador" href="">
+            </div>
+            <div class="cardtutoria centrar" id="cardentrenador" data-id="Entrenador" href="">
                 <div class="row">
                     <h1 class="titulocardia">Entrenador</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Tutoria especializada en Entrenador</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
-            </a>
-            <a class="cardtutoria centrar" id="cardentrenador" href="">
+            </div>
+            <div class="cardtutoria centrar" id="cardentrenador" data-id="Nutriologia" href="">
                 <div class="row">
                     <h1 class="titulocardia">Nutriologia</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Tutoria especializada en Nutriologia</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
-            </a>
+            </div>
         </div>
 
         <div class="row centrar espacio-top-c alinear-center">
             <h1 class=" text-c">Elige una TutorIA</h1>
         </div>
 
-        <div class="row alinear-center contenedortutoria"> <!-- Hace que los textos (titulo y subtitulo de la interfaz): de hola(nombre usuario) y psicologia -->
+        <div class="row alinear-center" id="contenedorchattutoria"> <!-- Hace que los textos (titulo y subtitulo de la interfaz): de hola(nombre usuario) y psicologia -->
             <div class="col">
                 <div class="row"> <!-- Fila de titulos -->
                     <!-- Se utiliza php para el nombre y apellido paterno (obtenido de la sesion iniciada) -->
@@ -43,13 +43,13 @@
                     <!-- Se utiliza para que con js lo obtengamos y sea el nombre a ocupar en el chat html -->
                     <!-- Se utiliza php para el nombre (obtenido de la sesion iniciada) -->
                     <h1 hidden id="nombreusuario"><?php include("../../Servidor/funciones_session/session_nombre.php") ?></h1>
-                    <h1 hidden id="tipo_ia">nutriologia</h1>
+                    <h1 hidden id="tipo_ia"></h1>
                     <h1 hidden id="tipo_usuario"><?php include("../../Servidor/funciones_session/session_tipousuario.php") ?></h1>
                     <h1 hidden id="hijo"><?php include("../../Servidor/funciones_session/session_obtenerhijo.php") ?></h1>
                 </div>
                 <div class="row centrar"> <!-- Fila del chat -->
                     <div class="row centrar">
-                        <h1 for="textareagemini" class="form-label">Soy tu Nutriologia</h1> <!-- Titulo que se mantiene para el contenedor del chat -->
+                        <h1 for="textareagemini" class="form-label" id="titulochatia"></h1> <!-- Titulo que se mantiene para el contenedor del chat -->
                         <!-- Contenedor (textareaconversacion) donde va a imprimirse (sdesde js) todos los chats es solo ready -->
                         <div class="textareaconversacion alinear-left borde-r-c text-c" id="textareapsicologia" rows="3">
                             <!-- AQUI SE IMPRIMEN TODOS LOS MENSAJES -->

@@ -1139,8 +1139,12 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* ------------------------------------------------ Tutorias -------------------------------- */
-.contenedortutoria {
+#contenedorchattutoria{
   display: none;
+}
+
+#contenedorcardsia {
+  display: flex;
 }
 
 .cardtutoria {
