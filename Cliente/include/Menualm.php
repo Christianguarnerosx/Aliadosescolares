@@ -25,6 +25,7 @@
         <div class="row espacio-top-m">
             <nav class="nav nav-pills flex-column text-m"> <!--Se asigna el tamano de texto dentro del nav (solo afecta a los "a" nav link)-->
                 <a class="nav-link active" aria-current="page" href="Principalalm.php">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="Tutoriasalm.php">TutorIAs</a>
 
                 <!-- se creo una clase personal 'drop', que asigna a todos los dropdowns el mismo tamaño sin importar lo que diga(sin esta clase, tomaran el tamaño segun el contenido) -->
                 <!-- se creo una clase personal 'hoverdrop' que se asigna a todos los dropdowns, se utiliza con js para que se abran al sobrteponer el mouse(sin dar click) -->
@@ -40,25 +41,6 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item" href="#">Mis stacks</a></li>
-                    </ul>
-                </div>
-
-
-                <!-- se creo una clase personal 'drop', que asigna a todos los dropdowns el mismo tamaño sin importar lo que diga(sin esta clase, tomaran el tamaño segun el contenido) -->
-                <!-- se creo una clase personal 'hoverdrop' que se asigna a todos los dropdowns, se utiliza con js para que se abran al sobrteponer el mouse(sin dar click) -->
-                <!-- boton dezplegable/droptown de... -->
-                <!-- Btn(dropdown) de tutorias -->
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary drop-g text-m alinear-left">TutorIAs</button> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
-                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split text-m hoverdrop" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="visually-hidden">Toggle Dropdown</span> <!-- flecha del dropdown -->
-                    </button>
-                    <ul class="dropdown-menu text-m menualmdrop"> <!--La clase menualmdrop hace que al abrir los dropdowns los menus dezplegados se vallan mas a la izq y se ubiquen a su lado-->
-                        <li><a class="dropdown-item" href="Psicologiaalm.php">PsicologIA</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item alinear-center">Mis tutorIAs</a></li>
                     </ul>
                 </div>
 

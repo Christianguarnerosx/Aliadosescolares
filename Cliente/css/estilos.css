@@ -23,7 +23,7 @@ haciendo mas reciclabe el codigo*/
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ffffff; /* Color del thumb */
+  background-color: aliceblue; /* Color del thumb */
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Displays +++++++++++++++++++++*/
@@ -342,7 +342,7 @@ haciendo mas reciclabe el codigo*/
   width: 134px;
   height: 130px;
   border-radius: 50%;
-  background-color: rgb(255, 255, 255);
+  background-color: aliceblue;
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Cuadros contenedores +++++++++++++++++++++*/
@@ -354,14 +354,14 @@ haciendo mas reciclabe el codigo*/
   width: calc(35vh + 230px);
 }
 
-@media (max-height: 700px){
-/*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
-.cuadro-v {
-  /*Ideal CALC para cuando se hace el cuadro blanco para resolucion de movil/telefono*/
-  height: 550px;
-  /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
-  width: 350px;
-}
+@media (max-height: 700px) {
+  /*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
+  .cuadro-v {
+    /*Ideal CALC para cuando se hace el cuadro blanco para resolucion de movil/telefono*/
+    height: 550px;
+    /*Ideal CALC para cuando se hace el cuadro blanco vertical de sesiones/etc para resolucion de movil/telefono*/
+    width: 350px;
+  }
 }
 
 /*Este hara un cuasdro blanco vertical nomalmente utilizado para hacer los cuadros de los login verticales*/
@@ -407,7 +407,7 @@ haciendo mas reciclabe el codigo*/
 
 /*Asigna un color blanco solido de fondo a cualquier elemento*/
 .blanco-solido {
-  background-color: rgb(255, 255, 255);
+  background-color: aliceblue;
 }
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Scroll ++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -1137,6 +1137,59 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* ------------------------------------------------ Tutorias -------------------------------- */
+.contenedortutoria {
+  display: none;
+}
+
+.cardtutoria {
+  position: relative;
+  height: 60vh;
+  width: 100px;
+  background-color: #1fc2a7;
+  text-decoration: none;
+  color: aliceblue;
+  transition: 0.3s ease;
+  text-align: center;
+  margin: 10px;
+  border-radius: 15px;
+  margin: 0;
+}
+
+.titulocardia {
+  transition: 0.3s ease;
+  transform: rotate(-90deg);
+}
+
+.contenidocardtutoria {
+  display: none;
+  transform: rotate(-90deg);
+}
+
+.cardtutoria:hover {
+  height: 70vh;
+  width: 300px;
+  text-align: left;
+  background-color: aliceblue;
+  color: #1fc2a7;
+  box-shadow: 0px 0px 20px #c4c4c4;
+}
+
+.cardtutoria:hover .titulocardia {
+  transform: rotate(0deg);
+}
+
+.cardtutoria:hover .contenidocardtutoria {
+  display: inline;
+  transform: rotate(0deg);
+}
+
+.iconocardtutoria {
+  position: absolute;
+  width: 25%;
+  right: 0;
+  bottom: 15px;
+}
+
 /* Clases que se ocupan en todos los chats (como son lo mismo, se utilizan las misma) */
 /* Contenedor donde iran imprimiendose los a generados de la entrada de usuario y los que genere la AI gemini*/
 .textareaconversacion {
