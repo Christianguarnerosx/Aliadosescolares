@@ -1080,7 +1080,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   transform: rotate(15deg);
   box-shadow: -5px -5px 40px #1fc2a7,
     /* Sombras para la parte superior e izquierda */ 5px 5px 40px
-    rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
+      rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
 }
 
 /*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
@@ -1157,6 +1157,13 @@ Asi logras evadir lo de position y z index en los elementos*/
   margin: 0;
 }
 
+@media (max-width: 500px) {
+  .cardtutoria {
+    height: 60vh;
+    width: 50px;
+  }
+}
+
 .titulocardia {
   transition: 0.3s ease;
   transform: rotate(-90deg);
@@ -1168,12 +1175,22 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 .cardtutoria:hover {
-  height: 70vh;
-  width: 300px;
+  height: 65vh;
+  width: 350px;
   text-align: left;
   background-color: aliceblue;
   color: #1fc2a7;
   box-shadow: 10px 10px 20px #1fc2a7;
+  z-index: 1;
+}
+
+@media (max-width: 500px) {
+  .cardtutoria:hover {
+    position: absolute;
+    height: 70vh;
+    width: 70vw;
+    z-index: 1;
+  }
 }
 
 .cardtutoria:hover .titulocardia {

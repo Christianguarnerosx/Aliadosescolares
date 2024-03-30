@@ -1,5 +1,5 @@
 <div class="container-fluid"> <!-- contenedor de todo el componente (para solo traerlo y no configurar nada) -->
-    <div class="row">
+    <div class="row centrar">
         <div class="row centrar">
             <a class="cardtutoria centrar" id="cardpsicologia" href="">
                 <div class="row">
