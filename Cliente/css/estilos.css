@@ -1018,49 +1018,49 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Card opcion2 (tipousuario) parte del tarjetero de reportes*/
 #card2 {
   z-index: 6; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #ceffe8;
+  background-color: aliceblue;
 }
 
 /*Card opcion3 (grado) parte del tarjetero de reportes*/
 #card3 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #a0ffd3;
+  background-color: aliceblue;
 }
 
 /*Card opcion4 (grupo) parte del tarjetero de reportes*/
 #card4 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #49f1a3;
+  background-color: aliceblue;
 }
 
 /*Card opcion5 (usuario elegido) parte del tarjetero de reportes*/
 #card5 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #57dfb6;
+  background-color: aliceblue;
 }
 
 /*Card opcion6 (reporte imagen) parte del tarjetero de reportes*/
 #card6 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #3dd8a9;
+  background-color: aliceblue;
 }
 
 /*Card opcion7 (reporte texto) parte del tarjetero de reportes*/
 #card7 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #3dd8a9;
+  background-color: aliceblue;
 }
 
 /*Card opcion8 (reporte audio) parte del tarjetero de reportes*/
 #card8 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #3dd8a9;
+  background-color: aliceblue;
 }
 
 /*Card 9 de enviar reporte*/
 #card9 {
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: #1fc2a7;
+  background-color: aliceblue;
 }
 
 /*Card de fondo parte del tarjetero de reportes*/
@@ -1068,9 +1068,9 @@ Asi logras evadir lo de position y z index en los elementos*/
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: aliceblue;
   transform: rotate(-15deg);
-  box-shadow: -5px -5px 40px rgb(34, 148, 255),
+  box-shadow: -5px -5px 40px #1fc2a7,
     /* Sombras para la parte superior e izquierda */ 5px 5px 40px
-      rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
+      rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
 }
 
 /*Card de fondo parte del tarjetero de reportes*/
@@ -1078,14 +1078,14 @@ Asi logras evadir lo de position y z index en los elementos*/
   z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
   background-color: aliceblue;
   transform: rotate(15deg);
-  box-shadow: -5px -5px 40px rgb(34, 148, 255),
+  box-shadow: -5px -5px 40px #1fc2a7,
     /* Sombras para la parte superior e izquierda */ 5px 5px 40px
-      rgb(93, 255, 160); /* Sombras para la parte inferior y derecha */
+    rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
 }
 
 /*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
 .opcion-reporte {
-  background-color: #72f1b6;
+  background-color: #1fc2a7;
   width: 23vh;
   height: 150px;
   margin: 5px;
@@ -1103,12 +1103,14 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Si se sobrepone el mouse, crecera el elemento*/
 .opcion-reporte:hover {
   transform: scale(1.1);
+  box-shadow: 5px 5px 10px #1fc2a7;
 }
 
 /* boton que envia los reportes audio/texto sean de un tamaño en especifico*/
 .btn-reporte-submit {
   width: 200px;
   height: 50px;
+  transition: 0.3s;
 }
 
 @media (max-width: 500px) {
@@ -1171,7 +1173,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   text-align: left;
   background-color: aliceblue;
   color: #1fc2a7;
-  box-shadow: 0px 0px 20px #c4c4c4;
+  box-shadow: 10px 10px 20px #1fc2a7;
 }
 
 .cardtutoria:hover .titulocardia {

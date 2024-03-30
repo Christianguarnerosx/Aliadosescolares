@@ -173,7 +173,7 @@
 
     <!-- Card 6 donde se imprimiran con php todos las sensaciones y el usu seleccionara alguno -->
     <div class="cardreporte alinear-center" id="card6">
-        <h1 class="espacio-top-g txt-blanco">¿Como te sientes?</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
+        <h1 class="espacio-top-g">¿Como te sientes?</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
         <div class="row centrar alinear-center espacio-top-c">
             <?Php
 
