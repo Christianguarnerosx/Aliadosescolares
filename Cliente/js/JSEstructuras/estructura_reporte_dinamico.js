@@ -249,7 +249,9 @@ document.addEventListener("DOMContentLoaded", function () {
     btnenviarreporte.addEventListener('click', function () {
         iniciarGrabacion();
         animarcard(btnenviarreporte);
-        anuncio.innerText = "Te estoy escuchando";
+        anuncio.innerHTML = "<div class='' id='pantallagrabando'>";
+        anuncio.innerHTML += "<h1 id='titulopantallagrabando' >Te estoy escuchando🎙️</h1>";
+        anuncio.innerHTML += "</div>";
     });
 
     // Variables para manejar la grabación de audio

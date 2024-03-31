@@ -1106,6 +1106,37 @@ Asi logras evadir lo de position y z index en los elementos*/
   box-shadow: 5px 5px 10px #1fc2a7;
 }
 
+#pantallagrabando {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1fc2a7c5;
+}
+
+#titulopantallagrabando {
+  position: absolute;
+  left: 0;
+  bottom: 200px;
+  color: aliceblue;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  #titulopantallagrabando {
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
 /* boton que envia los reportes audio/texto sean de un tamaño en especifico*/
 .btn-reporte-submit {
   width: 200px;
@@ -1139,7 +1170,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* ------------------------------------------------ Tutorias -------------------------------- */
-#contenedorchattutoria{
+#contenedorchattutoria {
   display: none;
 }
 
