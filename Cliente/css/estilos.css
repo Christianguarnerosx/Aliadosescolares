@@ -1084,12 +1084,22 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* card/opcion de usuarios (que usuario ¿quien?) */
 /* Es unicamente para los usuarios (donde aparecen los nombres de usuarios) */
 .opcion-reporte-usuarios {
-  width: 100px;
+  width: 200px;
   height: 100px;
   margin: 5px;
   background-color: #1fc2a7;
   cursor: pointer;
   transition: 0.4s ease;
+}
+
+/* card/opcion de usuarios (que usuario ¿quien?) */
+/* Es unicamente para los usuarios (donde aparecen los nombres de usuarios) */
+@media (max-width: 800px) {
+  .opcion-reporte-usuarios {
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+  }
 }
 
 /* Titulo de las opciones/cards seleccionables */
