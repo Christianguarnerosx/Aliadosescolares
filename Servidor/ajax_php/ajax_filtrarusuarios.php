@@ -29,9 +29,9 @@ $query = "SELECT u.id_usuario,
 $consulta = mysqli_query($conexion, $query); // Se ejecuta la consulta
 
 /* Al ajax regresara todo lo que este con 'echo' para despues insertar el en codigo (con js) de tipo html*/
-/* Asi que se crea el componente de html desde aqui*/
-echo "<h1 class='espacio-top-g'>¿Quien?</h1>";
-echo "<div class='row centrar alinear-center espacio-top-c'>";
+/* Asi que se crea el componente de html desde aqui centra a todas sus cards*/
+echo "<div class='row centrar alinear-center'>";
+echo "<h1 class='text-m espacio-top-c'>¿Quien?</h1>";
 
 // Verificar si se obtuvieron resultados
 if (mysqli_num_rows($consulta) > 0) {
@@ -40,10 +40,12 @@ if (mysqli_num_rows($consulta) > 0) {
         $id_usu = $row['id_usuario'];
         $nom_usu = $row['nombre'] . " " . $row['apellidop'] . " " . $row['apellidom'];
         /* Parte 2 que se crea el componente de html*/
-        echo "<div class='opcion-reporte usuarios hover-btn borde-r-c centrar' data-id='" . $id_usu . "'>";
+        /* Se la clase opcion-reporte-usuarios es unica para el hace que las opciones sean cuadros pequeños*/
+        echo "<div class='opcion-reporte-usuarios usuarios hover-btn borde-r-c centrar' data-id='" . $id_usu . "'>";
         echo "<div class='row'>";
         echo "<div class='col'>";
         echo "<h2 class='text-m negritam txt-blanco'>" . $nom_usu . "</h2>";
+        echo "<h2 class='titulocardreporte'>" . $nom_usu . "</h2>";
         echo "</div>";
         echo "</div>";
         echo "</div>";

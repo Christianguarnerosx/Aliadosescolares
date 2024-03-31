@@ -986,14 +986,15 @@ Asi logras evadir lo de position y z index en los elementos*/
 #contenedor-tarjetas {
   position: relative; /*Para hacer referente al contenedor y sea utilizado para todas las cards*/
   height: 90vh;
+  width: 100%;
   overflow: hidden;
 }
 
 /*Asigna tamaño y posicion a las cards*/
 .cardreporte {
   position: absolute; /*Se utiliza absolute para poder tomara como refrencia el relative y ubicar las cards una sobre otra (con los zindices)*/
-  height: 70vh;
-  width: 34vw;
+  height: 75vh;
+  width: 60vw;
   border-radius: 10px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -1001,7 +1002,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 @media (max-width: 500px) {
-  /*Asigna tamaño y posicion a las cards que muestran las opciones y elecciones de reportes*/
+  /*Asigna tamaño y posicion a las cards que muestran las opciones y elecciones de reportes en telefono*/
   .cardreporte {
     height: 80vh;
     width: 70vw;
@@ -1063,58 +1064,101 @@ Asi logras evadir lo de position y z index en los elementos*/
   background-color: aliceblue;
 }
 
-/*Card de fondo parte del tarjetero de reportes*/
-#card10 {
-  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: aliceblue;
-  transform: rotate(-15deg);
-  box-shadow: -5px -5px 40px #1fc2a7,
-    /* Sombras para la parte superior e izquierda */ 5px 5px 40px
-      rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
-}
-
-/*Card de fondo parte del tarjetero de reportes*/
-#card11 {
-  z-index: 1; /*Indica en que posicion de la baraja de cards estara*/
-  background-color: aliceblue;
-  transform: rotate(15deg);
-  box-shadow: -5px -5px 40px #1fc2a7,
-    /* Sombras para la parte superior e izquierda */ 5px 5px 40px
-      rgb(93, 169, 255); /* Sombras para la parte inferior y derecha */
-}
-
-/*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
+/*Asigna (cards/opciones seleccionables) a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
 .opcion-reporte {
   background-color: #1fc2a7;
-  width: 23vh;
-  height: 150px;
-  margin: 5px;
-  transition: 0.3s ease;
+  width: 100px;
+  height: 60vh;
   cursor: pointer;
+  transition: 0.4s ease;
 }
 
 @media (max-width: 500px) {
-  /*Asigna a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
+  /*Asigna a todas las cards/opciones seleccionables en modo telefono un tamaño diferente*/
   .opcion-reporte {
-    height: 100px;
+    width: 80px;
+    height: 30vh;
   }
 }
 
-/*Si se sobrepone el mouse, crecera el elemento*/
-.opcion-reporte:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 5px 10px #1fc2a7;
+/* card/opcion de usuarios (que usuario ¿quien?) */
+/* Es unicamente para los usuarios (donde aparecen los nombres de usuarios) */
+.opcion-reporte-usuarios {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  background-color: #1fc2a7;
+  cursor: pointer;
+  transition: 0.4s ease;
 }
 
+/* Titulo de las opciones/cards seleccionables */
+.titulocardreporte {
+  display: none; /* No parecen al principio, si no hasta que se hace el hover */
+  text-align: left;
+  color: aliceblue;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* descripcion de las opciones/cards seleccionables */
+.descripcioncardreporte {
+  display: none; /* No parecen al principio, si no hasta que se hace el hover */
+  font-size: 1rem;
+  text-align: left;
+}
+
+/*Si se sobrepone el mouse, crecera las opciones/cards seleccionables (se expanderan hacia lo ancho mas y un poco a lo alto) al principío son rectangulos verticales */
+.opcion-reporte:hover {
+  height: 63vh;
+  width: 250px;
+  background-color: aliceblue;
+  box-shadow: 10px 10px 20px #1fc2a7;
+  z-index: 1;
+}
+
+/*Si se sobrepone el mouse, al titulo que esta dentro de la card lo vas a mostrar y le cambias de color (por que el fondo se vvuelve blanco)*/
+.opcion-reporte:hover .titulocardreporte {
+  display: inline;
+  color: #1fc2a7;
+}
+
+/*Si se sobrepone el mouse, a la descripcion que esta dentro de la card lo vas a mostrar y le cambias de color (por que el fondo se vvuelve blanco)*/
+.opcion-reporte:hover .descripcioncardreporte {
+  display: inline;
+  color: #1fc2a7;
+}
+
+/* Para formato movil (mas angosto)*/
+@media (max-width: 500px) {
+  /*La card/opcion seleccionable sera mas pequeño para cuando sea de movil*/
+  .opcion-reporte:hover {
+    width: 80px;
+    height: 30vh;
+  }
+  /* No mostrar el titulo cuando se haga grande, para cuando sea de movil*/
+  .opcion-reporte:hover .titulocardreporte {
+    display: none;
+  }
+  /* No mostrar la descripcion cuando se haga grande, para cuando sea de movil*/
+  .opcion-reporte:hover .descripcioncardreporte {
+    display: none;
+  }
+}
+
+/* div, pantalla (espera) que se sobre pondra a todo y solo estara cuando este escuchando el reporte de audio*/
 #pantallagrabando {
-  position: fixed;
-  left: 0;
+  position: fixed; /* Para sobreponerse a todo */
+  left: 0; /* ubicarla desde la esquina arriba izq */
   top: 0;
   height: 100vh;
   width: 100vw;
   background-color: #1fc2a7c5;
 }
 
+/* Anuncion de la pantalla de espera que dira (esta grabando, te escucho o algo parecido asi) */
 #titulopantallagrabando {
   position: absolute;
   left: 0;
@@ -1125,6 +1169,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   text-align: center;
 }
 
+/* Si es telefono el anuncio estara en otro lado, por que si se deja el mismo en telefono se ve movido */
 @media (max-width: 1024px) {
   #titulopantallagrabando {
     position: absolute;
@@ -1170,16 +1215,19 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* ------------------------------------------------ Tutorias -------------------------------- */
+/* Hace que la row que contiene el chat input y boton de consultar inicien ocultas y se aparecera solo cuando seleccione el tipo de tutoria que quiera */
 #contenedorchattutoria {
   display: none;
 }
 
+/* Contenedor donde estaran los tipos de tutoria quer quiere, psico, tut, depor, nutri. se asigna un id para despues con js cambiarle el tipo display y desaparecerlo */
 #contenedorcardsia {
   display: flex;
 }
 
+/* card/opcion seleccionable entre que tipo de ia especialista quiere*/
 .cardtutoria {
-  position: relative;
+  position: relative; /* Es relative para que se pueda utilizar como referencia para posicionar con absolute los elementos dentro de la card */
   height: 60vh;
   width: 100px;
   background-color: #1fc2a7;
@@ -1190,8 +1238,10 @@ Asi logras evadir lo de position y z index en los elementos*/
   margin: 10px;
   border-radius: 15px;
   margin: 0;
+  cursor: pointer; /* Cambia de cursor para que parezca seleccionable*/
 }
 
+/* si es para telefonos. Card/opcion seleccionable entre que tipo de ia sera mas pequeña */
 @media (max-width: 500px) {
   .cardtutoria {
     height: 60vh;
@@ -1199,16 +1249,19 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
+/* La clase que hace que el titulo aparezca vertical y cuando se expamnda/abra se ponga horizontal*/
 .titulocardia {
   transition: 0.3s ease;
   transform: rotate(-90deg);
 }
 
+/* La clase que hace que el contenido en general dentro de las cards aparezca vertical y cuando se expamnda/abra se ponga horizontal*/
 .contenidocardtutoria {
   display: none;
   transform: rotate(-90deg);
 }
 
+/*Si se sobrepone, se abrira/expandera la card a lo ancho */
 .cardtutoria:hover {
   height: 65vh;
   width: 350px;
@@ -1219,6 +1272,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   z-index: 1;
 }
 
+/*Para telefono Si se sobrepone, se abrira/expandera la card a lo ancho en mas pequeño que el normal y se sobre pondra a las demas */
 @media (max-width: 500px) {
   .cardtutoria:hover {
     position: absolute;
@@ -1228,15 +1282,18 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
+/* Si se abrea la card para el titulo de la card seleccionable se rotara y quedara de vertical a horizontal*/
 .cardtutoria:hover .titulocardia {
   transform: rotate(0deg);
 }
 
+/* Si se abrea la card para el contenido de la card seleccionable se rotara y quedara de vertical a horizontal*/
 .cardtutoria:hover .contenidocardtutoria {
   display: inline;
   transform: rotate(0deg);
 }
 
+/* ubicamos en una posicion predeterminada el icono abajo a la derecha, con el absolute y tomando como referencia al padre relative */
 .iconocardtutoria {
   position: absolute;
   width: 25%;
