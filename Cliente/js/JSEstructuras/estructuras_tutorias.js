@@ -130,8 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("El tipo de chatia: " + iaseleccionada);
 
             const contenedorcards = document.getElementById('contenedorcardsia');
-            contenedorcards.style.display = "none";
-
+            contenedorcards.style.position = "fixed";
+            contenedorcards.style.top = "-100%";
+            
             const contenedorchattutoria = document.getElementById('contenedorchattutoria');
             contenedorchattutoria.style.display = "flex";
 
@@ -261,7 +262,7 @@ function Configuraciongemini(Tipo_ia, Tipo_usuario, hijo, nombreusuario) {
             console.log("El contenido es nutriologia para alumnos");
         }
     }
-    
+
     historialgemini.push(especialidad);
     historialgemini.push(enfoque);
     historialgemini.push(locacion);

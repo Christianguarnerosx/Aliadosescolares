@@ -55,7 +55,7 @@
                     <!-- A este main se le aplicara un scroll en y cuando el contenido se deborde, solo se oculta el scroll x y se asigna un tama;o-->
                     <main class="row"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
                         <div class="col"> <!-- AQUI LLEVA EL CONTENIDO QUE lleva la interfaz-->
-                            <?php include("../componentes_php/componente_tutoria.php");?>
+                            <?php include("../componentes_php/componente_tutorias.php");?>
                         </div>
                     </main>
 

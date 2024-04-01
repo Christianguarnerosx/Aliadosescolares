@@ -29,11 +29,11 @@
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
+            <div class="row centrar espacio-top-c alinear-center">
+                <h1 class=" text-c">Elige una TutorIA</h1>
+            </div>
         </div>
 
-        <div class="row centrar espacio-top-c alinear-center">
-            <h1 class=" text-c">Elige una TutorIA</h1>
-        </div>
 
         <div class="row alinear-center" id="contenedorchattutoria"> <!-- Hace que los textos (titulo y subtitulo de la interfaz): de hola(nombre usuario) y psicologia -->
             <div class="col">

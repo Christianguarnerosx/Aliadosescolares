@@ -1233,6 +1233,10 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Contenedor donde estaran los tipos de tutoria quer quiere, psico, tut, depor, nutri. se asigna un id para despues con js cambiarle el tipo display y desaparecerlo */
 #contenedorcardsia {
   display: flex;
+  position: absolute;
+  left: 0;
+  top: 18%;
+  transition: 1s ease;
 }
 
 /* card/opcion seleccionable entre que tipo de ia especialista quiere*/
