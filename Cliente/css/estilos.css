@@ -925,7 +925,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*-------------------------------------------- Reportes ---------------------------------------*/
 /*Contenedor principal de la estcutura reportes que es exportada a la interfaz reportes*/
 #main-reportealm {
-  width: 75vw;
+  width: 87%;
 }
 
 @media (max-width: 500px) {
@@ -1401,5 +1401,76 @@ Asi logras evadir lo de position y z index en los elementos*/
   .iconobtnpreguntar {
     transform: scale(0.7); /* Se haga mas pequeño */
     margin-bottom: -10px; /* Para que se aline mas al centro del boton*/
+  }
+}
+
+/* -------------------------------------------------------------- Desarrollo (stacadisticas)-------------------------- */
+#contenedordesarrollo {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1fc2a7;
+  border-radius: 15px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.contenedorstacksdesarrollo {
+  position: relative;
+  background-color: rgb(228, 243, 255);
+  height: 100%;
+  width: 100%;
+  min-width: 50%;
+  overflow-x: auto;
+}
+
+@media (max-width: 700px) {
+  .contenedorstacksdesarrollo {
+    height: 100%;
+    width: 100%;
+    overflow-x: none;
+    overflow-y: auto;
+  }
+}
+
+.contenedorgraficadesarrollo {
+  height: 320px;
+  width: 320px;
+  background-color: bisque;
+  margin: 5px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .contenedorgraficadesarrollo {
+    height: 450px;
+    width: 450px;
+  }
+}
+
+.contenedorgraficadesarrollo:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 700px) {
+  #contenedorgrafica1 {
+    margin-top: 40px;
+  }
+}
+
+#navdesarrollo {
+  position: sticky;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 700px) {
+  #navdesarrollo {
+    position: sticky;
+    right: 0;
+    bottom: 0;
   }
 }

@@ -44,6 +44,7 @@
                     </ul>
                 </div>
 
+                <a class="nav-link active" href="Desarrolloestadisticas.php">Mi desarrollo</a>
                 <a class="nav-link" href="#">Track</a>
                 <a class="nav-link active" href="Generarqr.php">Generar QR</a>
             </nav>
