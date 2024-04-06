@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3310
--- Generation Time: Mar 19, 2024 at 03:14 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1:3310
+-- Tiempo de generación: 05-04-2024 a las 20:55:19
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `escuela`
+-- Base de datos: `escuela`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `actividades`
+-- Estructura de tabla para la tabla `actividades`
 --
 
 CREATE TABLE `actividades` (
@@ -38,7 +38,7 @@ CREATE TABLE `actividades` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alumnos`
+-- Estructura de tabla para la tabla `alumnos`
 --
 
 CREATE TABLE `alumnos` (
@@ -51,19 +51,46 @@ CREATE TABLE `alumnos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `alumnos`
+-- Volcado de datos para la tabla `alumnos`
 --
 
 INSERT INTO `alumnos` (`id_alumno`, `id_usuario`, `id_grado`, `id_grupo`, `id_padre`, `id_docente`) VALUES
 (1, 12, 1, 1, 1, 1),
-(2, 13, 1, 1, 2, 3),
-(3, 14, 1, 1, 1, 2),
+(2, 13, 1, 1, 2, 1),
+(3, 14, 1, 1, 1, 1),
 (4, 15, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `consejos`
+-- Estructura de tabla para la tabla `calificaciones`
+--
+
+CREATE TABLE `calificaciones` (
+  `id_calificacion` int(11) NOT NULL,
+  `id_alumno` int(11) NOT NULL,
+  `id_grado` int(11) NOT NULL,
+  `id_periodo` int(11) NOT NULL,
+  `id_materia` int(11) NOT NULL,
+  `calificacion` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `calificaciones`
+--
+
+INSERT INTO `calificaciones` (`id_calificacion`, `id_alumno`, `id_grado`, `id_periodo`, `id_materia`, `calificacion`) VALUES
+(13, 1, 1, 1, 1, 7.5),
+(14, 1, 1, 2, 1, 8.5),
+(15, 1, 1, 3, 1, 8),
+(16, 1, 1, 4, 1, 9),
+(17, 1, 1, 5, 1, 9.5),
+(18, 1, 1, 6, 1, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `consejos`
 --
 
 CREATE TABLE `consejos` (
@@ -76,7 +103,7 @@ CREATE TABLE `consejos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `docentes`
+-- Estructura de tabla para la tabla `docentes`
 --
 
 CREATE TABLE `docentes` (
@@ -87,7 +114,7 @@ CREATE TABLE `docentes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `docentes`
+-- Volcado de datos para la tabla `docentes`
 --
 
 INSERT INTO `docentes` (`id_docente`, `id_usuario`, `id_grado`, `id_grupo`) VALUES
@@ -99,7 +126,7 @@ INSERT INTO `docentes` (`id_docente`, `id_usuario`, `id_grado`, `id_grupo`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grados`
+-- Estructura de tabla para la tabla `grados`
 --
 
 CREATE TABLE `grados` (
@@ -108,7 +135,7 @@ CREATE TABLE `grados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `grados`
+-- Volcado de datos para la tabla `grados`
 --
 
 INSERT INTO `grados` (`id_grado`, `nombre_grado`) VALUES
@@ -122,7 +149,7 @@ INSERT INTO `grados` (`id_grado`, `nombre_grado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grupos`
+-- Estructura de tabla para la tabla `grupos`
 --
 
 CREATE TABLE `grupos` (
@@ -131,7 +158,7 @@ CREATE TABLE `grupos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `grupos`
+-- Volcado de datos para la tabla `grupos`
 --
 
 INSERT INTO `grupos` (`id_grupo`, `nombre_grupo`) VALUES
@@ -142,7 +169,29 @@ INSERT INTO `grupos` (`id_grupo`, `nombre_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `padres`
+-- Estructura de tabla para la tabla `materias`
+--
+
+CREATE TABLE `materias` (
+  `id_materia` int(11) NOT NULL,
+  `nombre_materia` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `materias`
+--
+
+INSERT INTO `materias` (`id_materia`, `nombre_materia`) VALUES
+(1, 'Matematicas'),
+(2, 'Español'),
+(3, 'Ciencias'),
+(4, 'Fisica'),
+(5, 'Humanidades');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `padres`
 --
 
 CREATE TABLE `padres` (
@@ -153,7 +202,7 @@ CREATE TABLE `padres` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `padres`
+-- Volcado de datos para la tabla `padres`
 --
 
 INSERT INTO `padres` (`id_padre`, `id_usuario`, `id_grado`, `id_grupo`) VALUES
@@ -164,7 +213,60 @@ INSERT INTO `padres` (`id_padre`, `id_usuario`, `id_grado`, `id_grupo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `proyectos`
+-- Estructura de tabla para la tabla `periodos`
+--
+
+CREATE TABLE `periodos` (
+  `id_periodo` int(11) NOT NULL,
+  `nombre_periodo` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `periodos`
+--
+
+INSERT INTO `periodos` (`id_periodo`, `nombre_periodo`) VALUES
+(1, 'primero'),
+(2, 'segundo'),
+(3, 'tercero'),
+(4, 'cuarto'),
+(5, 'quinto'),
+(6, 'sexto');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `peticiones`
+--
+
+CREATE TABLE `peticiones` (
+  `id_peticion` int(11) NOT NULL,
+  `id_tipo_ia` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `consulta` text NOT NULL,
+  `fecha` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `peticiones`
+--
+
+INSERT INTO `peticiones` (`id_peticion`, `id_tipo_ia`, `id_usuario`, `consulta`, `fecha`) VALUES
+(2, 1, 12, 'Que tal viejo', '2024-04-04 20:28:52'),
+(3, 1, 12, 'Que pasa hermano', '2024-04-04 20:40:29'),
+(4, 1, 12, 'Que ondaaa', '2024-04-04 20:40:54'),
+(5, 2, 12, 'Que pasa mai', '2024-04-04 20:41:19'),
+(6, 2, 12, 'Que hubole', '2024-04-04 20:41:46'),
+(7, 2, 12, 'Nunca se olvida de lo real', '2024-04-04 20:42:02'),
+(8, 4, 12, 'La favorita de dios fui shooo', '2024-04-04 20:42:29'),
+(9, 3, 12, 'Por que personas como ella ya no quedan', '2024-04-04 20:42:58'),
+(10, 3, 12, 'Nunca se olvida de lo real', '2024-04-04 20:43:20'),
+(11, 4, 12, 'Todos quieren plata otros quiren fama', '2024-04-04 20:44:08');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proyectos`
 --
 
 CREATE TABLE `proyectos` (
@@ -178,7 +280,7 @@ CREATE TABLE `proyectos` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reportes`
+-- Estructura de tabla para la tabla `reportes`
 --
 
 CREATE TABLE `reportes` (
@@ -189,36 +291,25 @@ CREATE TABLE `reportes` (
   `fecha_reporte` datetime DEFAULT NULL,
   `id_sensacion` int(11) NOT NULL,
   `texto_reporte` text DEFAULT NULL,
-  `audio_reporte` blob DEFAULT NULL
+  `audio_reporte` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `reportes`
+-- Volcado de datos para la tabla `reportes`
 --
 
 INSERT INTO `reportes` (`id_reporte`, `id_tipo_reporte`, `id_usuario`, `id_usuario_reportado`, `fecha_reporte`, `id_sensacion`, `texto_reporte`, `audio_reporte`) VALUES
 (3, 1, 1, 13, '2024-03-18 00:00:00', 4, NULL, NULL),
-(54, 2, 12, 13, '2024-03-19 03:06:13', 2, 'DHUG\n', NULL),
-(55, 1, 12, 9, '2024-03-19 03:06:27', 5, NULL, NULL),
-(56, 2, 12, 9, '2024-03-19 03:07:06', 2, 'Me cae mal jaja', NULL);
+(107, 1, 12, 9, '2024-03-31 17:47:55', 3, NULL, NULL),
+(108, 1, 12, 15, '2024-03-31 18:11:27', 3, NULL, NULL),
+(109, 1, 12, 13, '2024-04-05 15:05:41', 4, NULL, NULL),
+(110, 2, 12, 15, '2024-04-05 15:06:01', 2, 'Le pego a un niño en silla de ruedas', NULL),
+(111, 3, 12, 13, '2024-04-05 15:06:46', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_12_el_2024-04-05 1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reportes_acumulados`
---
-
-CREATE TABLE `reportes_acumulados` (
-  `id_reportes_acumulados` int(11) NOT NULL,
-  `id_alumno` int(11) DEFAULT NULL,
-  `total_reportes_generados` int(11) DEFAULT NULL,
-  `total_reportes_recibidos` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sensaciones`
+-- Estructura de tabla para la tabla `sensaciones`
 --
 
 CREATE TABLE `sensaciones` (
@@ -228,7 +319,7 @@ CREATE TABLE `sensaciones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `sensaciones`
+-- Volcado de datos para la tabla `sensaciones`
 --
 
 INSERT INTO `sensaciones` (`id_sensacion`, `nombre_sensacion`, `imagen_sensacion`) VALUES
@@ -241,7 +332,7 @@ INSERT INTO `sensaciones` (`id_sensacion`, `nombre_sensacion`, `imagen_sensacion
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_estatus`
+-- Estructura de tabla para la tabla `tipo_estatus`
 --
 
 CREATE TABLE `tipo_estatus` (
@@ -250,7 +341,7 @@ CREATE TABLE `tipo_estatus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tipo_estatus`
+-- Volcado de datos para la tabla `tipo_estatus`
 --
 
 INSERT INTO `tipo_estatus` (`id_estatus`, `nombre_estatus`) VALUES
@@ -260,28 +351,50 @@ INSERT INTO `tipo_estatus` (`id_estatus`, `nombre_estatus`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_reportes`
+-- Estructura de tabla para la tabla `tipo_ia`
+--
+
+CREATE TABLE `tipo_ia` (
+  `id_tipo_ia` int(11) NOT NULL,
+  `nombre_ia` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_ia`
+--
+
+INSERT INTO `tipo_ia` (`id_tipo_ia`, `nombre_ia`) VALUES
+(1, 'Tutor'),
+(2, 'Psicologo'),
+(3, 'Entrenador'),
+(4, 'Nutriologo');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipo_reportes`
 --
 
 CREATE TABLE `tipo_reportes` (
   `id_tipo_reporte` int(11) NOT NULL,
   `nombre_tipo_reporte` varchar(10) NOT NULL,
-  `imagen_tipo_reporte` varchar(60) NOT NULL
+  `imagen_tipo_reporte` varchar(60) NOT NULL,
+  `descripcion_reporte` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tipo_reportes`
+-- Volcado de datos para la tabla `tipo_reportes`
 --
 
-INSERT INTO `tipo_reportes` (`id_tipo_reporte`, `nombre_tipo_reporte`, `imagen_tipo_reporte`) VALUES
-(1, 'Imagen', '../imagenes/iconos/reportes/visualblanco.png'),
-(2, 'Escrito', '../imagenes/iconos/reportes/documentoblanco.png'),
-(3, 'Audio', '../imagenes/iconos/reportes/audioblanco.png');
+INSERT INTO `tipo_reportes` (`id_tipo_reporte`, `nombre_tipo_reporte`, `imagen_tipo_reporte`, `descripcion_reporte`) VALUES
+(1, 'Imagen', '../imagenes/iconos/reportes/visualblanco.png', 'Crea tus reportes solo seleccionando una imagen descriptiva'),
+(2, 'Escrito', '../imagenes/iconos/reportes/documentoblanco.png', 'Crea tus reportes escribiendo lo sucedido'),
+(3, 'Audio', '../imagenes/iconos/reportes/audioblanco.png', 'Crea tus reportes relatando en un audio lo sucedido');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipo_usuarios`
+-- Estructura de tabla para la tabla `tipo_usuarios`
 --
 
 CREATE TABLE `tipo_usuarios` (
@@ -291,7 +404,7 @@ CREATE TABLE `tipo_usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tipo_usuarios`
+-- Volcado de datos para la tabla `tipo_usuarios`
 --
 
 INSERT INTO `tipo_usuarios` (`id_tipo_usuario`, `nombre_tipo_usuario`, `imagen_tipo_usuario`) VALUES
@@ -303,7 +416,7 @@ INSERT INTO `tipo_usuarios` (`id_tipo_usuario`, `nombre_tipo_usuario`, `imagen_t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -321,36 +434,36 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidop`, `apellidom`, `correo`, `telefono`, `contraseña`, `id_estatus`, `id_tipo_usuario`, `avatar`, `fondo`) VALUES
-(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
+(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-gusano.gif'),
 (2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '', ''),
 (3, 'Ivan', 'Sanchez', 'Juarez', 'Ivan@gmail.com', '2461234588', '12345678', 2, 2, '', ''),
 (4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '', ''),
 (6, 'Raymundo', 'Montiel', 'Lira', 'ray@gmail.com', '2467854849', '12345678', 2, 2, '', ''),
-(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '', ''),
-(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '', ''),
+(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
+(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-gato.gif', ''),
 (11, 'Moises', 'Guarneros', 'Ramirez', 'moi@gmail.com', '2481754645', '12345678', 2, 3, '', ''),
-(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-bmoranchero.gif', ''),
-(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-dulceprincesa.gif', ''),
+(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-gusano.gif'),
+(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
 (14, 'Daniel', 'Guarneros', 'Martinez', 'guar98953@gmail.com', '2441875082', 'tetenegra', 1, 4, '', ''),
 (15, 'Uriel', 'Cabello', 'Sosa', 'urisosa@gmail.com', '2485084578', '12345678', 1, 4, '', '');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `actividades`
+-- Indices de la tabla `actividades`
 --
 ALTER TABLE `actividades`
   ADD PRIMARY KEY (`id_actividad`),
   ADD UNIQUE KEY `id_actividad` (`id_actividad`);
 
 --
--- Indexes for table `alumnos`
+-- Indices de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD PRIMARY KEY (`id_alumno`),
@@ -361,7 +474,17 @@ ALTER TABLE `alumnos`
   ADD KEY `id_docente` (`id_docente`);
 
 --
--- Indexes for table `consejos`
+-- Indices de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD PRIMARY KEY (`id_calificacion`),
+  ADD KEY `boleta_alumno` (`id_alumno`),
+  ADD KEY `boleta_periodo` (`id_periodo`),
+  ADD KEY `boleta_materias` (`id_materia`),
+  ADD KEY `boleta_grado` (`id_grado`);
+
+--
+-- Indices de la tabla `consejos`
 --
 ALTER TABLE `consejos`
   ADD PRIMARY KEY (`id_consejo`),
@@ -369,7 +492,7 @@ ALTER TABLE `consejos`
   ADD KEY `id_docente` (`id_docente`);
 
 --
--- Indexes for table `docentes`
+-- Indices de la tabla `docentes`
 --
 ALTER TABLE `docentes`
   ADD PRIMARY KEY (`id_docente`),
@@ -378,21 +501,27 @@ ALTER TABLE `docentes`
   ADD KEY `id_grupo` (`id_grupo`);
 
 --
--- Indexes for table `grados`
+-- Indices de la tabla `grados`
 --
 ALTER TABLE `grados`
   ADD PRIMARY KEY (`id_grado`),
   ADD UNIQUE KEY `id_grado` (`id_grado`);
 
 --
--- Indexes for table `grupos`
+-- Indices de la tabla `grupos`
 --
 ALTER TABLE `grupos`
   ADD PRIMARY KEY (`id_grupo`),
   ADD UNIQUE KEY `id_grupo` (`id_grupo`);
 
 --
--- Indexes for table `padres`
+-- Indices de la tabla `materias`
+--
+ALTER TABLE `materias`
+  ADD PRIMARY KEY (`id_materia`);
+
+--
+-- Indices de la tabla `padres`
 --
 ALTER TABLE `padres`
   ADD PRIMARY KEY (`id_padre`),
@@ -401,7 +530,21 @@ ALTER TABLE `padres`
   ADD KEY `padres_ibfk_3` (`id_grupo`);
 
 --
--- Indexes for table `proyectos`
+-- Indices de la tabla `periodos`
+--
+ALTER TABLE `periodos`
+  ADD PRIMARY KEY (`id_periodo`);
+
+--
+-- Indices de la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  ADD PRIMARY KEY (`id_peticion`),
+  ADD KEY `peticion_usuario` (`id_usuario`),
+  ADD KEY `peticion_tipoia` (`id_tipo_ia`);
+
+--
+-- Indices de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
   ADD PRIMARY KEY (`id_proyecto`),
@@ -409,7 +552,7 @@ ALTER TABLE `proyectos`
   ADD KEY `id_docente` (`id_docente`);
 
 --
--- Indexes for table `reportes`
+-- Indices de la tabla `reportes`
 --
 ALTER TABLE `reportes`
   ADD PRIMARY KEY (`id_reporte`),
@@ -420,38 +563,37 @@ ALTER TABLE `reportes`
   ADD KEY `id_sensacion` (`id_sensacion`);
 
 --
--- Indexes for table `reportes_acumulados`
---
-ALTER TABLE `reportes_acumulados`
-  ADD PRIMARY KEY (`id_reportes_acumulados`),
-  ADD KEY `id_alumno` (`id_alumno`);
-
---
--- Indexes for table `sensaciones`
+-- Indices de la tabla `sensaciones`
 --
 ALTER TABLE `sensaciones`
   ADD PRIMARY KEY (`id_sensacion`);
 
 --
--- Indexes for table `tipo_estatus`
+-- Indices de la tabla `tipo_estatus`
 --
 ALTER TABLE `tipo_estatus`
   ADD PRIMARY KEY (`id_estatus`);
 
 --
--- Indexes for table `tipo_reportes`
+-- Indices de la tabla `tipo_ia`
+--
+ALTER TABLE `tipo_ia`
+  ADD PRIMARY KEY (`id_tipo_ia`);
+
+--
+-- Indices de la tabla `tipo_reportes`
 --
 ALTER TABLE `tipo_reportes`
   ADD PRIMARY KEY (`id_tipo_reporte`);
 
 --
--- Indexes for table `tipo_usuarios`
+-- Indices de la tabla `tipo_usuarios`
 --
 ALTER TABLE `tipo_usuarios`
   ADD PRIMARY KEY (`id_tipo_usuario`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
@@ -460,99 +602,129 @@ ALTER TABLE `usuarios`
   ADD KEY `id_estatus` (`id_estatus`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `actividades`
+-- AUTO_INCREMENT de la tabla `actividades`
 --
 ALTER TABLE `actividades`
   MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `alumnos`
+-- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `consejos`
+-- AUTO_INCREMENT de la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `consejos`
 --
 ALTER TABLE `consejos`
   MODIFY `id_consejo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `docentes`
+-- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
   MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `grados`
+-- AUTO_INCREMENT de la tabla `grados`
 --
 ALTER TABLE `grados`
   MODIFY `id_grado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `grupos`
+-- AUTO_INCREMENT de la tabla `grupos`
 --
 ALTER TABLE `grupos`
   MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `padres`
+-- AUTO_INCREMENT de la tabla `materias`
+--
+ALTER TABLE `materias`
+  MODIFY `id_materia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `padres`
 --
 ALTER TABLE `padres`
   MODIFY `id_padre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `proyectos`
+-- AUTO_INCREMENT de la tabla `periodos`
+--
+ALTER TABLE `periodos`
+  MODIFY `id_periodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
   MODIFY `id_proyecto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `reportes`
+-- AUTO_INCREMENT de la tabla `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
--- AUTO_INCREMENT for table `sensaciones`
+-- AUTO_INCREMENT de la tabla `sensaciones`
 --
 ALTER TABLE `sensaciones`
   MODIFY `id_sensacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tipo_estatus`
+-- AUTO_INCREMENT de la tabla `tipo_estatus`
 --
 ALTER TABLE `tipo_estatus`
   MODIFY `id_estatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tipo_reportes`
+-- AUTO_INCREMENT de la tabla `tipo_ia`
+--
+ALTER TABLE `tipo_ia`
+  MODIFY `id_tipo_ia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_reportes`
 --
 ALTER TABLE `tipo_reportes`
   MODIFY `id_tipo_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tipo_usuarios`
+-- AUTO_INCREMENT de la tabla `tipo_usuarios`
 --
 ALTER TABLE `tipo_usuarios`
   MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `alumnos`
+-- Filtros para la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
   ADD CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
@@ -562,13 +734,22 @@ ALTER TABLE `alumnos`
   ADD CONSTRAINT `alumnos_ibfk_5` FOREIGN KEY (`id_docente`) REFERENCES `docentes` (`id_docente`);
 
 --
--- Constraints for table `consejos`
+-- Filtros para la tabla `calificaciones`
+--
+ALTER TABLE `calificaciones`
+  ADD CONSTRAINT `boleta_alumno` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`),
+  ADD CONSTRAINT `boleta_grado` FOREIGN KEY (`id_grado`) REFERENCES `grados` (`id_grado`),
+  ADD CONSTRAINT `boleta_materias` FOREIGN KEY (`id_materia`) REFERENCES `materias` (`id_materia`),
+  ADD CONSTRAINT `boleta_periodo` FOREIGN KEY (`id_periodo`) REFERENCES `periodos` (`id_periodo`);
+
+--
+-- Filtros para la tabla `consejos`
 --
 ALTER TABLE `consejos`
   ADD CONSTRAINT `consejos_ibfk_1` FOREIGN KEY (`id_docente`) REFERENCES `docentes` (`id_docente`);
 
 --
--- Constraints for table `docentes`
+-- Filtros para la tabla `docentes`
 --
 ALTER TABLE `docentes`
   ADD CONSTRAINT `docentes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
@@ -576,7 +757,7 @@ ALTER TABLE `docentes`
   ADD CONSTRAINT `docentes_ibfk_3` FOREIGN KEY (`id_grupo`) REFERENCES `grupos` (`id_grupo`);
 
 --
--- Constraints for table `padres`
+-- Filtros para la tabla `padres`
 --
 ALTER TABLE `padres`
   ADD CONSTRAINT `padres_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
@@ -584,13 +765,20 @@ ALTER TABLE `padres`
   ADD CONSTRAINT `padres_ibfk_3` FOREIGN KEY (`id_grupo`) REFERENCES `grupos` (`id_grupo`);
 
 --
--- Constraints for table `proyectos`
+-- Filtros para la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  ADD CONSTRAINT `peticion_tipoia` FOREIGN KEY (`id_tipo_ia`) REFERENCES `tipo_ia` (`id_tipo_ia`),
+  ADD CONSTRAINT `peticion_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Filtros para la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
   ADD CONSTRAINT `proyectos_ibfk_1` FOREIGN KEY (`id_docente`) REFERENCES `docentes` (`id_docente`);
 
 --
--- Constraints for table `reportes`
+-- Filtros para la tabla `reportes`
 --
 ALTER TABLE `reportes`
   ADD CONSTRAINT `id_sensacion` FOREIGN KEY (`id_sensacion`) REFERENCES `sensaciones` (`id_sensacion`),
@@ -599,13 +787,7 @@ ALTER TABLE `reportes`
   ADD CONSTRAINT `id_usuario_reportado` FOREIGN KEY (`id_usuario_reportado`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Constraints for table `reportes_acumulados`
---
-ALTER TABLE `reportes_acumulados`
-  ADD CONSTRAINT `reportes_acumulados_ibfk_1` FOREIGN KEY (`id_alumno`) REFERENCES `alumnos` (`id_alumno`);
-
---
--- Constraints for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `id_estatus` FOREIGN KEY (`id_estatus`) REFERENCES `tipo_estatus` (`id_estatus`),
