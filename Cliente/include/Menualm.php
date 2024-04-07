@@ -34,9 +34,9 @@
             <!-- se creo una clase personal 'hoverdrop' que se asigna a todos los dropdowns, se utiliza con js para que se abran al sobrteponer el mouse(sin dar click) -->
             <!-- boton dezplegable/droptown de... -->
             <div class="btn-group">
-                <a href="Reportealm.php"><button type="button" class="btn btn-primary drop-g text-g alinear-left">Aliados</button></a> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
+                <a href="Reportealm.php" class="decoracion-no"><button type="button" class="btn btn-primary drop-g text-g alinear-left display-f centrar-v">Aliados</button></a> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split text-m hoverdrop" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="visually-hidden">Toggle Dropdown</span>
+                    <span class="visually-hidden centrar">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu text-m menualmdrop"> <!--La clase menualmdrop hace que al abrir los dropdowns los menus dezplegados se vallan mas a la izq y se ubiquen a su lado-->
                     <li><a class="dropdown-item" href="Reportealm.php">Reporte aliado</a></li>
@@ -49,6 +49,7 @@
 
             <a class="nav-link active" href="Desarrolloestadisticas.php">Mi desarrollo</a>
             <a class="nav-link active" href="Generarqr.php">Generar QR</a>
+            <a class="nav-link active" id="btncerrarsesion" href="Generarqr.php">Salir</a>
         </nav>
     </div>
 
