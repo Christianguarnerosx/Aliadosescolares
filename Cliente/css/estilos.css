@@ -693,9 +693,10 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /*Asigna el tamano de la columna izq/menualm de forma predeterminada*/
 #colmenuplantillaalm {
+  position: relative;
   width: 300px; /*Este tamano solo se utilizara provisionlamnete mientras se desarrolla para pon tener que estra abre y cierra el menu, se pone ya que si no abre de mas el menu, y asi mantiene la coherencia con el tamano asignado en el js logica menu*/
   transition: 0.25s ease-in;
-  background-color: rgba(51, 160, 233, 0.822);
+  background-color: aliceblue;
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -866,6 +867,39 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Maneja lod drops que cuando se abran las opciones esten mas a la derecha y no debajo*/
 .menualmdrop {
   margin-left: 213px;
+}
+
+#imagentextomenualm {
+  position: absolute;
+  background-color: #1fc2a7;
+  top: -30px;
+  width: 100%;
+  height: 250px;
+}
+
+#navmenualm {
+  position: absolute;
+  margin-top: 250px;
+  left: 17px;
+}
+
+#navmenualm .nav-link {
+  width: 110%;
+  background-color: #1fc2a7;
+  margin-top: 1px;
+  transition: 0.3s ease;
+}
+
+#navmenualm .nav-link:hover {
+  transform: scale(1.01);
+  background-color: aliceblue;
+  color: #1fc2a7;
+}
+
+#navmenualm .btn-primary {
+  background-color: #1fc2a7;
+  border: 2px solid aliceblue;
+  transition: 03s ease;
 }
 
 /*************************************************************************************** Configsusuavatar *****************************/
