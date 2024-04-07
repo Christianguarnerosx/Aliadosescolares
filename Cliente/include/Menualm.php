@@ -34,7 +34,7 @@
             <!-- se creo una clase personal 'hoverdrop' que se asigna a todos los dropdowns, se utiliza con js para que se abran al sobrteponer el mouse(sin dar click) -->
             <!-- boton dezplegable/droptown de... -->
             <div class="btn-group">
-                <button type="button" class="btn btn-primary drop-g text-g alinear-left">Aliados</button> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
+                <a href="Reportealm.php"><button type="button" class="btn btn-primary drop-g text-g alinear-left">Aliados</button></a> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split text-m hoverdrop" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>

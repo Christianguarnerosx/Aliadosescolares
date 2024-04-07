@@ -10,11 +10,11 @@
         </div>
         <div class="contenedorgraficadesarrollo">
             <h1 class="text-c"> Utilizacion de IA</h1>
-            <canvas class="graficadesarrollo" id="graficaia2"></canvas>
+            <canvas class="graficadesarrollo" id="graficareportes"></canvas>
         </div>
         <div class="contenedorgraficadesarrollo">
-            <h1 class="text-c"> Utilizacion de IA</h1>
-            <canvas class="graficadesarrollo" id="graficaia3"></canvas>
+            <h1 class="text-c"> Historial academico </h1>
+            <canvas class="graficadesarrollo" id="graficacalificacion"></canvas>
         </div>
     </div>
 
