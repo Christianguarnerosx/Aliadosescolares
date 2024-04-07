@@ -17,6 +17,7 @@
     <!--Si quieres iniciar la session donde se manda atraer en el nombre dara errores como session indefinida/no iniciada       -->
     <?php
     session_start();
+    include_once("../../Servidor/Verificarsesion.php");
     include_once("../../Servidor/funciones_session/session_fondo.php");
     ?>
 

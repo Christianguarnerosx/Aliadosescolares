@@ -49,7 +49,7 @@
 
             <a class="nav-link active" href="Desarrolloestadisticas.php">Mi desarrollo</a>
             <a class="nav-link active" href="Generarqr.php">Generar QR</a>
-            <a class="nav-link active" id="btncerrarsesion" href="Generarqr.php">Salir</a>
+            <a class="nav-link active" id="btncerrarsesion" href="../../Servidor/Cerrarsesion.php">Salir</a>
         </nav>
     </div>
 
