@@ -896,7 +896,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* El tamaño de las pills (opciones) sera mas pequeño a lo alto al igual que la letra y el ancho */
 @media (max-height: 800px) {
   #navmenualm .nav-link {
-    height: 45px;
+    height: 47px;
     font-size: 1.8rem; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
     width: 120%; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
   }
@@ -915,9 +915,10 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Estilo hover para todas las opciones si se sobre pone el mouse */
 /* Mas grande, cambia de fondo y la letra (al reves de lo normal) */
 #navmenualm .nav-link:hover {
-  transform: scale(1.01);
+  transform: scale(1.05);
   background-color: aliceblue;
   color: #1fc2a7;
+  z-index: 5;
 }
 
 /* Crea un tamaño diferemte del boton de cerrar sesion mas pequeño y distintop a los demas pero heredando estilos de los otros navs */
@@ -945,7 +946,7 @@ Asi logras evadir lo de position y z index en los elementos*/
     position: absolute;
     width: 100%;
     bottom: -15px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 

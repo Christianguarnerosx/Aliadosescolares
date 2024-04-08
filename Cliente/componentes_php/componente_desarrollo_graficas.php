@@ -12,9 +12,11 @@
             <h1 class="text-c"> Utilizacion de IA</h1>
             <canvas class="graficadesarrollo" id="graficareportes"></canvas>
         </div>
-        <div class="contenedorgraficadesarrollo">
-            <h1 class="text-c"> Historial academico </h1>
-            <canvas class="graficadesarrollo" id="graficacalificacion"></canvas>
+        <div class="contenedorgraficadesarrollo centrar">
+            <div class="row">
+                <h1 class="text-c"> Historial academico </h1>
+                <canvas class="graficadesarrollo" id="graficacalificacion"></canvas>
+            </div>
         </div>
     </div>
 
@@ -35,9 +37,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#filacontenedor2"> Mis estadisticas </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#filacontenedor2">Pricing</a>
                     </li>
                 </ul>
             </div>

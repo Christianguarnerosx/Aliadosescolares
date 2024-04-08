@@ -142,24 +142,49 @@ graficarreportes();
 
 /* Grafica de calificaciones */
 function graficocalificaciones() {
-    const labels = "numero de reportes";
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        }]
-    };
+    console.log("Entramos a calificaciones");
 
-    const config3 = {
-        type: 'line',
-        data: data,
-    };
+    $.ajax({
+        type: "GET",
+        url: "../../Servidor/ajax_php/ajax_calificaciones.php",
+        dataType: 'json',
+        success: function (response) {
+            console.log("Entramos al ajax calificaciones");
+            response.forEach(function (item) {
+                var materia = item.nombremateria;
+                var calificacion = item.calificacionmateria;
 
-    new Chart(graficacalif, config3);
+                datoscalificaciones[materia] = calificacion;
+
+                // Obtener en un arraylas claves (nombres de los tipos de IA)
+                tiposmaterias = Object.keys(datoscalificaciones);
+            });
+
+            console.log("" + tiposmaterias[0]);
+            console.log("" + datoscalificaciones[0]);
+
+            const labels = [1,2,3,4,5];
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Bloque',
+                    data: [datoscalificaciones[tiposmaterias[0]], datoscalificaciones[tiposmaterias[1]], datoscalificaciones[tiposmaterias[2]], datoscalificaciones[tiposmaterias[3]], datoscalificaciones[tiposmaterias[4]]],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            const config3 = {
+                type: 'line',
+                data: data,
+            };
+
+            new Chart(graficacalif, config3);
+
+        }
+
+    });
 }
 
 graficocalificaciones();
