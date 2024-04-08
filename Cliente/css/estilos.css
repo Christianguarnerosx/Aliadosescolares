@@ -863,12 +863,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
-/******************************************************************************************* Menualm/include **************/
-/* Maneja lod drops que cuando se abran las opciones esten mas a la derecha y no debajo */
-.menualmdrop {
-  margin-left: 213px;
-}
-
+/****************************************************************** Menualm/include *********************/
 /* Asigna una posicion a la imagen fija dentro del contenedor padre que tiene un relative */
 #imagentextomenualm {
   position: absolute;
@@ -881,44 +876,77 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Asigna una posicion fija dentro del contenedor padre que tiene un relative */
 #navmenualm {
   position: absolute;
-  padding-top: 250px;
   left: 17px;
+  top: 245px;
 }
 
+/* Maneja el diseño de las pill (opciones del nav del menu desplegable izq) */
 #navmenualm .nav-link {
   display: flex;
   align-items: center;
   width: 110%;
   height: 55px;
-  background-color: #1fc2a7;
   margin-top: 1px;
-  transition: 0.3s ease;
+  background-color: #1fc2a7;
+  color: aliceblue;
+  transition: 0.4s ease;
 }
 
+/* Si lo alto de la interfaz es menor a 800px pantallas pequeñas a lo alto */
+/* El tamaño de las pills (opciones) sera mas pequeño a lo alto al igual que la letra y el ancho */
+@media (max-height: 800px) {
+  #navmenualm .nav-link {
+    height: 45px;
+    font-size: 1.8rem; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
+    width: 120%; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
+  }
+}
+
+/* Maneja el tamaño del boton (mas pequeño) de flecha del drop */
+#navmenualm .dropdown-toggle {
+  width: 50px;
+}
+
+/* Maneja la parte abierta de los drops que cuando se abran las opciones esten mas a la derecha y no debajo */
+.menualmdrop {
+  margin-left: 239px;
+}
+
+/* Estilo hover para todas las opciones si se sobre pone el mouse */
+/* Mas grande, cambia de fondo y la letra (al reves de lo normal) */
 #navmenualm .nav-link:hover {
   transform: scale(1.01);
   background-color: aliceblue;
   color: #1fc2a7;
 }
 
-#navmenualm .btn-primary {
-  height: 55px;
-  background-color: #1fc2a7;
-  border: 2px solid aliceblue;
-  transition: 0.5s ease;
-}
-
-#navmenualm .btn-primary:hover {
-  transform: scale(1.01);
-  background-color: aliceblue;
-  color: #1fc2a7;
-}
-
-#navmenualm #btncerrarsesion{
+/* Crea un tamaño diferemte del boton de cerrar sesion mas pequeño y distintop a los demas pero heredando estilos de los otros navs */
+#navmenualm #btncerrarsesion {
+  height: 40px;
+  margin-top: 2px;
   background-color: rgba(255, 0, 85, 0.76);
+  font-size: 1.5rem;
   font-weight: bold;
   color: aliceblue;
-  margin-top: 5px;
+}
+
+/* Row de el menualm hasta abajo, para poner copyright y descrip tituo/etc */
+#piemenualm {
+  position: absolute;
+  width: 100%;
+  bottom: -15px;
+  font-size: 0.95rem;
+}
+
+/* Si lo alto de la interfaz es menor a 800px pantallas pequeñas a lo alto */
+/* Hace que la letra del pie sea mas pequeña */
+@media (max-height: 800px) {
+  #piemenualm {
+    position: absolute;
+    width: 100%;
+    bottom: -15px;
+    font-size: 0.7rem;
+  }
 }
 
 /*************************************************************************************** Configsusuavatar *****************************/
