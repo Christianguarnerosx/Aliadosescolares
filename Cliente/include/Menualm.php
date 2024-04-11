@@ -43,7 +43,7 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Mis stacks</a></li>
+                    <li><a class="dropdown-item" href="Reportesestadistica.php">Mis Reportes</a></li>
                 </ul>
             </div>
 

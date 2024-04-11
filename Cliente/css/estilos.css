@@ -1556,3 +1556,15 @@ Asi logras evadir lo de position y z index en los elementos*/
     bottom: 0;
   }
 }
+
+/* --------------------------------------------------- Reportes estadistica ------------------------- */
+.contenedorreportesestadistica {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(152, 252, 255);
+  border-radius: 15px;
+}

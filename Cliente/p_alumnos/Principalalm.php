@@ -69,6 +69,14 @@
                             <!--fila/seccion de cards de opciones rapidas (Sera el contenedor y podra aguantar demasiadas tarjetas (elementos tipo a))-->
                             <div class="row espacio-top-c"> <!--Seccion de card de opciones principalalm-->
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
+                                <a href="Tutoriasalm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
+                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
+                                        <h1 class="text-m">Tutor IA's</h1>
+                                        <p class="text-c">Inteligencias artificiales y sistemas expertos</p>
+                                        <img class="icono-card-rb" src="../imagenes/iconos/iconoplay.png" alt="">
+                                    </div>
+                                </a>
+                                <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Reportealm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
                                     <div class="row espacio-top-m"><!--Fila de texto de la card-->
                                         <h1 class="text-m">Comunidad</h1>
@@ -77,10 +85,18 @@
                                     </div>
                                 </a>
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
-                                <a href="" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
+                                <a href="Desarrolloestadisticas.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
                                     <div class="row espacio-top-m"><!--Fila de texto de la card-->
                                         <h1 class="text-m">Rendimiento</h1>
                                         <p class="text-c">Estadisticas</p>
+                                        <img class="icono-card-rb" src="../imagenes/iconos/iconoplay.png" alt="">
+                                    </div>
+                                </a>
+                                <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
+                                <a href="Reportesestadistica.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
+                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
+                                        <h1 class="text-m">Comunidad</h1>
+                                        <p class="text-c">Mis aportes</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/iconoplay.png" alt="">
                                     </div>
                                 </a>

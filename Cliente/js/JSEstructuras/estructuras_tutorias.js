@@ -15,6 +15,20 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 var nombreusuario = "";
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Se aplica ingenieria de Propmt que configura a la IA y pone en contexto con que usuario tiene con la misma info del usuario*/
 /* Configuracion usuario */
 const rolusuario = "Soy un estudiante de nivel basico, generalmente comprendido entre los 6 y 12 años de edad, estudio e una escuela primaria llamada venustiano carranza. y ahora tengo acceso a una nueva herremienta ia, que sera mi apoyo para crever academica y perosnal mente y asi desarrollarme de la mejor manera";
