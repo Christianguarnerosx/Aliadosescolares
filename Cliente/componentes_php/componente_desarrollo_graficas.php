@@ -5,16 +5,16 @@
     <h1 hidden id="nombreusuariodesarollo"> <?php include_once("../../Servidor/funciones_session/session_nombre.php") ?> </h1>
     <div class="row contenedorstacksdesarrollo centrar alinear-center" id="filacontenedor1">
         <div class="contenedorgraficadesarrollo alinear-center" id="contenedorgrafica1">
-            <h1 class="text-c txt-blanco"> Utilizacion de IA</h1>
+            <h1 class="text-c txt-blanco"> Utilización de IA</h1>
             <canvas class="graficadesarrollo" id="graficaia1"></canvas>
         </div>
         <div class="contenedorgraficadesarrollo">
-            <h1 class="text-c txt-blanco"> Utilizacion de IA</h1>
+            <h1 class="text-c txt-blanco"> Mis Reportes </h1>
             <canvas class="graficadesarrollo" id="graficareportes"></canvas>
         </div>
         <div class="contenedorgraficadesarrollo centrar">
             <div class="row">
-                <h1 class="text-c txt-blanco"> Historial academico </h1>
+                <h1 class="text-c txt-blanco"> Historial académico </h1>
                 <canvas class="graficadesarrollo" id="graficacalificacion"></canvas>
             </div>
         </div>
