@@ -1,28 +1,28 @@
 <div class="container-fluid"> <!-- contenedor de todo el componente (para solo traerlo y no configurar nada) -->
     <div class="row centrar">
         <div class="row centrar" id="contenedorcardsia">
-            <div class="cardtutoria centrar" id="cardpsicologia" data-id="Psicologia" href="">
+            <div class="cardtutoria centrar" id="cardpsicologia" data-id="2" href="">
                 <div class="row">
                     <h1 class="titulocardia">Psicologia</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Psicologa especializado en brindar apoyo en problemas basicos de psicologia</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
-            <div class="cardtutoria centrar" id="cardtutoria" data-id="Tutoria" href="">
+            <div class="cardtutoria centrar" id="cardtutoria" data-id="1" href="">
                 <div class="row">
                     <h1 class="titulocardia">Tutoria</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Tutora personal especializada en ensenar de la manera mas facil</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
-            <div class="cardtutoria centrar" id="cardentrenador" data-id="Entrenador" href="">
+            <div class="cardtutoria centrar" id="cardentrenador" data-id="3" href="">
                 <div class="row">
                     <h1 class="titulocardia">Entrenador</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Entrenador personal especializado en bienestar fisico </h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
-            <div class="cardtutoria centrar" id="cardentrenador" data-id="Nutriologia" href="">
+            <div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
                 <div class="row">
                     <h1 class="titulocardia">Nutriologia</h1>
                     <h1 class="contenidocardtutoria text-c"> Su Nutriologa especializada en brindar formas sanas de comer</h1>
