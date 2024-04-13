@@ -13,15 +13,28 @@
             <canvas class="graficadesarrollo" id="graficareportes"></canvas>
         </div>
         <?php
+        /*Funcion para obtener el nombre y apellido paterno*/
+        include("../../Servidor/Conexion.php"); /*Incluimos la conexion (OJOOOO se debe calcular la ruta desde donde se manda atraer no desde aqui) */
+        /* Para que se importe bien la conexion es necesario que sea SOLO include() porqueeeee si utilizas include_once() marca error*/
 
-        if ($_SESSION['usuario'] == 4) {
-            echo "<div class='contenedorgraficadesarrollo centrar'>
-            <div class='row'>
-                <h1 class='text-c txt-blanco'> Historial académico </h1>
-                <canvas class='graficadesarrollo' id='graficacalificacion'></canvas>
-            </div>
-        </div>";
+        $id = $_SESSION['usuario']; /*Mandamos a llamar a la variable sesion y la asignamos a una nieva variable (id)*/
+        $query = "SELECT id_tipo_usuario FROM usuarios WHERE id_usuario = $id"; /*Declaramos la consulta*/
+        $consulta = mysqli_query($conexion, $query); /* ejecutamos la consulta mandando la conexion y la consulta*/
+
+        if (mysqli_num_rows($consulta) > 0) { /*si la consulta devuelve algo*/
+            $row = mysqli_fetch_array($consulta); /*guardamos en la variable row todo lo que nos regreso por campos*/
+            /*Se utuliza a row por que almaceno lo obtenido de la consulta y se manda a traer el campo ['campo']*/
+
+            if ($row['id_tipo_usuario'] == 4) {
+                echo "<div class='contenedorgraficadesarrollo centrar'>
+                        <div class='row'>
+                            <h1 class='text-c txt-blanco'> Historial académico </h1>
+                            <canvas class='graficadesarrollo' id='graficacalificacion'></canvas>
+                        </div>
+                    </div>";
+            }
         }
+        mysqli_close($conexion);
         ?>
     </div>
 
