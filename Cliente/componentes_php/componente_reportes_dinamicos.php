@@ -55,21 +55,45 @@
     <div class="cardreporte alinear-center centrar" id="card2">
         <div class="row centrar alinear-center">
             <?Php
+            $id = $_SESSION['usuario']; /*Mandamos a llamar a la variable sesion y la asignamos a una nieva variable (id)*/
+            $query = "SELECT id_tipo_usuario FROM usuarios WHERE id_usuario = $id"; /*Declaramos la consulta*/
+            $consulta = mysqli_query($conexion, $query); /* ejecutamos la consulta mandando la conexion y la consulta*/
 
-            $query = "SELECT id_tipo_usuario, nombre_tipo_usuario, imagen_tipo_usuario from tipo_usuarios WHERE id_tipo_usuario != 1 ORDER BY id_tipo_usuario DESC";
-            $consulta = mysqli_query($conexion, $query);
+            if (mysqli_num_rows($consulta) > 0) { /*si la consulta devuelve algo*/
+                $row = mysqli_fetch_array($consulta); /*guardamos en la variable row todo lo que nos regreso por campos*/
 
-            if (mysqli_num_rows($consulta) > 0) {
+                $query = "";
+                $tipousuario = $row['id_tipo_usuario'];
+
+                if ($tipousuario == 4) {
+                    $query = "SELECT id_tipo_usuario, nombre_tipo_usuario, imagen_tipo_usuario from tipo_usuarios WHERE id_tipo_usuario != 1
+                ORDER BY id_tipo_usuario DESC";
+                } else {
+                    $query = "SELECT id_tipo_usuario, nombre_tipo_usuario, imagen_tipo_usuario from tipo_usuarios WHERE id_tipo_usuario != 1 AND id_tipo_usuario != 3
+                ORDER BY id_tipo_usuario DESC";
+                };
+
+                if ($tipousuario == 4) {
+                    $query = "SELECT id_tipo_usuario, nombre_tipo_usuario, imagen_tipo_usuario from tipo_usuarios WHERE id_tipo_usuario != 1
+                ORDER BY id_tipo_usuario DESC";
+                } else {
+                    $query = "SELECT id_tipo_usuario, nombre_tipo_usuario, imagen_tipo_usuario from tipo_usuarios WHERE id_tipo_usuario != 1 AND id_tipo_usuario != 3
+                ORDER BY id_tipo_usuario DESC";
+                }
+
+                $consulta = mysqli_query($conexion, $query);
+
+                if (mysqli_num_rows($consulta) > 0) {
             ?>
             <?php
-                while ($row = mysqli_fetch_array($consulta)) {
-                    $id_tipo_usuario = $row['id_tipo_usuario'];
-                    $nom_usuario = $row['nombre_tipo_usuario'];
-                    $img_usuario = $row['imagen_tipo_usuario'];
-                    /* opcion reporte es una clase para asignar estilos a tadas las opciones */
-                    /* clase tipousu se utiliza para asignar a todas las opciones un eventlistener y obtener el id del que sea seleccionado*/
-                    /* Gracias al data-id "" se asigna el valor obtenido (al hacer click) y 'id' se obtiene en js con el data-id */
-                    echo "<div class='opcion-reporte tipousu hover-btn borde-r-c centrar' data-id='" . $id_tipo_usuario . "'>        
+                    while ($row = mysqli_fetch_array($consulta)) {
+                        $id_tipo_usuario = $row['id_tipo_usuario'];
+                        $nom_usuario = $row['nombre_tipo_usuario'];
+                        $img_usuario = $row['imagen_tipo_usuario'];
+                        /* opcion reporte es una clase para asignar estilos a tadas las opciones */
+                        /* clase tipousu se utiliza para asignar a todas las opciones un eventlistener y obtener el id del que sea seleccionado*/
+                        /* Gracias al data-id "" se asigna el valor obtenido (al hacer click) y 'id' se obtiene en js con el data-id */
+                        echo "<div class='opcion-reporte tipousu hover-btn borde-r-c centrar' data-id='" . $id_tipo_usuario . "'>        
                     <div class='row'>
                         <div class='col'>
                             <div class='row'>
@@ -85,9 +109,10 @@
                         </div>
                     </div>
             </div>";
+                    }
+                } else {
+                    echo "<option value=''>No hay resultados</option>";
                 }
-            } else {
-                echo "<option value=''>No hay resultados</option>";
             }
             ?>
             <div class="row">
