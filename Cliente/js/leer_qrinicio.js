@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const id = code.data;
                 idDisplay.textContent = id;
 
-                alert("Se obtuvo" + id);
+                console.log("Se obtuvo" + id);
 
                 mandarusuario(id);
             }

@@ -146,13 +146,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
             /* Obtenemos el nombre del usuario mediante los label que los obtienen con php desde la session*/
             nombreusuario = document.getElementById('nombreusuario').textContent;
+
+            var nombreia = "";
+
+            if (iaseleccionada == 1) {
+                nombreia = "Tutora";
+            } else if (iaseleccionada == 2) {
+                nombreia = "Psicologa";
+            } else if (iaseleccionada == 3) {
+                nombreia = "Entrenador";
+            } else if (iaseleccionada == 4) {
+                nombreia = "Nutriologa";
+            }
+
             Tipo_ia = document.getElementById('tipo_ia');
             Tipo_ia.textContent = iaseleccionada;
             Tipo_ia = document.getElementById('tipo_ia').textContent;
             Tipo_usuario = document.getElementById('tipo_usuario').textContent;
             hijo = document.getElementById('hijo').textContent;
             titulochatia = document.getElementById('titulochatia');
-            titulochatia.textContent = "Soy tu " + iaseleccionada;
+            titulochatia.textContent = "Soy tu " + nombreia;
 
             console.log("el usuario se llama: " + nombreusuario);
             console.log("Su hijo se llama: " + hijo);

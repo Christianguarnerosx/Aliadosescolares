@@ -12,12 +12,17 @@
             <h1 class="text-c txt-blanco"> Mis Reportes </h1>
             <canvas class="graficadesarrollo" id="graficareportes"></canvas>
         </div>
-        <div class="contenedorgraficadesarrollo centrar">
-            <div class="row">
-                <h1 class="text-c txt-blanco"> Historial académico </h1>
-                <canvas class="graficadesarrollo" id="graficacalificacion"></canvas>
+        <?php
+
+        if ($_SESSION['usuario'] == 4) {
+            echo "<div class='contenedorgraficadesarrollo centrar'>
+            <div class='row'>
+                <h1 class='text-c txt-blanco'> Historial académico </h1>
+                <canvas class='graficadesarrollo' id='graficacalificacion'></canvas>
             </div>
-        </div>
+        </div>";
+        }
+        ?>
     </div>
 
     <div class="contenedorstacksdesarrollo centrar" id="filacontenedor2">
