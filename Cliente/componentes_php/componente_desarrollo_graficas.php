@@ -21,7 +21,14 @@
     </div>
 
     <div class="contenedorstacksdesarrollo centrar" id="filacontenedor2">
-        <h1> Letras y numeros que cambian y van incrementando </h1>
+        <div class="row centrar alinear-center">
+            <h1 class="titulo-g" id="contadorreportes">0</h1>
+            <h1>Numero de reportes</h1>
+        </div>
+        <div class="row centrar alinear-center">
+            <h1 class="titulo-g" id="contadorpeticiones">0</h1>
+            <h1>Numero de Peticiones</h1>
+        </div>
     </div>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navdesarrollo">
@@ -36,7 +43,7 @@
                         <a class="nav-link active" aria-current="page" href="#filacontenedor1"> Uso de mi app </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#filacontenedor2"> Mis estadisticas </a>
+                        <a class="nav-link" href="#filacontenedor2" id="btnestadisticasdesaarrollo"> Mis estadisticas </a>
                     </li>
                 </ul>
             </div>

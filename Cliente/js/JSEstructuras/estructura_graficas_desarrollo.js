@@ -161,9 +161,9 @@ function graficocalificaciones() {
             });
 
             console.log("" + tiposmaterias[0]);
-            console.log("" + datoscalificaciones[0]);
+            console.log("" + datoscalificaciones[tiposmaterias[0]]);
 
-            const labels = [1,2,3,4,5];
+            const labels = [1, 2, 3, 4, 5];
             const data = {
                 labels: labels,
                 datasets: [{
@@ -188,3 +188,86 @@ function graficocalificaciones() {
 }
 
 graficocalificaciones();
+
+
+/* Numeros incrementales */
+
+// Obtener el elemento del contador
+var contadorElementoreportes = document.getElementById('contadorreportes');
+
+// Definir intervalo fuera de la función
+var intervaloreportes;
+
+// Función para incrementar el contador
+function incrementarContadorreportes() {
+    // Obtener el valor actual del contador
+    var valorActual = parseInt(contadorElementoreportes.innerText);
+
+    // Incrementar el valor
+    valorActual++;
+
+    // Actualizar el elemento del contador con el nuevo valor
+    contadorElementoreportes.innerText = valorActual;
+
+    // Realizar la solicitud AJAX
+    $.ajax({
+        type: "GET",
+        url: "../../Servidor/ajax_php/ajax_total_reportes.php",
+        dataType: 'json',
+        success: function (response) {
+            var total_reportes = response;
+            // Detener cuando se alcance cierto punto
+            if (valorActual >= total_reportes) {
+                clearInterval(intervaloreportes);
+            }
+        }
+    });
+}
+
+const btnestadisticas = document.getElementById('btnestadisticasdesaarrollo');
+
+// Obtener el elemento del contador
+var contadorElementopeticiones = document.getElementById('contadorpeticiones');
+
+// Definir intervalo fuera de la función
+var intervalopeticiones;
+
+// Función para incrementar el contador
+function incrementarContadorpeticiones() {
+    // Obtener el valor actual del contador
+    var valorActual = parseInt(contadorElementopeticiones.innerText);
+
+    // Incrementar el valor
+    valorActual++;
+
+    // Actualizar el elemento del contador con el nuevo valor
+    contadorElementopeticiones.innerText = valorActual;
+
+    // Realizar la solicitud AJAX
+    $.ajax({
+        type: "GET",
+        url: "../../Servidor/ajax_php/ajax_total_peticiones.php",
+        dataType: 'json',
+        success: function (response) {
+            var total_numero_peticiones = response;
+            // Detener cuando se alcance cierto punto
+            if (valorActual >= total_numero_peticiones) {
+                clearInterval(intervalopeticiones);
+            }
+        }
+    });
+}
+
+btnestadisticas.addEventListener('click', function () {
+    // Verificar si el intervalo ya está en curso antes de iniciarlo nuevamente
+    if (!intervaloreportes) {
+        // Establecer el intervalo solo si no está en curso
+        intervaloreportes = setInterval(incrementarContadorreportes, 100);
+    }
+
+    // Verificar si el intervalo ya está en curso antes de iniciarlo nuevamente
+    if (!intervalopeticiones) {
+        // Establecer el intervalo solo si no está en curso
+        intervalopeticiones = setInterval(incrementarContadorpeticiones, 100);
+    }
+});
