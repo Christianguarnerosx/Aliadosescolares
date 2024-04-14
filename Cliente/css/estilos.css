@@ -807,7 +807,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   width: 300px; /*Asigan el tama;o de la card*/
   margin-top: 15px;
   margin-left: 2.5vh;
-  box-shadow: 0px 5px 10px rgba(39, 39, 39, 0.295);
+  box-shadow: 0px 2px 5px rgba(39, 39, 39, 0.295);
   transition: 0.2s ease;
   background-color: rgba(31, 155, 238, 0.884);
   color: aliceblue;
@@ -816,6 +816,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Hover para las cards que tienen las opciones al inicio de principalalm*/
 .card-principalalm:hover {
   transform: scale(1.05);
+  box-shadow: 0px 5px 10px rgba(39, 39, 39, 0.295);
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
