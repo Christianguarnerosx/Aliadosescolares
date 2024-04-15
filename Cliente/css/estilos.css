@@ -26,6 +26,13 @@ haciendo mas reciclabe el codigo*/
   background-color: aliceblue; /* Color del thumb */
 }
 
+/* Aplicar un estilo diferente cuando el ancho de la pantalla para movil */
+@media (max-width: 500px) {
+  audio {
+    width: 160px; /* Reducir el ancho del reproductor de audio */
+  }
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Displays +++++++++++++++++++++*/
 /*Asigna al elemento que tenga esta clase un display especifico para poder tomar herramientas de display sin tener que escribir display en cada unoa de ellas*/
 .display-f {
@@ -887,6 +894,16 @@ Asi logras evadir lo de position y z index en los elementos*/
   height: 250px;
 }
 
+/* Maneja el lugar de el tipo usuario debajo de la imagen */
+#tipousuariomenualm {
+  margin-top: 17px;
+}
+
+/* Maneja la posicion del nombre del usuario debajo del tipo usuario*/
+#nombremenualm {
+  margin-top: -5px;
+}
+
 /* Asigna una posicion fija dentro del contenedor padre que tiene un relative */
 #navmenualm {
   position: absolute;
@@ -1501,6 +1518,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* -------------------------------------------------------------- Desarrollo (stacadisticas)-------------------------- */
+/* contenedor padre, donde los dos contenedores hijos utilizaran para poder solo hacer el scroll en el*/
 #contenedordesarrollo {
   position: absolute;
   left: 12px;
@@ -1513,24 +1531,25 @@ Asi logras evadir lo de position y z index en los elementos*/
   scroll-behavior: smooth;
 }
 
+/* Contenedor que tiene las graficas de chartjs */
 .contenedorstacksdesarrollo {
-  position: relative;
   background-color: rgb(228, 243, 255);
   height: 100%;
   width: 100%;
-  min-width: 50%;
-  overflow-x: auto;
+  min-width: 50%; /* Para que el tamaño del contenedor tenga un tamaño por defecto si no tiene graficas*/
 }
 
+/* Si el dispositivo es movil el tamaño de los contenedores a los que se adaptaran las graficas seran mas grandes*/
 @media (max-width: 700px) {
   .contenedorstacksdesarrollo {
     height: 100%;
     width: 100%;
-    overflow-x: none;
-    overflow-y: auto;
+    overflow-x: none; /* Hace que desaparezca el scroll 'x' y solo tome en cuenta el 'y' para que el contenedor pueda recorrer las graficas ocultas o desbordadas */
+    overflow-y: auto; /* Parta que solo se pueda hacer scroll en y a lo alto */
   }
 }
 
+/* Contenedor que contiene 1 grafica de chartjs se utilizan el mismo tamaño en todas las cards (que lo asigna esta clase) */
 .contenedorgraficadesarrollo {
   height: 320px;
   width: 320px;
@@ -1540,38 +1559,37 @@ Asi logras evadir lo de position y z index en los elementos*/
   transition: 0.3s ease;
 }
 
+/* Contenedor que contiene 1 grafica de chartjs se utilizan el mismo tamaño en todas las cards (que lo asigna esta clase) */
 @media (max-width: 700px) {
+  /* si es telefono las cards seran mas grandes para que solo abarque una por renglon*/
   .contenedorgraficadesarrollo {
     height: 450px;
     width: 450px;
   }
 }
 
+/* Si se coloca en una grafica que crezca */
 .contenedorgraficadesarrollo:hover {
   transform: scale(1.1);
 }
 
+/* Contenedor de la grafica de IA que hace que tenga un espacio cuando este en telefono y asi evitar que este debajo de el boton estras y logo */
 @media (max-width: 700px) {
   #contenedorgrafica1 {
     margin-top: 40px;
   }
 }
 
+/* Hace que el nav que se convierte a btn este estatico abajo de el contenedor padre el cuadro blanco */
 #navdesarrollo {
   position: sticky;
   right: 0;
   bottom: 0;
 }
 
-@media (max-width: 700px) {
-  #navdesarrollo {
-    position: sticky;
-    right: 0;
-    bottom: 0;
-  }
-}
-
 /* --------------------------------------------------------------- Reportes info ---------------------------- */
+/* Ubica a la tabla dentro del contenedor padre (el cuadro blanco) lo centramos y le asignamos un espacio arriba
+Asi como un tamaño de alto determinado opara que se pueda realizar los scroll al desbordarse de ese tamaño */
 #tablareportes {
   position: absolute;
   left: 12px;
@@ -1585,6 +1603,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   overflow-x: hidden;
 }
 
+/* Si es para moviles que tenga menos espacio a lo alto y menos espacio a lo ancho izq y der */
 @media (max-width: 800px) {
   #tablareportes {
     top: 44px;
@@ -1593,6 +1612,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
+/* Hace que la tabla se mantenga aun y cuando los registros bajen y no se desaparezca al hacer scroll asi como asignarle un color de fondo */
 .tablatituloreportes {
   position: sticky;
   top: -7px;
@@ -1602,33 +1622,44 @@ Asi logras evadir lo de position y z index en los elementos*/
   color: aliceblue;
 }
 
+/* Maneja el fondo de las filas/registros (reportes) asi como le asigna un borde solo abajo para ver la separacion */
 .filatablareportes {
   height: 60px;
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.849);
   border-bottom: 1px solid rgba(241, 241, 241, 0.911);
 }
 
+/* Maneja el tamaño de las imagenes en el contenido de los reportes tipo img */
+.imagentablareportes {
+  width: 60px;
+}
+
+/* Asigna un tamaño predeterminado a el boton de imprimir reporte */
 .btn-acciones {
   font-size: 0.7rem;
   width: 70px;
   transition: 0.3s;
 }
 
+/* Si se sobre pone que el boton a los botones de la clase acciones creezca */
 .btn-acciones:hover {
   transform: scale(1.1);
 }
 
+/* Para el caso de l btn de imprimir cambiara de color, asigaremos un borde y crecera */
 #btnimprimirreportes:hover {
   transform: scale(1.1);
   background-color: aliceblue;
   border: 1px solid dodgerblue;
 }
 
+/* Al hacer hover aparecera lo que este en el content y borrara el span que tiene la letra de imprimir */
 #btnimprimirreportes:hover::after {
   content: "🖨️";
   font-size: 0.9rem;
 }
 
+/* Desaparece el espan que tiene la letra del boton para que solo aparezca el content asignado en el hover after*/
 #btnimprimirreportes:hover #spancontenidobtnreportes {
   display: none;
 }

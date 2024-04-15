@@ -1,6 +1,8 @@
 <div class="container-fluid"> <!-- contenedor de todo el componente (para solo traerlo y no configurar nada) -->
-    <div class="row centrar">
+    <div class="row centrar"> <!-- Este es el row que contendra las cards verticales -->
         <div class="row centrar" id="contenedorcardsia">
+            <!-- Esta es la card vertical de psicologia la cual hace la animacion de expanderse -->
+            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardpsicologia" data-id="2" href="">
                 <div class="row">
                     <h1 class="titulocardia">Psicologia</h1>
@@ -8,6 +10,7 @@
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
+            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardtutoria" data-id="1" href="">
                 <div class="row">
                     <h1 class="titulocardia">Tutoria</h1>
@@ -15,6 +18,7 @@
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
+            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardentrenador" data-id="3" href="">
                 <div class="row">
                     <h1 class="titulocardia">Entrenador</h1>
@@ -22,6 +26,7 @@
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
+            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
                 <div class="row">
                     <h1 class="titulocardia">Nutriologia</h1>
@@ -29,6 +34,8 @@
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
+
+            <!-- Pie/titulo  -->
             <div class="row centrar espacio-top-c alinear-center">
                 <h1 class=" text-c">Elige una TutorIA</h1>
             </div>

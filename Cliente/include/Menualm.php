@@ -21,8 +21,8 @@
     <div class="row centrar espacio-top-c" id="imagentextomenualm">
         <div class="row centrar-h alinear-center espacio-top-c">
             <img class="avatar-c" src="<?php include("../../Servidor/funciones_session/session_avatar.php"); ?>" alt=""> <!--Img  de menu Debe de ponerse la ruta calculada desde donde se manda a traer en este caso es para la de menual pricnipal-->
-            <h1 class="text-c txt-blanco"> <?php include_once("../../Servidor/funciones_session/session_nombretipousuario.php") ?> </h1>
-            <h1 class="text-m txt-blanco "> <?php include_once("../../Servidor/funciones_session/session_nombreapa.php") ?> </h1>
+            <h1 class="text-c txt-blanco" id="tipousuariomenualm"> <?php include_once("../../Servidor/funciones_session/session_nombretipousuario.php") ?> </h1>
+            <h1 class="text-m txt-blanco" id="nombremenualm"> <?php include_once("../../Servidor/funciones_session/session_nombreapa.php") ?> </h1>
         </div>
     </div>
     <div class="row" id="navmenualm">
