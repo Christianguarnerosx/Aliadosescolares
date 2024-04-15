@@ -45,17 +45,19 @@
                     <img class="icono-btn" src="<?php include("../../Servidor/funciones_session/session_avatar.php"); ?>" alt=""> <!--Se obtiene el avatar con php la clse icono avatar hace referencia al 100% del padre(el tama;o del boton)-->
                 </button>
 
+                <button type="button" id="plantillaalm-logo" class=""><!--Logo del contenedor de contenido de enmedio-->
+                    <img class="icono-btn" src="../imagenes/logos/logoaliadoshorizontal.gif">
+                </button>
+
                 <!--1 contenedor de cuadro blanco ya el contenido de enmedio/principal de la interfaz-->
                 <section id="plantillaalm-cuadro" class="cuadro-fondo centrar blanco-transparente borde-r-c"> <!--El id se ha utilizado para poner su position relative y asi sea refremcia de otros elementos-->
-                    <!--Logo del contenedor de contenido de enmedio-->
-                    <img id="plantillaalm-logo" class="logo-c" src="../imagenes/logos/logoaliadoshorizontal.gif" alt="">
                     <!--Contenedor principal (central) de todos los componentes de la interfaz-->
 
                     <!-- Este es el contendor de las card/opciones que muestras acciones de la app en la interfaz principal-->
                     <!-- A este main se le aplicara un scroll en y cuando el contenido se deborde, solo se oculta el scroll x y se asigna un tama;o-->
                     <main class="row scroll-y"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
                         <div class="col"> <!-- AQUI LLEVA EL CONTENIDO QUE lleva la interfaz-->
-                        
+
                         </div>
                     </main>
 

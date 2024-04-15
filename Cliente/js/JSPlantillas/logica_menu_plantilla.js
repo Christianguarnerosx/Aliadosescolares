@@ -36,7 +36,7 @@ document.getElementById("colconfigplantillaalm").addEventListener("show.bs.colla
 /*De la misma manera se aplica el event de hidden a la col que se quiera ocultar al agregarle el hide.bs,collapse*/
 document.getElementById("colconfigplantillaalm").addEventListener("hide.bs.collapse", function () {
     document.getElementById("btn-extras-plantillaalm").style.scale = "1"; /*Este ahce que se sobreponga a todo lo demas del contenido es como en canva/word "Traer/mandar adelante de todo (lo que este debajo de "1")*/
-    document.getElementById("btn-extras-plantillaalm").style.right = "15px";/*Esta es la medida que tiene en el css (Con la que comienza) Regresar a la misma posicion*/
-    document.getElementById("btn-extras-plantillaalm").style.top = "12px";/*Esta es la medida que tiene en el css (Con la que comienza) Regresar a la misma posicion*/
+    document.getElementById("btn-extras-plantillaalm").style.right = "16px";/*Esta es la medida que tiene en el css (Con la que comienza) Regresar a la misma posicion*/
+    document.getElementById("btn-extras-plantillaalm").style.top = "9px";/*Esta es la medida que tiene en el css (Con la que comienza) Regresar a la misma posicion*/
     document.getElementById("btn-extras-plantillaalm").style.rotate = "0deg"; /* Utilizado para dar la a animacionde girar*/
 });

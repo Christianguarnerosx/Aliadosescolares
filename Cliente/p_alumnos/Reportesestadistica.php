@@ -58,7 +58,6 @@
                             <?php include("../componentes_php/componente_reportes_info.php");?>
                         </div>
                     </main>
-
                 </section>
             </div>
 
