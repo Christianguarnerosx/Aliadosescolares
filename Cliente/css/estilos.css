@@ -165,6 +165,13 @@ haciendo mas reciclabe el codigo*/
   transition: 0.2s ease;
 }
 
+/*Hace el tamano de un boton mediano*/
+.btn-c {
+  width: 70px;
+  height: 30px;
+  transition: 0.2s ease;
+}
+
 /*Asigna a un elemento de boton/imagen fondo transparente y sin bordes*/
 .btn-transparente {
   background-color: rgba(240, 248, 255, 0);
@@ -174,11 +181,13 @@ haciendo mas reciclabe el codigo*/
 /*Asigna el fondo y forma de boton*/
 .btn-azul {
   background-color: rgb(15, 134, 253);
+  border: none;
 }
 
 /*Asigna el fondo y forma de boton*/
 .btn-naranja {
   background-color: rgb(255, 110, 32);
+  border: none;
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Dropdowns +++++++++++++++++++++*/
@@ -1563,15 +1572,63 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* --------------------------------------------------------------- Reportes info ---------------------------- */
-.contenedorreportesestadistica {
-  position: absolute;
-  width: 100%;
-}
-
-#tablatituloreportes {
+#tablareportes {
   position: absolute;
   left: 12px;
-  top: 65px;
+  top: 54px;
   width: 100%;
+  height: 90%;
+  padding: 5px;
+  padding-left: 55px;
+  padding-right: 55px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 800px) {
+  #tablareportes {
+    top: 44px;
+    padding-left: 35px;
+    padding-right: 30px;
+  }
+}
+
+.tablatituloreportes {
+  position: sticky;
+  top: -7px;
+  height: 40px;
+  z-index: 2;
   background-color: #1fc2a7;
+  color: aliceblue;
+}
+
+.filatablareportes {
+  height: 60px;
+  background-color: aliceblue;
+  border-bottom: 1px solid rgba(241, 241, 241, 0.911);
+}
+
+.btn-acciones {
+  font-size: 0.7rem;
+  width: 70px;
+  transition: 0.3s;
+}
+
+.btn-acciones:hover {
+  transform: scale(1.1);
+}
+
+#btnimprimirreportes:hover {
+  transform: scale(1.1);
+  background-color: aliceblue;
+  border: 1px solid dodgerblue;
+}
+
+#btnimprimirreportes:hover::after {
+  content: "🖨️";
+  font-size: 0.9rem;
+}
+
+#btnimprimirreportes:hover #spancontenidobtnreportes {
+  display: none;
 }
