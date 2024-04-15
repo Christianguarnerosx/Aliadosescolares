@@ -916,7 +916,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   display: flex;
   align-items: center;
   width: 110%;
-  height: 55px;
+  height: 65px;
   margin-top: 1px;
   background-color: #1fc2a7;
   color: aliceblue;
@@ -927,7 +927,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* El tamaño de las pills (opciones) sera mas pequeño a lo alto al igual que la letra y el ancho */
 @media (max-height: 800px) {
   #navmenualm .nav-link {
-    height: 47px;
+    height: 55px;
     font-size: 1.8rem; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
     width: 120%; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
   }
@@ -954,7 +954,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /* Crea un tamaño diferemte del boton de cerrar sesion mas pequeño y distintop a los demas pero heredando estilos de los otros navs */
 #navmenualm #btncerrarsesion {
-  height: 40px;
+  height: 50px;
   margin-top: 2px;
   background-color: rgba(255, 0, 85, 0.76);
   font-size: 1.5rem;
