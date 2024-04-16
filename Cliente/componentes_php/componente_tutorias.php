@@ -88,7 +88,7 @@
             </div>
         </div>
     </div>
-    <p class="alinear-right espacio-right-m">@<span class="text-m negrita espacio-right-c">GoogleCloud☁️</span></p>
+    <p class="creditogoogleia alinear-right espacio-right-m">@<span class="creditogoogleia negrita espacio-right-c creditogoogleia">GoogleCloud ☁️</span></p>
 </div>
 
 <!-- Importamos el js importante: como TIPO MODULE  -->

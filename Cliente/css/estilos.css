@@ -1586,6 +1586,10 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
+.creditogoogleia{
+  font-size: 0.5rem;
+}
+
 /* -------------------------------------------------------------- Desarrollo (stacadisticas)-------------------------- */
 /* contenedor padre, donde los dos contenedores hijos utilizaran para poder solo hacer el scroll en el*/
 #contenedordesarrollo {
