@@ -1108,7 +1108,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   height: 90%;
   bottom: 7.5vh;
   right: -5vh;
-  z-index: 8;
+  z-index: 10;
 }
 
 @media (max-width: 1300px) {
@@ -1258,7 +1258,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   width: 250px;
   background-color: aliceblue;
   box-shadow: 10px 10px 20px #1fc2a7;
-  z-index: 1;
+  z-index: 10;
 }
 
 /*Si se sobrepone el mouse, al titulo que esta dentro de la card lo vas a mostrar y le cambias de color (por que el fondo se vvuelve blanco)*/
