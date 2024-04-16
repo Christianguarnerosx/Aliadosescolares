@@ -35,5 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function mandarusuario(id) {
-    window.location.href = 'iniciodinamico.php?id=' + encodeURIComponent(id);
+    var url = 'iniciodinamico.php?id=' + encodeURIComponent(id) + '&autres=alumno';
+
+    window.location.href = url;
 }
