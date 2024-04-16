@@ -1390,7 +1390,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   text-align: center;
   margin: 10px;
   border-radius: 15px;
-  margin: 0;
+  margin: 0; /* hace que las cards parecieran que estan unidas*/
   cursor: pointer; /* Cambia de cursor para que parezca seleccionable*/
 }
 
@@ -1400,6 +1400,30 @@ Asi logras evadir lo de position y z index en los elementos*/
     height: 60vh;
     width: 70px;
   }
+}
+
+/* Es el imagen/cuadro que sale y al principio tiene un personaje  (preview del personaje de la card)*/
+/* La imagen no aparece pero se establece un lugar para que la animacion de aparecer se haga desde alli y tambien se oculte hacia alla */
+.indicardorcardtutoria {
+  position: absolute;
+  top: 300px;
+  left: -120px;
+  height: 70px;
+  width: auto;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/*Si se sobrepone, se abrira/expandera la card a lo ancho y aplicara estos estilos solo a la imagen personaje*
+/* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
+.cardtutoria:hover .indicardorcardtutoria {
+  position: relative;
+  top: -10px; /* Lugar del personaje*/
+  left: -50px;
+  opacity: 1; /* aparacece el personaje*/
+  height: 250px;
+  width: auto;
+  margin-right: -45px; /* se utiliza para que el texto este mas a la izq y no se desborde */
 }
 
 /* La clase que hace que el titulo aparezca vertical y cuando se expamnda/abra se ponga horizontal*/
@@ -1426,7 +1450,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /*Para telefono Si se sobrepone, se abrira/expandera la card a lo ancho en mas pequeño que el normal y se sobre pondra a las demas */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .cardtutoria:hover {
     position: absolute;
     height: 70vh;
@@ -1579,7 +1603,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 .contenedorgraficadesarrollo {
   height: 320px;
   width: 320px;
-  background-color: rgb(166, 194, 236);
+  background-color: rgba(178, 190, 230, 0.897);
   margin: 5px;
   border-radius: 15px;
   transition: 0.3s ease;

@@ -4,40 +4,44 @@
             <!-- Esta es la card vertical de psicologia la cual hace la animacion de expanderse -->
             <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardpsicologia" data-id="2" href="">
+                <img src="../imagenes/personajes/Psicologa.png" class="indicardorcardtutoria">
                 <div class="row">
                     <h1 class="titulocardia">Psicologia</h1>
-                    <h1 class="contenidocardtutoria text-c"> Su Psicologa especializado en brindar apoyo en problemas basicos de psicologia</h1>
+                    <h1 class="contenidocardtutoria text-c"> Tu Psicologa especializado en brindar apoyo en problemas basicos</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
             <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardtutoria" data-id="1" href="">
+                <img src="../imagenes/personajes/Tutora.png" class="indicardorcardtutoria">
                 <div class="row">
                     <h1 class="titulocardia">Tutoria</h1>
-                    <h1 class="contenidocardtutoria text-c"> Su Tutora personal especializada en ensenar de la manera mas facil</h1>
+                    <h1 class="contenidocardtutoria text-c"> Su Tutora personal especializada en enseñar de la manera mas facil</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
             <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardentrenador" data-id="3" href="">
+                <img src="../imagenes/personajes/Entrenador.png" class="indicardorcardtutoria">
                 <div class="row">
                     <h1 class="titulocardia">Entrenador</h1>
-                    <h1 class="contenidocardtutoria text-c"> Su Entrenador personal especializado en bienestar fisico </h1>
+                    <h1 class="contenidocardtutoria text-c"> Tu Entrenador personal especializado en bienestar fisico</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
             <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
             <div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
+                <img src="../imagenes/personajes/Nutriologa.png" class="indicardorcardtutoria">
                 <div class="row">
                     <h1 class="titulocardia">Nutriologia</h1>
-                    <h1 class="contenidocardtutoria text-c"> Su Nutriologa especializada en brindar formas sanas de comer</h1>
+                    <h1 class="contenidocardtutoria text-c"> Tu Nutriologa especializada en brindar formas sanas de comer</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
             </div>
 
             <!-- Pie/titulo  -->
             <div class="row centrar espacio-top-c alinear-center">
-                <h1 class=" text-c">Elige una TutorIA</h1>
+                <h1 class="text-c">Elige una TutorIA</h1>
             </div>
         </div>
 
