@@ -966,7 +966,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 #piemenualm {
   position: absolute;
   width: 100%;
-  bottom: -15px;
+  bottom: 0px;
   font-size: 0.95rem;
 }
 
@@ -976,7 +976,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   #piemenualm {
     position: absolute;
     width: 100%;
-    bottom: -15px;
+    bottom: -10px;
     font-size: 0.6rem;
   }
 }
