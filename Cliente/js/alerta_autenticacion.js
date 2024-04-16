@@ -2,6 +2,7 @@
 // Reproduce el sonido Siempre que se utilice esta alerta mandara este audio Solo se necesitan estas 2 lineas
 var audiocorrecto = new Audio("../sonidos/audio/Success.mp3"); /* 1 */
 var audiofail = new Audio("../sonidos/audio/Errorpatricio.mp3"); /* 1 */
+var audioentrada = new Audio("../sonidos/audio/BienvenidaBob.mp3"); /* 1 */
 
 
 // Recupera el valor del parámetro "resultado" de la URL
@@ -32,8 +33,7 @@ if (resultado === "fracaso") {
     text: "Solo alumnos pueden utilizarlo",
   });
 } else if (resultado === "alumno") {
-  audiocorrecto.play(); /* 2 */
-
+  audioentrada.play(); /* 2 */
   Swal.fire({
     icon: "success",
     title: "Para iniciar :",
