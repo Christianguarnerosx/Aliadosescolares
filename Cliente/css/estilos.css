@@ -1478,6 +1478,25 @@ Asi logras evadir lo de position y z index en los elementos*/
   bottom: 15px;
 }
 
+#personajechatia {
+  position: absolute;
+  height: 500px;
+  width: auto;
+  right: -120px;
+  bottom: 150px;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1300px) {
+  #personajechatia {
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
 /* Clases que se ocupan en todos los chats (como son lo mismo, se utilizan las misma) */
 /* Contenedor donde iran imprimiendose los a generados de la entrada de usuario y los que genere la AI gemini*/
 .textareaconversacion {
@@ -1499,7 +1518,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Si las pantallas son como de telefono*/
 @media (max-width: 500px) {
   .textareaconversacion {
-    max-width: 85%; /* Tamaño del textarea sera siempre el mismo (hace que sea un cuadro) no tiene la animacion como de pc*/
+    max-width: 75%; /* Tamaño del textarea sera siempre el mismo (hace que sea un cuadro) no tiene la animacion como de pc*/
     padding-left: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
     padding-right: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
   }
@@ -1508,7 +1527,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Sirve para que el input y el boton sean parte de la misma barra y no esten separados */
 .barrabusqueda {
   margin-bottom: 20px; /* Para que no se vaya para abajo (medio desaparezca) cuando se abre el contenedor del chat */
-  width: 80%; /* Asigna el tamaño de la barra al 80% de la row en la que esta que es el tamaño de todo el contenedor-contenido */
+  max-width: 80%; /* Asigna el tamaño de la barra al 80% de la row en la que esta que es el tamaño de todo el contenedor-contenido */
   height: 50px; /* que tan ancha este la barra a lo alto*/
   background-color: aliceblue; /* Fondo de la barra */
   border-radius: 15px; /* Contornos recortados de la barra */
@@ -1528,7 +1547,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   border: none; /* Estilisa el input y le quita el borde de adentro*/
   margin: 0; /* Elimina los posibles margenes que haya a lo alto izq y der*/
   margin-left: -20px; /* Para que cubra toda la barra al 100 sin este dejara un espacion la barra y saldra (se vera la barra) */
-  width: 90%; /* Ancho segun el ancho de la barra */
+  width: 95%; /* Ancho segun el ancho de la barra */
   height: 100%; /* Ancho segun el ancho de la barra */
   background-color: aliceblue; /* El mismo tono que la barra para que se vean como si fueran uno */
   font-size: 1.8rem; /* Tamaño de las letras que ingresen y del placeholder */
@@ -1537,7 +1556,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* Si las pantallas son como de telefono... Cambiara esto del normal */
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .inputconversacion {
     width: 80%; /* Ancho segun el ancho de la barra */
     font-size: 1.2rem; /* Tamaño de las letras que ingresen y del placeholder */

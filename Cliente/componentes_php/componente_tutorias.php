@@ -59,6 +59,7 @@
                     <h1 hidden id="hijo"><?php include("../../Servidor/funciones_session/session_obtenerhijo.php") ?></h1>
                 </div>
                 <div class="row centrar"> <!-- Fila del chat -->
+                    <img src="" id="personajechatia">
                     <div class="row centrar">
                         <h1 for="textareagemini" class="form-label" id="titulochatia"></h1> <!-- Titulo que se mantiene para el contenedor del chat -->
                         <!-- Contenedor (textareaconversacion) donde va a imprimirse (sdesde js) todos los chats es solo ready -->
@@ -87,6 +88,7 @@
             </div>
         </div>
     </div>
+    <p class="alinear-right espacio-right-m">@<span class="text-m negrita espacio-right-c">GoogleCloud☁️</span></p>
 </div>
 
 <!-- Importamos el js importante: como TIPO MODULE  -->

@@ -63,7 +63,7 @@ function ejecutargemini() {
                 },
             ],
             generationConfig: { /* configuracion de como va a generar respuestas (tipo de respuestas que dara)*/
-                maxOutputTokens: 250, /* Maximo numero de letras */
+                maxOutputTokens: 450, /* Maximo numero de letras */
                 stopSequences: ["Violencia", "Suicidio", "Autolesión", "Drogas", "Medicamentos"], /* Filtro de temas (si ella piensa en generar cosas que tengan que ver con esto, pausa/bloquea la generacion) */
                 temperature: 0.8, /* Calidad de respuestas (largas/complejas) */
                 topP: 0.2, /* Que tan diversas son las respuestas (0.1 - 1) */
@@ -86,18 +86,19 @@ function ejecutargemini() {
         } else if (Tipo_ia === "3") {
             textarea.innerHTML += "<h1 class='alinear-left text-c'>" + " 🤸🏻 Entrenador IA: </h1>";
         } else if (Tipo_ia === "4") {
-            textarea.innerHTML += "<h1 class='alinear-left text-c'>" + " 👩🏻‍⚕️ Nutriologia: </h1>";
+            textarea.innerHTML += "<h1 class='alinear-left text-c'>" + " 👩🏻‍⚕️ NutriologIA: </h1>";
         }
 
         for await (const chunk of result.stream) {
             const chunkText = chunk.text();
 
-            /*Filtor de palabras Detecta los ** y el * del texto que regresa la api de gemini
-             y aplicar formato a negritas (*) y cursivas(*):*/
+            // Suponiendo que chunkText es tu texto sin formato obtenido de alguna fuente
             const textoformato = chunkText
-                .replace(/\*\*/g, "<b>") // negritas
-                .replace(/\*/g, "<i>") // cursiva
-                .replace(/\n\n/g, "<br>"); // Line breaks
+                .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // negritas
+                .replace(/\*(.*?)\*/g, "<i>$1</i>") // cursiva
+                .replace(/(?:^|\n)-\s*(.*?)(?=\n|$)/g, "<li>$1</li>") // viñetas
+                .replace(/(\* .*?)(?=\n\n|$)/g, "$1<br>") // Agregar <br> después de cada elemento de la lista, incluso si hay saltos de línea dentro de los elementos individuales
+                .replace(/\n\n/g, "<br><br>"); // Saltos de línea normales
 
             textarea.innerHTML += textoformato;
             textarea.scrollTop = textarea.scrollHeight;
@@ -121,12 +122,41 @@ function ejecutargemini() {
         console.log("Se insertara la peticion:" + promp);
         console.log("Se insertara ia:" + Tipo_ia);
 
+
         insertarpeticion(promp, Tipo_ia);
 
         const prompmandado = nombreusuario + ": " + promp;
         textarea.style.height = "100vh";
         textarea.innerHTML += "<h1 class='alinear-right text-m espacio-top-c'>" + prompmandado + "</h1>";
         textarea.scrollTop = textarea.scrollHeight;
+    });
+
+    const inputpreguntarenter = document.getElementById('inputpsicologia');
+
+    inputpreguntarenter.addEventListener('keypress', function (event) {
+        // Verificar si la tecla presionada es Enter (código de tecla 13)
+        if (event.keyCode === 13) {
+            const inputpromp = document.getElementById('inputpsicologia');
+
+            const promp = inputpromp.value;
+
+            console.log("Promp obtenido: ", promp);
+            inputpromp.value = ""; /* Ressetea la entrada del input */
+
+            console.log("Por entrar a insertar");
+
+            gemini(promp);
+
+            console.log("Se insertara la peticion:" + promp);
+            console.log("Se insertara ia:" + Tipo_ia);
+
+            insertarpeticion(promp, Tipo_ia);
+
+            const prompmandado = nombreusuario + ": " + promp;
+            textarea.style.height = "100vh";
+            textarea.innerHTML += "<h1 class='alinear-right text-m espacio-top-c'>" + prompmandado + "</h1>";
+            textarea.scrollTop = textarea.scrollHeight;
+        }
     });
 }
 
@@ -140,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const contenedorcards = document.getElementById('contenedorcardsia');
             contenedorcards.style.position = "fixed";
             contenedorcards.style.top = "-100%";
+            contenedorcards.style.zIndex = "-1";
 
             const contenedorchattutoria = document.getElementById('contenedorchattutoria');
             contenedorchattutoria.style.display = "flex";
@@ -166,6 +197,8 @@ document.addEventListener('DOMContentLoaded', function () {
             hijo = document.getElementById('hijo').textContent;
             titulochatia = document.getElementById('titulochatia');
             titulochatia.textContent = "Soy tu " + nombreia;
+
+            mostrarpersonaje(Tipo_ia);
 
             console.log("el usuario se llama: " + nombreusuario);
             console.log("Su hijo se llama: " + hijo);
@@ -306,4 +339,17 @@ function insertarpeticion(prompt, idtutoria) {
             console.log(response);
         }
     });
+}
+
+function mostrarpersonaje(personaje) {
+    const imgpersonaje = document.getElementById('personajechatia');
+    if (personaje == "1") {
+        imgpersonaje.src = "../imagenes/personajes/Tutora.png";
+    } else if (personaje == "2") {
+        imgpersonaje.src = "../imagenes/personajes/Psicologa.png";
+    } else if (personaje == "3") {
+        imgpersonaje.src = "../imagenes/personajes/Entrenador.png";
+    } else if (personaje == "4") {
+        imgpersonaje.src = "../imagenes/personajes/Nutriologa.png";
+    }
 }
