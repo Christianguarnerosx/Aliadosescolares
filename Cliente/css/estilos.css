@@ -1103,6 +1103,24 @@ Asi logras evadir lo de position y z index en los elementos*/
   overflow: hidden;
 }
 
+#personajereportes {
+  position: absolute;
+  height: 90%;
+  bottom: 7.5vh;
+  right: -5vh;
+  z-index: 8;
+}
+
+@media (max-width: 1300px) {
+  #personajereportes {
+    width: 200px;
+    height: auto;
+    inset: auto auto auto auto;
+    bottom: -150px;
+    margin-left: 30px;
+  }
+}
+
 /*Asigna tamaño y posicion a las cards*/
 .cardreporte {
   position: absolute; /*Se utiliza absolute para poder tomara como refrencia el relative y ubicar las cards una sobre otra (con los zindices)*/
@@ -1184,9 +1202,10 @@ Asi logras evadir lo de position y z index en los elementos*/
   height: 60vh;
   cursor: pointer;
   transition: 0.4s ease;
+  z-index: 9;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   /*Asigna a todas las cards/opciones seleccionables en modo telefono un tamaño diferente*/
   .opcion-reporte {
     width: 80px;
@@ -1255,7 +1274,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 /* Para formato movil (mas angosto)*/
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   /*La card/opcion seleccionable sera mas pequeño para cuando sea de movil*/
   .opcion-reporte:hover {
     width: 80px;
