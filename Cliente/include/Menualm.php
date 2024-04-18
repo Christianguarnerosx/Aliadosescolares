@@ -25,7 +25,7 @@
             <h1 class="text-m txt-blanco" id="nombremenualm"> <?php include_once("../../Servidor/funciones_session/session_nombreapa.php") ?> </h1>
         </div>
     </div>
-    <div class="row" id="navmenualm">
+    <div class="row centrar" id="navmenualm">
         <nav class="nav nav-pills flex-column text-g"> <!--Se asigna el tamano de texto dentro del nav (solo afecta a los "a" nav link)-->
             <a class="nav-link" aria-current="page" href="Principalalm.php">Inicio</a>
             <a class="nav-link" aria-current="page" href="Tutoriasalm.php">TutorIAs</a>

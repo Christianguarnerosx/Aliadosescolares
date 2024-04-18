@@ -907,7 +907,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Asigna una posicion fija dentro del contenedor padre que tiene un relative */
 #navmenualm {
   position: absolute;
-  left: 17px;
+  left: 17.5px;
   top: 245px;
 }
 
