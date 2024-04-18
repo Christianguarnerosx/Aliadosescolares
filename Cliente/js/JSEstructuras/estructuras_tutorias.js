@@ -23,14 +23,15 @@ var Tipo_usuario = "";
 var hijo = "";
 var titulochatia = "";
 
-
 let especialidad = "";
 let configgemini = "";
 let rolgemini = "";
+
 const locacion = "Estamos en: México";
 const idioma = "siempre hablar en: español";
 const enfoque = "enfoque: niños de primaria";
 
+const imgpersonaje = document.getElementById('personajechatia');
 
 
 /* (aun no cumple todo su cometido) sirve para que la ia vaya entendiendo la historia del chat, lo que le escriben y lo que va contestando*/
@@ -129,6 +130,8 @@ function ejecutargemini() {
         textarea.style.height = "100vh";
         textarea.innerHTML += "<h1 class='alinear-right text-m espacio-top-c'>" + prompmandado + "</h1>";
         textarea.scrollTop = textarea.scrollHeight;
+
+        imgpersonaje.style.opacity = "1";
     });
 
     const inputpreguntarenter = document.getElementById('inputpsicologia');
@@ -156,6 +159,8 @@ function ejecutargemini() {
             textarea.style.height = "100vh";
             textarea.innerHTML += "<h1 class='alinear-right text-m espacio-top-c'>" + prompmandado + "</h1>";
             textarea.scrollTop = textarea.scrollHeight;
+
+            imgpersonaje.style.opacity = "1";
         }
     });
 }
@@ -171,6 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contenedorcards.style.position = "fixed";
             contenedorcards.style.top = "-100%";
             contenedorcards.style.zIndex = "-1";
+            contenedorcards.style.opacity = "0";
 
             const contenedorchattutoria = document.getElementById('contenedorchattutoria');
             contenedorchattutoria.style.display = "flex";

@@ -764,7 +764,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   position: absolute; /*Se vuelve fixed para que se comporte de manera independiente al contenido*/
   z-index: 23; /* (Zindex mas alto)Se asigna un index 3 para poner encima/enfrente de toda la interfaz y de la columna extras quer tiene un z index 2*/
   right: 16px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
-  top: 9px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
+  top: 1.3vh; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   width: 55px;
   height: 55px;
   background-color: aliceblue;
@@ -1487,6 +1487,8 @@ Asi logras evadir lo de position y z index en los elementos*/
   z-index: 0;
   margin: 0;
   padding: 0;
+  opacity: 0;
+  transition: 0.3s ease;
 }
 
 @media (max-width: 1300px) {
