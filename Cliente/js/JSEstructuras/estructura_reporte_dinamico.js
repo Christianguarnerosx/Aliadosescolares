@@ -249,7 +249,12 @@ document.addEventListener("DOMContentLoaded", function () {
     btnenviarreporte.addEventListener('click', function () {
         iniciarGrabacion();
         animarcard(btnenviarreporte);
-        anuncio.innerHTML = "<div class='' id='pantallagrabando'>";
+
+        const personajereportes = document.getElementById('personajereportes');
+
+        personajereportes.style.opacity = "0";
+
+        anuncio.innerHTML = "<div id='pantallagrabando'>";
         anuncio.innerHTML += "<h1 id='titulopantallagrabando' >Te estoy escuchando🎙️</h1>";
         anuncio.innerHTML += "</div>";
     });

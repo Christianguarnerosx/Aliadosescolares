@@ -1109,6 +1109,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   bottom: 7.5vh;
   right: -5vh;
   z-index: 10;
+  transition: 0.5s ease;
 }
 
 @media (max-width: 1300px) {
@@ -1302,13 +1303,12 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /* Anuncion de la pantalla de espera que dira (esta grabando, te escucho o algo parecido asi) */
 #titulopantallagrabando {
-  position: absolute;
+  position: relative;
   left: 0;
-  bottom: 200px;
+  top: 100px;
   color: aliceblue;
   font-size: 5rem;
   font-weight: bold;
-  text-align: center;
 }
 
 /* Si es telefono el anuncio estara en otro lado, por que si se deja el mismo en telefono se ve movido */
