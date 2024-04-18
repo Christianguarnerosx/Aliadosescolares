@@ -35,7 +35,7 @@
             <!-- boton dezplegable/droptown de... -->
             <div class="btn-group">
                 <a href="Reportealm.php" class="btn nav-link drop-g text-g alinear-left display-f centrar-v decoracion-no c">Aliados</a> <!--Aqui tambien se debe de cambiar el tamano del texto por que al ponerselo al nav solo agarra a los nav-link-->
-                <button type="button" class="btn nav-link btn-primary dropdown-toggle dropdown-toggle-split text-m hoverdrop" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn nav-link dropdown-toggle dropdown-toggle-split text-m hoverdrop" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu text-m menualmdrop"> <!--La clase menualmdrop hace que al abrir los dropdowns los menus dezplegados se vallan mas a la izq y se ubiquen a su lado-->
