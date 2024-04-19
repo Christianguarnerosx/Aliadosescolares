@@ -72,7 +72,7 @@
                     <div class="row centrar"> <!-- Fila de la entrada de texto (busqueda) -->
                         <div class="barrabusqueda espacio-top-c"> <!-- Se utiliza para el fondo de la barra y tener los dos elementos dentro de el (input/btn) -->
                             <!-- Input que obtiene lo que recibe del usuario (se obtiene su contenido con js cuando le den click al boton) -->
-                            <input class="inputconversacion borde-r-c" id="inputpsicologia" type="text" placeholder=" 🔍Preguntame algo" aria-label="">
+                            <input class="inputconversacion borde-r-c" id="inputpsicologia" type="text" placeholder=" 🔍 Preguntame algo" aria-label="">
 
                             <!-- btn que asigna tamaño y posicion en la barra de busqueda -->
                             <button class="btn-transparente hover-btn" id="btnpreguntar">
