@@ -1105,9 +1105,9 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 #personajereportes {
   position: absolute;
-  height: 90%;
-  bottom: 7.5vh;
-  right: -5vh;
+  height: 70%;
+  bottom: 0;
+  right: 0;
   z-index: 10;
   transition: 0.5s ease;
 }
@@ -1367,7 +1367,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   display: flex;
   position: absolute;
   left: 0;
-  top: 18%;
+  top: 13%;
   transition: 1s ease;
 }
 
@@ -1406,8 +1406,8 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* La imagen no aparece pero se establece un lugar para que la animacion de aparecer se haga desde alli y tambien se oculte hacia alla */
 .indicardorcardtutoria {
   position: absolute;
-  top: 300px;
-  left: -120px;
+  top: 1000px;
+  left: 41%;
   height: 70px;
   width: auto;
   opacity: 0;
@@ -1417,13 +1417,30 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Si se sobrepone, se abrira/expandera la card a lo ancho y aplicara estos estilos solo a la imagen personaje*
 /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
 .cardtutoria:hover .indicardorcardtutoria {
-  position: relative;
-  top: -10px; /* Lugar del personaje*/
-  left: -50px;
-  opacity: 1; /* aparacece el personaje*/
-  height: 250px;
+  position: fixed;
+  height: 350px;
   width: auto;
-  margin-right: -45px; /* se utiliza para que el texto este mas a la izq y no se desborde */
+  inset: auto auto auto auto;
+  bottom: 7px; /* Lugar del personaje*/
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1; /* aparacece el personaje*/
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(4px 0px 0px #dafff9); /* Puedes ajustar el tamaño y el color del borde según tus preferencias */
+}
+
+@media (max-width: 700px) {
+  /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
+  .cardtutoria:hover .indicardorcardtutoria {
+    height: 400px;
+    bottom: 10px;
+  }
+}
+
+/* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
+.cardtutoria:hover ~ #subtituloeligetutorias {
+  opacity: 0;
 }
 
 /* La clase que hace que el titulo aparezca vertical y cuando se expamnda/abra se ponga horizontal*/
@@ -1588,7 +1605,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
-.creditogoogleia{
+.creditogoogleia {
   font-size: 0.5rem;
 }
 

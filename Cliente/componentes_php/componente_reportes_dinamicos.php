@@ -1,9 +1,9 @@
 <!-- componenete importable (Se imporrta donde se requiera toda la estrcutura de reportes reportes)-->
 <div class="container-fluid centrar" id="contenedor-tarjetas">
-    <img src="../imagenes/personajes/Detective.png" id="personajereportes">
-
+    
     <!-- Card 1 donde se imprimiran con php todos los tipos de reportes y el usu seleccionara alguno -->
     <div class="cardreporte alinear-center centrar" id="card1">
+        <img src="../imagenes/personajes/Detective.png" id="personajereportes">
         <div class="row centrar alinear-center">
             <?Php
             include("../../Servidor/Conexion.php");  /* Para que se importe bien la conexion es necesario que sea SOLO include() porqueeeee si utilizas include_once() marca error*/

@@ -39,10 +39,7 @@
                 </div>
             </div>
 
-            <!-- Pie/titulo  -->
-            <div class="row centrar espacio-top-c alinear-center">
-                <h1 class="text-c">Elige una TutorIA</h1>
-            </div>
+            <h1 id="subtituloeligetutorias" class="alinear-center text-c espacio-top-c">Elige una TutorIA</h1>
         </div>
 
 
