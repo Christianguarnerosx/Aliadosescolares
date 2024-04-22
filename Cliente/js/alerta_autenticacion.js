@@ -36,7 +36,7 @@ if (resultado === "fracaso") {
   audioentrada.play(); /* 2 */
   Swal.fire({
     icon: "success",
-    title: "Para iniciar :",
-    text: "Selecciona ",
+    title: "Para comenzar",
+    text: "Presiona iniciar",
   });
 }

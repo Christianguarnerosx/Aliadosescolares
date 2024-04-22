@@ -1424,7 +1424,9 @@ Asi logras evadir lo de position y z index en los elementos*/
   opacity: 1; /* aparacece el personaje*/
   z-index: 2;
   pointer-events: none;
-  filter: drop-shadow(4px 0px 0px #dafff9); /* Puedes ajustar el tamaño y el color del borde según tus preferencias */
+  filter: drop-shadow(
+    4px 0px 0px #dafff9
+  ); /* Puedes ajustar el tamaño y el color del borde según tus preferencias */
 }
 
 @media (max-width: 700px) {
@@ -1679,34 +1681,68 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* --------------------------------------------------------------- Reportes info ---------------------------- */
 /* Ubica a la tabla dentro del contenedor padre (el cuadro blanco) lo centramos y le asignamos un espacio arriba
 Asi como un tamaño de alto determinado opara que se pueda realizar los scroll al desbordarse de ese tamaño */
-#tablareportes {
+.contenedortablareportes {
   position: absolute;
-  left: 12px;
-  top: 54px;
+  margin-left: 1px;
+  left: 0;
   width: 100%;
-  height: 90%;
-  padding: 5px;
-  padding-left: 55px;
-  padding-right: 55px;
+  height: 89vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-left: 60px;
+  padding-right: 40px;
+  scroll-behavior: smooth;
+}
+
+/* nav reportes docentes */
+#navreportesdocentes {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+#navreportesadministradores {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+/* Si es para moviles que tenga menos espacio a lo alto y menos espacio a lo ancho izq y der */
+@media (max-width: 500px) {
+  .contenedortablareportes {
+    top: 22px;
+    width: 100%;
+    padding-left: 28px;
+  }
+}
+
+.tablareportes {
+  height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* Si es para moviles que tenga menos espacio a lo alto y menos espacio a lo ancho izq y der */
-@media (max-width: 800px) {
-  #tablareportes {
-    top: 44px;
-    padding-left: 35px;
-    padding-right: 30px;
-  }
+#tablamisreportes {
+  width: 100%;
+  background-color: #1fc2a7;
+}
+
+#tablareportesalumnos {
+  width: 100%;
+  background-color: #1fc2a7;
 }
 
 /* Hace que la tabla se mantenga aun y cuando los registros bajen y no se desaparezca al hacer scroll asi como asignarle un color de fondo */
 .tablatituloreportes {
   position: sticky;
-  top: -7px;
-  height: 40px;
+  top: 0;
+  height: 30px;
   z-index: 2;
+  margin-left: 1px;
   background-color: #1fc2a7;
   color: aliceblue;
 }
@@ -1751,4 +1787,67 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 /* Desaparece el espan que tiene la letra del boton para que solo aparezca el content asignado en el hover after*/
 #btnimprimirreportes:hover #spancontenidobtnreportes {
   display: none;
+}
+
+/* Cards infogeneral admin */
+.cardadmininfo {
+  width: 50%;
+  background-color: rgba(178, 190, 230, 0.897);
+  color: aliceblue;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 700px) {
+  /* Cards infogeneral admin */
+  .cardadmininfo {
+    width: 500px;
+    margin: 10px;
+  }
+}
+
+.selectinfo {
+  width: 100px;
+  height: 40px;
+  background-color: aliceblue;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+#alumnostopreportes {
+  padding-bottom: 30vh;
+}
+
+/* Alumnos target */
+.cardalumnotarget {
+  height: 500px;
+  width: 300px;
+  background-color: #c21f1f;
+}
+
+.cardtopalumnostarget {
+  background-color: #1fc2a7;
+  height: 300px;
+  width: 180px;
+  margin: 5px;
+}
+
+#herramientasusadas{
+  height: 500px;
+  width: 98.5%;
+  margin-top: 50px;
+  background-color: #ffbcbc;
+}
+
+.cardherramientasusadas{
+  width: 30%;
+}
+
+@media (max-width:500px) {
+  #herramientasusadas{
+    height: 700px;
+  }
+
+  .cardherramientasusadas{
+    width: 100%;
+  }
 }

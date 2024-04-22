@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3310
--- Generation Time: Apr 08, 2024 at 03:09 AM
+-- Generation Time: Apr 22, 2024 at 08:39 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -56,8 +56,8 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`id_alumno`, `id_usuario`, `id_grado`, `id_grupo`, `id_padre`, `id_docente`) VALUES
 (1, 12, 1, 1, 1, 1),
-(2, 13, 1, 1, 2, 1),
-(3, 14, 1, 1, 1, 1),
+(2, 13, 1, 3, 2, 1),
+(3, 14, 1, 2, 1, 1),
 (4, 15, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
@@ -251,16 +251,13 @@ CREATE TABLE `peticiones` (
 --
 
 INSERT INTO `peticiones` (`id_peticion`, `id_tipo_ia`, `id_usuario`, `consulta`, `fecha`) VALUES
-(2, 1, 12, 'Que tal viejo', '2024-04-04 20:28:52'),
-(3, 1, 12, 'Que pasa hermano', '2024-04-04 20:40:29'),
-(4, 1, 12, 'Que ondaaa', '2024-04-04 20:40:54'),
-(5, 2, 12, 'Que pasa mai', '2024-04-04 20:41:19'),
-(6, 2, 12, 'Que hubole', '2024-04-04 20:41:46'),
-(7, 2, 12, 'Nunca se olvida de lo real', '2024-04-04 20:42:02'),
-(8, 4, 12, 'La favorita de dios fui shooo', '2024-04-04 20:42:29'),
-(9, 3, 12, 'Por que personas como ella ya no quedan', '2024-04-04 20:42:58'),
-(10, 3, 12, 'Nunca se olvida de lo real', '2024-04-04 20:43:20'),
-(11, 4, 12, 'Todos quieren plata otros quiren fama', '2024-04-04 20:44:08');
+(51, 1, 12, 'Bien como puedes ayudarme', '2024-04-16 06:07:10'),
+(52, 2, 12, 'Que ondaaaa', '2024-04-16 06:07:40'),
+(53, 2, 12, 'Hola como andas', '2024-04-16 06:08:04'),
+(54, 2, 12, 'Como andas', '2024-04-16 06:08:14'),
+(122, 1, 13, 'Hola', '2024-04-22 01:15:15'),
+(123, 3, 13, 'hoalalalal', '2024-04-22 01:49:35'),
+(124, 4, 14, 'Como bajar de peso', '2024-04-22 05:12:32');
 
 -- --------------------------------------------------------
 
@@ -290,7 +287,7 @@ CREATE TABLE `reportes` (
   `fecha_reporte` datetime DEFAULT NULL,
   `id_sensacion` int(11) NOT NULL,
   `texto_reporte` text DEFAULT NULL,
-  `audio_reporte` varchar(60) DEFAULT NULL
+  `audio_reporte` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -301,11 +298,19 @@ INSERT INTO `reportes` (`id_reporte`, `id_tipo_reporte`, `id_usuario`, `id_usuar
 (3, 1, 1, 13, '2024-03-18 00:00:00', 4, NULL, NULL),
 (107, 1, 12, 9, '2024-03-31 17:47:55', 3, NULL, NULL),
 (108, 1, 12, 15, '2024-03-31 18:11:27', 3, NULL, NULL),
-(109, 1, 12, 13, '2024-04-05 15:05:41', 4, NULL, NULL),
+(109, 1, 12, 14, '2024-04-05 15:05:41', 4, NULL, NULL),
 (110, 2, 12, 15, '2024-04-05 15:06:01', 2, 'Le pego a un niño en silla de ruedas', NULL),
-(111, 3, 12, 13, '2024-04-05 15:06:46', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_12_el_2024-04-05 1'),
-(112, 2, 12, 13, '2024-04-08 01:23:38', 2, 'Me cae mal', NULL),
-(113, 2, 12, 2, '2024-04-08 01:57:48', 2, 'Me dijo que soy su hijo y no soy su hijo ', NULL);
+(112, 2, 12, 14, '2024-04-08 01:23:38', 2, 'Me cae mal', NULL),
+(113, 2, 12, 2, '2024-04-08 01:57:48', 2, 'Me dijo que soy su hijo y no soy su hijo ', NULL),
+(139, 1, 13, 14, '2024-04-20 21:21:28', 1, NULL, NULL),
+(140, 1, 9, 14, '2024-04-20 21:23:48', 5, NULL, NULL),
+(142, 2, 14, 14, '2024-04-20 21:37:20', 4, 'Me cae mal y lo quiero golpear', NULL),
+(143, 1, 2, 12, '2024-04-21 06:52:53', 2, NULL, NULL),
+(144, 1, 12, 2, '2024-04-21 23:53:19', 1, NULL, NULL),
+(145, 1, 12, 2, '2024-04-21 23:53:19', 1, NULL, NULL),
+(146, 1, 12, 2, '2024-04-21 23:53:34', 4, NULL, NULL),
+(147, 1, 12, 2, '2024-04-21 23:53:34', 4, NULL, NULL),
+(148, 3, 1, 2, '2024-04-22 08:36:38', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_1_el_2024-04-22 08_36_38.mp3');
 
 -- --------------------------------------------------------
 
@@ -440,14 +445,14 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidop`, `apellidom`, `correo`, `telefono`, `contraseña`, `id_estatus`, `id_tipo_usuario`, `avatar`, `fondo`) VALUES
 (1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-bmobano.gif'),
-(2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '', ''),
+(2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
 (3, 'Ivan', 'Sanchez', 'Juarez', 'Ivan@gmail.com', '2461234588', '12345678', 2, 2, '', ''),
-(4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '', ''),
+(4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
 (6, 'Raymundo', 'Montiel', 'Lira', 'ray@gmail.com', '2467854849', '12345678', 2, 2, '', ''),
 (9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
-(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-gato.gif', ''),
+(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', ''),
 (11, 'Moises', 'Guarneros', 'Ramirez', 'moi@gmail.com', '2481754645', '12345678', 2, 3, '', ''),
-(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-bmoranchero.gif', '../imagenes/fondos/fondo-gusano.gif'),
+(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-gusano.gif'),
 (13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
 (14, 'Daniel', 'Guarneros', 'Martinez', 'guar98953@gmail.com', '2441875082', 'tetenegra', 1, 4, '', ''),
 (15, 'Uriel', 'Cabello', 'Sosa', 'urisosa@gmail.com', '2485084578', '12345678', 1, 4, '', '');
@@ -670,7 +675,7 @@ ALTER TABLE `periodos`
 -- AUTO_INCREMENT for table `peticiones`
 --
 ALTER TABLE `peticiones`
-  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `proyectos`
@@ -682,7 +687,7 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT for table `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
 
 --
 -- AUTO_INCREMENT for table `sensaciones`
@@ -712,7 +717,7 @@ ALTER TABLE `tipo_reportes`
 -- AUTO_INCREMENT for table `tipo_usuarios`
 --
 ALTER TABLE `tipo_usuarios`
-  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `usuarios`

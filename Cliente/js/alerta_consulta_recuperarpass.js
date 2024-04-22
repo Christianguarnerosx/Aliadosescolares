@@ -7,13 +7,13 @@ const resultado = urlParams.get("resultado");
 if (resultado === "exito") {
   Swal.fire({
     icon: "success",
-    title: "SIUUUU 😎",
-    text: "Envie tu pass a tu correo crack ",
+    title: "Listo! 😎",
+    text: "Envie tu pass a tu correo crack",
   });
 } else if (resultado === "error") {
   Swal.fire({
     icon: "error",
-    title: "NOUUU",
+    title: "NOOO",
     text: "No pude enviar el correo",
   });
 } else if (resultado === "fracaso") {

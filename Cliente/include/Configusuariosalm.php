@@ -30,7 +30,7 @@
                         <h1 class="text-g"><img src="../imagenes/iconos/fondoblanco.png" alt="">Fondo</h1>
                     </a>
                     <a href="" id="confiapodoalm" class="opcionconfigusu centrar decoracion-no txt-blanco hover-btn">
-                        <h1 class="text-g"><img src="../imagenes/iconos/fondoblanco.png" alt="">Tema</h1>
+                        <h1 class="text-g"><img src="../imagenes/iconos/tema.png" alt="">Tema</h1>
                     </a>
                 </div>
                 <div class="row">
