@@ -171,24 +171,6 @@
                             <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
                         </td>
                     </tr>";
-                                echo "<tr class='filatablareportes'>
-                        <td> $nombrealumno </td>
-                        <td> <img class='imagentablareportes' src='$imagensensacion' alt=''>  $contenido </td>
-                        <td> $nombretiporeporte </td>
-                        <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
-                        </td>
-                    </tr>";
-                                echo "<tr class='filatablareportes'>
-                        <td> $nombrealumno </td>
-                        <td> <img class='imagentablareportes' src='$imagensensacion' alt=''>  $contenido </td>
-                        <td> $nombretiporeporte </td>
-                        <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
-                        </td>
-                    </tr>";
                             } else if ($tiporeporte == 2) { /* Si es tipo texto el contenido sera un texto simple */
                                 $contenido = $row['texto_reporte'];
                                 echo "<tr class='filatablareportes'>
@@ -261,7 +243,7 @@
                 </div>
 
                 <div class="row centrar espacio-top-g alinear-center" id="alumnostopreportes">
-                    <h1> Top 3 alumnos mas reportados </h1>
+                    <h1 class="espacio-top-c"> Top 3 alumnos mas reportados </h1>
                     <?php
                     $query4 = "SELECT r.id_usuario_reportado, 
                                 COUNT(id_usuario_reportado) AS numreportes,

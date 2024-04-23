@@ -4,7 +4,7 @@ function Fondoseleccionado(rutaFondo) {
     Swal.fire({
         //Se crea/muestra una nueva ventana de confirmacion de sweet alert
         title: "¿Estás seguro de elegir este Fondo?", //titulo
-        text: 'Presiona "SEEEE" para confirmar tu selección', //cuerpo
+        text: 'Presiona "Aceptar" para confirmar tu selección', //cuerpo
         icon: "question", //icono
         showCancelButton: true, //¿Quieres boton de cancelar? verdadero
         confirmButtonText: "Aceptar", // Cuerpo de el boton de confirmacion

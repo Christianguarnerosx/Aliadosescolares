@@ -4,10 +4,10 @@ function Imagenseleccionada(rutaAvatar) {
   Swal.fire({
     //Se crea/muestra una nueva ventana de confirmacion de sweet alert
     title: "¿Estás seguro de elegir este avatar?", //titulo
-    text: 'Presiona "SIUU" para confirmar tu selección', //cuerpo
+    text: 'Presiona "Si" para confirmar tu selección', //cuerpo
     icon: "question", //icono
     showCancelButton: true, //¿Quieres boton de cancelar? verdadero
-    confirmButtonText: "SIUU", // Cuerpo de el boton de confirmacion
+    confirmButtonText: "SI", // Cuerpo de el boton de confirmacion
     cancelButtonText: "Cancelar", //cuerpo del boton de cancelar
   }).then((result) => {
     //Se espera la respuesta del uasuario con .then
