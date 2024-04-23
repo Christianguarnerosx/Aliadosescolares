@@ -21,12 +21,12 @@
 
 <body> <!--Se utiliza el contenedor para darle un fondo de imagen-->
     <div class="container-fluid fondo contenedor-iniciodinamico centrar">
-        <section class="cuadro-h blanco-transparente centrar">
+        <section class="cuadro-h blanco-transparente borde-r-c   centrar">
             <div class="row">
                 <div class="col">
                     <div class="row espacio-top-m alinear-center">
                         <div class="col">
-                            <img src="../imagenes/logos/logoaliadosvertical.gif" class="logotopleft">
+                            <img src="../imagenes/logos/logoaliadoshorizontal.gif" class="logotopleft">
                             <h1 class="titulo-m"><span class="text-m">Hola </span><?php include_once("../../Servidor/funciones_session/session_nombreapa.php"); ?> <!--Manda a el nombre que se obtiene por la variable session--></h1>
                             <span class="text-m espacio-top-m">Presiona el boton para iniciar</span>
                         </div>

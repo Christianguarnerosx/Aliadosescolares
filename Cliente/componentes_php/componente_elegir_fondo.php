@@ -8,5 +8,5 @@
         <img class="fondo-elegir espacio-top-c" src="../imagenes/fondos/fondotronquitos.gif" alt="" onclick="Fondoseleccionado('../imagenes/fondos/fondotronquitos.gif')">
         <img class="fondo-elegir espacio-top-c" src="../imagenes/fondos/fondo-zen.gif" alt="" onclick="Fondoseleccionado('../imagenes/fondos/fondo-zen.gif')">
         <img class="fondo-elegir espacio-top-c" src="../imagenes/fondos/fondo-bmobaraba.gif" alt="" onclick="Fondoseleccionado('../imagenes/fondos/fondo-bmobaraba.gif')">
-        <h1 class="fondo-elegir espacio-top-c" onclick="Fondoseleccionado('')"> Sin fondo </h1>
+        <h1 class="fondo-elegir espacio-top-c txt-blanco" onclick="Fondoseleccionado('')"> Sin fondo </h1>
     </div>

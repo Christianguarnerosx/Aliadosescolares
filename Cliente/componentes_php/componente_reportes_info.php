@@ -339,6 +339,7 @@
     </div>
 
     <div class="row centrar" id="herramientasusadas">
+        <h1 class="text-g txt-blanco alinear-center"> Uso de toda la escuela</h1>
         <div class="cardherramientasusadas">
             <h1 class="text-m txt-blanco alinear-center"> Utilización Tutorias </h1>
             <canvas id="herramientapeticionia"></canvas>

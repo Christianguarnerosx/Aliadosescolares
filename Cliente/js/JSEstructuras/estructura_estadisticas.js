@@ -17,8 +17,8 @@ selectgrados.addEventListener('change', function () {
             const gradopeticiontitulo = document.getElementById('gradopeticioniainfo');
             const gradoreportetitulo = document.getElementById('gradoreporteiainfo');
 
-            gradopeticiontitulo.textContent = "Peticiones totales de los " + gradoseleccionado + " grados";
-            gradoreportetitulo.textContent = "Reportes totales de los " + gradoseleccionado + " grados";
+            gradopeticiontitulo.textContent = "Peticiones de " + gradoseleccionado + " grados";
+            gradoreportetitulo.textContent = "Reportes de " + gradoseleccionado + " grados";
 
             if (response && response.length > 0) {
                 var numeropeticiones = [];
@@ -40,7 +40,7 @@ selectgrados.addEventListener('change', function () {
                 const data = {
                     labels: labels,
                     datasets: [{
-                        label: 'Peticiones IA por grupo',
+                        label: 'Numero peticiones IA',
                         data: [numeropeticiones[0], numeropeticiones[1], numeropeticiones[2]],
                         backgroundColor: [
                             'rgba(153, 102, 255, 0.2)',
@@ -71,6 +71,14 @@ selectgrados.addEventListener('change', function () {
                         scales: {
                             y: {
                                 beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    // Cambia el color de los labels aquí
+                                    color: 'aliceblue'
+                                }
                             }
                         }
                     },
@@ -121,7 +129,7 @@ selectgrados.addEventListener('change', function () {
                 const data2 = {
                     labels: labels2,
                     datasets: [{
-                        label: 'Reportes generados por grupo',
+                        label: 'Numero de reportes',
                         data: [numeroreportes[0], numeroreportes[1], numeroreportes[2]],
                         backgroundColor: [
                             'rgba(153, 102, 255, 0.2)',
@@ -152,6 +160,14 @@ selectgrados.addEventListener('change', function () {
                         scales: {
                             y: {
                                 beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    // Cambia el color de los labels aquí
+                                    color: 'aliceblue'
+                                }
                             }
                         }
                     },
@@ -210,7 +226,7 @@ $.ajax({
                     data: [numeropeticionesia[0], numeropeticionesia[1], numeropeticionesia[2], numeropeticionesia[2]],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
-                        'rgb(153, 202, 100)',
+                        'rgba(58, 255, 145, 0.8)',
                         'rgb(54, 162, 235)',
                         'rgb(255, 205, 86)'
                     ],
@@ -221,6 +237,16 @@ $.ajax({
             const config3 = {
                 type: 'pie',
                 data: data3,
+                options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                // Cambia el color de los labels aquí
+                                color: 'aliceblue'
+                            }
+                        }
+                    }
+                }
             };
 
             // Obtener el contexto del canvas
@@ -284,6 +310,16 @@ $.ajax({
             const config4 = {
                 type: 'pie',
                 data: data4,
+                options: {
+                    plugins: {
+                        legend: {
+                            labels: {
+                                // Cambia el color de los labels aquí
+                                color: 'aliceblue'
+                            }
+                        }
+                    }
+                }
             };
 
             // Obtener el contexto del canvas
