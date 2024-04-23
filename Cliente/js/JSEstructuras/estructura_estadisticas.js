@@ -273,10 +273,9 @@ $.ajax({
                     label: 'Reportes',
                     data: [numeroreportes[0], numeroreportes[1], numeroreportes[2]],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(153, 202, 100)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
+                        'rgba(58, 255, 145, 0.8)',
+                        'rgba(78, 40, 255, 0.8)',
+                        'rgba(255, 0, 66, 0.81)'
                     ],
                     hoverOffset: 4
                 }]

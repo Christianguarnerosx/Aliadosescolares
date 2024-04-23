@@ -1792,7 +1792,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 /* Cards infogeneral admin */
 .cardadmininfo {
   width: 50%;
-  background-color: rgba(178, 190, 230, 0.897);
+  background-color: #9385d7a2;
   color: aliceblue;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1835,7 +1835,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   height: 500px;
   width: 98.5%;
   margin-top: 50px;
-  background-color: #ffbcbc;
+  background-color: #4277c6c5;
 }
 
 .cardherramientasusadas{
