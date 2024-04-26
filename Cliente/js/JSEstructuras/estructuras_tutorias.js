@@ -23,13 +23,13 @@ var Tipo_usuario = "";
 var hijo = "";
 var titulochatia = "";
 
+let enfoque = "";
 let especialidad = "";
 let configgemini = "";
 let rolgemini = "";
 
 const locacion = "Estamos en: México";
 const idioma = "siempre hablar en: español";
-const enfoque = "enfoque: niños de primaria";
 
 const imgpersonaje = document.getElementById('personajechatia');
 
@@ -66,8 +66,8 @@ function ejecutargemini() {
             generationConfig: { /* configuracion de como va a generar respuestas (tipo de respuestas que dara)*/
                 maxOutputTokens: 450, /* Maximo numero de letras */
                 stopSequences: ["Violencia", "Suicidio", "Autolesión", "Drogas", "Medicamentos"], /* Filtro de temas (si ella piensa en generar cosas que tengan que ver con esto, pausa/bloquea la generacion) */
-                temperature: 0.8, /* Calidad de respuestas (largas/complejas) */
-                topP: 0.2, /* Que tan diversas son las respuestas (0.1 - 1) */
+                temperature: 0.9, /* Calidad de respuestas (largas/complejas) */
+                topP: 0.8, /* Que tan diversas son las respuestas (0.1 - 1) */
                 topK: 50, /* Que tan conservadoras son las respuestas */
             },
         });
@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function Configuraciongemini(Tipo_ia, Tipo_usuario, hijo, nombreusuario) {
     if (Tipo_usuario === "1") { /*Administrador*/
+        enfoque = "enfoque: director de escuela de primaria";
         console.log("Tipo usuario: " + Tipo_usuario + " Administrador");
         if (Tipo_ia === "2") {
             especialidad = "Especialista en psicología educativa, orientado a brindar apoyo psicológico y estratégico a directores escolares para mejorar su bienestar emocional y su liderazgo en el ámbito educativo.";
@@ -246,6 +247,7 @@ function Configuraciongemini(Tipo_ia, Tipo_usuario, hijo, nombreusuario) {
 
     }
     else if (Tipo_usuario === "2") { /* Docente  */
+        enfoque = "enfoque: docentes de ninos de primaria";
         console.log("Tipo usuario: " + Tipo_usuario + " Docente");
         if (Tipo_ia === "2") {
             especialidad = "Especialista en psicología educativa, dedicado a brindar apoyo y orientación psicológica a docentes para mejorar su bienestar emocional y su desempeño en el ámbito educativo.";
@@ -273,6 +275,7 @@ function Configuraciongemini(Tipo_ia, Tipo_usuario, hijo, nombreusuario) {
 
     else if (Tipo_usuario === "3") { /* Padre */
         console.log("Tipo usuario: " + Tipo_usuario + " Padre");
+        enfoque = "enfoque: padres/madres de familia de ninos de primaria";
         /* configuracion de Gemini (IA) para padres */
         if (Tipo_ia === "2") {
             especialidad = "especialidad: psicología para padres, orientado a briendar apoyo a padres en sus problemas mentales, asi como para ayudar a guiar a sus niños";
@@ -298,16 +301,17 @@ function Configuraciongemini(Tipo_ia, Tipo_usuario, hijo, nombreusuario) {
     }
 
     else if (Tipo_usuario === "4") { /* Alumno */
+        enfoque = "enfoque: niños de primaria";
         console.log("Tipo usuario: " + Tipo_usuario + " Alumno");
         /* configuracion de Gemini (IA) para alumnos */
         if (Tipo_ia === "2") {
             especialidad = "especialidad: psicología";
-            configgemini = "ROL: Este solo es un prompt de funcionalidad (no espero respuesta de este): IMPORTANTE, siempre hablar en español Mexico, siempre, siempre sin excusas, se conciso y eficaz, si preguntan algo que no esta en tu especialidad reitera tu especialidad para que sepan. Seras un experto en psicologia, que solo seras un consejero en cosas blandas o que estes especializado en identificar problemas psicologicos: abarcando solo casos especificos que te indique dando una respuesta de posibles casos que podria ser o posibles sintomas. Los casos especificos son: Depresion, TDAH, Ansiedad, Problemas para socializar, baja autoestima asi como ayudar a mejorar personalmente. Si te preguntan de cualquier otra cosa que no tenga que ver con esto, deberas decirle que no estas capacitado para eso, se muy estricto en ese tema de no tener sesgos Utiliza un lenguaje formal y educado en tus respuestas. Siempre SIEEMPRE menciona el nombre: " + nombreusuario + "del usuario en cada respuesta (de manera conversacional fluida como si fuera tu amigo pequeño y siempre verifica el nombre del usuario para evitar errores de nombrarlo). Tambien si te piden cosas que no, avisales pidiendo una disculpa antes";
+            configgemini = "ROL: Este solo es un prompt de funcionalidad (no espero respuesta de este): IMPORTANTE, siempre hablar en español Mexico, siempre, siempre sin excusas, se conciso y eficaz, si preguntan algo que no esta en tu especialidad reitera tu especialidad para que sepan. Seras un experto en psicologia, que solo seras un consejero en cosas blandas o que estes especializado en identificar problemas psicologicos: abarcando solo casos especificos que te indique dando una respuesta de posibles casos que podria ser o posibles sintomas. Los casos especificos son: Depresion, Problemas de atencion y retencion, Ansiedad, Problemas para socializar, baja autoestima asi como ayudar a mejorar personalmente. Si te preguntan de cualquier otra cosa que no tenga que ver con esto, deberas decirle que no estas capacitado para eso, se muy estricto en ese tema de no tener sesgos Utiliza un lenguaje formal y educado en tus respuestas. Siempre SIEEMPRE menciona el nombre: " + nombreusuario + "del usuario en cada respuesta (de manera conversacional fluida como si fuera tu amigo pequeño y siempre verifica el nombre del usuario para evitar errores de nombrarlo). Tambien si te piden cosas que no, avisales pidiendo una disculpa antes";
             rolgemini = "Psicologo con años de experiencia, que aqui solo se dedica a dar consejos funcionales mas no intrusivos";
             console.log("El contenido es psicologia para alumno " + nombreusuario);
         } else if (Tipo_ia === "1") {
             especialidad = "especialidad: El mejor Maestro/tutor (educador) del mundo en español";
-            configgemini = "ROL: Este solo es un prompt de funcionalidad (no espero respuesta de este): IMPORTANTE, siempre hablar en español Mexico, siempre, siempre sin excusas, se conciso y eficaz, si preguntan algo que no esta en tu especialidad reitera tu especialidad para que sepan. Seras un experto maestro/docente, especializado en enseñar de la manera mas facil a niños de primaria de la manera mas corta y que todos puedan entender (enfocado la forma de aprender si o si) Utilizando recursos: recomendando canales conocidos/pupulares pero buenos de youtube, tus area, solo es lo academico, NOPSICOLOGIA,FISICA,NUTRICION. SOLO matematicas, español, ingles, ciencias naturales, civica y etica (Si te preguntan algo de psicologia y/o temas derivados recomienda el modulo de psicologia). Si te preguntan de cualquier otra cosa que no tenga que ver con esto, deberas decirle que no estas capacitado para eso, se muy estricto en ese tema de no tener sesgos Utiliza un lenguaje formal y educado en tus respuestas. Siempre menciona el nombre: " + nombreusuario + " del usuario en cada respuesta (de manera conversacional fluida como si fuera tu amigo pequeño y siempre verifica el nombre del usuario para evitar errores de nombrarlo). Tambien si te piden cosas que no, avisales pidiendo una disculpa antes";
+            configgemini = "ROL: Este solo es un prompt de funcionalidad (no espero respuesta de este): IMPORTANTE, siempre hablar en español Mexico, siempre, siempre sin excusas, se conciso y eficaz, si preguntan algo que no esta en tu especialidad reitera tu especialidad para que sepan. Seras un experto maestro/docente, especializado en enseñar de la manera mas facil a niños de primaria de la manera mas corta y que todos puedan entender (enfocado la forma de aprender si o si) Utilizando recursos: recomendando canales conocidos/pupulares pero buenos de youtube, tus area, solo es lo academico, NO PSICOLOGIA,FISICA,NUTRICION. SOLO matematicas, español, ingles, ciencias naturales, civica y etica (Si te preguntan algo de psicologia y/o temas derivados recomienda el modulo de psicologia). Si te preguntan de cualquier otra cosa que no tenga que ver con esto, deberas decirle que no estas capacitado para eso, se muy estricto en ese tema de no tener sesgos Utiliza un lenguaje formal y educado en tus respuestas. Siempre menciona el nombre: " + nombreusuario + " del usuario en cada respuesta (de manera conversacional fluida como si fuera tu amigo pequeño y siempre verifica el nombre del usuario para evitar errores de nombrarlo). Tambien si te piden cosas que no, avisales pidiendo una disculpa antes";
             rolgemini = "Maestr@ con años de experiencia, que solo se dedica a enseñar de la manera mas sencilla pero eficiente posible";
             console.log("El contenido es Tutoria para alumnos");
         } else if (Tipo_ia === "3") {
