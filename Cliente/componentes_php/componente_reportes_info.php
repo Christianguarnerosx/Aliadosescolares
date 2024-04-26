@@ -299,7 +299,7 @@
                     <a class="nav-link" href="#alumnotarget" id=""> Alumno Target </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#alumnostopreportes" id=""> Mas reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                    <a class="nav-link" href="#alumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                 </li>
             </ul>
         </div>
@@ -351,7 +351,7 @@
     </div>
 
     <div class="row centrar espacio-top-g alinear-center" id="alumnostopreportes">
-        <h1> Top 5 mas reportados de la escuela</h1>
+        <h1> Top 5 más reportados de la escuela</h1>
         <?php
             $query4 = "SELECT r.id_usuario_reportado, 
                                 COUNT(id_usuario_reportado) AS numreportes,
@@ -418,7 +418,7 @@
                         <a class="nav-link" href="#herramientasusadas" id=""> Tipos herramientas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#alumnostopreportes" id=""> Mas reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                        <a class="nav-link" href="#alumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                 </ul>
             </div>

@@ -31,7 +31,7 @@ session_start();
                         <br>
                         <span class="text-m">Escoge un vatar</span>
                         <br>
-                        <span class="text-c">(No te preocupes mas adelante podras cambiarlo)</span>
+                        <span class="text-c">(Más adelante podrás cambiarlo)</span>
                     </h1>
                 </div>
                 <div class="col-7 scroll-y centrar">

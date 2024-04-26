@@ -23,7 +23,7 @@
                     <div class="row alinear-center">
                         <div class="col">
                             <img src="../imagenes/logos/logoaliadosvertical.gif" class="logo-m">
-                            <h1 class="text-m espacio-top-c">Bienvenid@, inicia sesion</h1>
+                            <h1 class="text-m espacio-top-c">Bienvenide, inicia sesión</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -32,7 +32,7 @@
                             <form action="../../Servidor/autenticar.php" method="POST"> <!--Manda a el back 2 parametros 1(correo o id) 2(contraseña)-->
                                 <div class="form-floating mb-2 input-g">
                                     <input type="text" class="form-control text-c" id="floatingInput" name="usuario" placeholder="name@example.com">
-                                    <label for="floatingInput">Correo/ID</label> <!--Se manda a el back con el name del input-->
+                                    <label for="floatingInput">ID ó Correo</label> <!--Se manda a el back con el name del input-->
                                 </div>
                                 <div class="form-floating input-g">
                                     <input type="password" class="form-control text-c" id="floatingPassword" name="contraseña" placeholder="Password">

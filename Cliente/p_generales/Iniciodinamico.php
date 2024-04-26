@@ -28,7 +28,7 @@
                         <div class="col">
                             <img src="../imagenes/logos/logoaliadoshorizontal.gif" class="logotopleft">
                             <h1 class="titulo-m"><span class="text-m">Hola </span><?php include_once("../../Servidor/funciones_session/session_nombreapa.php"); ?> <!--Manda a el nombre que se obtiene por la variable session--></h1>
-                            <span class="text-m espacio-top-m">Presiona el boton para iniciar</span>
+                            <span class="text-m espacio-top-m">Presiona el botón para iniciar</span>
                         </div>
                     </div>
                     <div class="row espacio-top-c">

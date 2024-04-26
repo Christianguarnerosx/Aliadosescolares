@@ -53,11 +53,11 @@
     <div class="contenedorstacksdesarrollo centrar" id="filacontenedor2">
         <div class="row centrar alinear-center">
             <h1 class="titulo-g" id="contadorreportes">0</h1> <!-- Con js y ajax obtenemos los reportes y los vamos imprimiendo en este h1 -->
-            <h1>Numero de reportes</h1>
+            <h1>Número de reportes</h1>
         </div>
         <div class="row centrar alinear-center">
             <h1 class="titulo-g" id="contadorpeticiones">0</h1> <!-- Con js y ajax obtenemos los reportes y los vamos imprimiendo en este h1 -->
-            <h1>Numero de Peticiones</h1>
+            <h1>Número de Peticiones</h1>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
                         <a class="nav-link active" aria-current="page" href="#filacontenedor1"> Uso de mi app </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#filacontenedor2" id="btnestadisticasdesaarrollo"> Mis estadisticas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                        <a class="nav-link" href="#filacontenedor2" id="btnestadisticasdesaarrollo"> Mis estadísticas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                 </ul>
             </div>

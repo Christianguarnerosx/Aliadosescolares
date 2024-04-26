@@ -23,8 +23,8 @@
                     <div class="row espacio-top-c">
                         <div class="col">
                             <img src="../imagenes/logos/logoaliadosvertical.gif" class="logo-m">
-                            <h1 class="text-m espacio-top-m">Hola ¿Olvidaste tu contraseña?</h1>
-                            <p class="text-c espacio-top-c">Para tener acceso otra vez ingresa algunun dato</p>
+                            <h1 class="text-m espacio-top-m">Hola ¿Olvidaste tú contraseña?</h1>
+                            <p class="text-c espacio-top-c">Para tener acceso otra vez ingresa algún dato</p>
                         </div>
                     </div>
                     <div class="row">
@@ -33,7 +33,7 @@
                             <form action="../../Servidor/mandarcorreos.php" method="POST"> <!--Manda a el back 2 parametros 1(correo o id) 2(contraseña)-->
                                 <div class="form-floating input-g espacio-top-c">
                                     <input type="text" class="form-control input-g text-c" id="floatingInput" name="usuario" placeholder="name@example.com">
-                                    <label for="floatingInput">ID o Correo electronico</label> <!--Se manda a el back con el name del input-->
+                                    <label for="floatingInput">ID o Correo electrónico</label> <!--Se manda a el back con el name del input-->
                                 </div>
                                 <div class="row espacio-top-c">
                                     <div class="col"> <!--Este col hace que el tamaño del boton no sea el de toda la row y se pueda centrar-->
