@@ -33,7 +33,7 @@
             <div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
                 <img src="../imagenes/personajes/Nutriologa.png" class="indicardorcardtutoria">
                 <div class="row">
-                    <h1 class="titulocardia">Nutriologia</h1>
+                    <h1 class="titulocardia">Nutriología</h1>
                     <h1 class="contenidocardtutoria text-c"> Tu Nutriologa especializada en brindar formas sanas de comer</h1>
                     <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
                 </div>
