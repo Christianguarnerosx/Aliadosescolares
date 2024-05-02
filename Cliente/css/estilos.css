@@ -1689,9 +1689,14 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   height: 89vh;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-left: 60px;
-  padding-right: 40px;
   scroll-behavior: smooth;
+}
+
+/* Si es para moviles que tenga menos espacio a lo alto y menos espacio a lo ancho izq y der */
+@media (max-width: 500px) {
+  .contenedortablareportes {
+    top: 22px;
+  }
 }
 
 /* nav reportes docentes */
@@ -1711,15 +1716,6 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   z-index: 5;
 }
 
-/* Si es para moviles que tenga menos espacio a lo alto y menos espacio a lo ancho izq y der */
-@media (max-width: 500px) {
-  .contenedortablareportes {
-    top: 22px;
-    width: 100%;
-    padding-left: 28px;
-  }
-}
-
 .tablareportes {
   height: 100vh;
   overflow-y: auto;
@@ -1727,13 +1723,12 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 }
 
 #tablamisreportes {
-  width: 100%;
-  background-color: #1fc2a7;
+  width: 150vw;
+  background-color: aliceblue;
 }
 
 #tablareportesalumnos {
-  width: 100%;
-  background-color: #1fc2a7;
+  background-color: aliceblue;
 }
 
 /* Hace que la tabla se mantenga aun y cuando los registros bajen y no se desaparezca al hacer scroll asi como asignarle un color de fondo */
@@ -1752,6 +1747,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   height: 60px;
   background-color: rgba(240, 248, 255, 0.849);
   border-bottom: 1px solid rgba(241, 241, 241, 0.911);
+  color: darkblue;
 }
 
 /* Maneja el tamaño de las imagenes en el contenido de los reportes tipo img */

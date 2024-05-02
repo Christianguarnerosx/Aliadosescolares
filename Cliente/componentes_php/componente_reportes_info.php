@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- Row que posiciona la tabla dentro de su contenedor padre el cuadro blanco transparente -->
-<div class="row contenedortablareportes centrar espacio-top-c">
+<div class="row contenedortablareportes espacio-top-c">
     <!-- Contenido para alumno -->
     <table class="tablareportes" id="tablamisreportes"> <!-- Se crea una tabla -->
         <thead class="tablatituloreportes"> <!-- Maneja donde iran los titulos de las columnas de la tabla se asigna color de fondo y letra -->
