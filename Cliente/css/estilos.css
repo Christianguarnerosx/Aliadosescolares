@@ -813,8 +813,9 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Contenedor donde va el contenido de enmedio, cards normalmente */
 #main-principalalm {
   position: absolute;
+  top: 5%;
   bottom: 70px; /*Hace que el contenedor se fije desde abajo*/
-  height: 80%; /*Para que tenga u n tama;o y posicion de contenedor adecuado y haga el efecto que salgan debajo de la barra de busqueda*/
+  height: 87%; /*Para que tenga u n tama;o y posicion de contenedor adecuado y haga el efecto que salgan debajo de la barra de busqueda*/
   width: 95%;
   margin-left: 35px;
 }
