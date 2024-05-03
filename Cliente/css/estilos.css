@@ -932,6 +932,14 @@ Asi logras evadir lo de position y z index en los elementos*/
   }
 }
 
+/* Si lo alto de la interfaz es menor a 800px pantallas pequeñas a lo alto */
+/* El tamaño de las pills (opciones) sera mas pequeño a lo alto al igual que la letra y el ancho */
+@media (max-width: 500px) {
+  #navmenualm .nav-link {
+    width: 100%;
+  }
+}
+
 /* Maneja el tamaño del boton (mas pequeño) de flecha del drop */
 #navmenualm .dropdown-toggle {
   width: 50px;
@@ -1826,23 +1834,23 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   margin: 5px;
 }
 
-#herramientasusadas{
+#herramientasusadas {
   height: 500px;
   width: 98.5%;
   margin-top: 50px;
   background-color: #4277c6c5;
 }
 
-.cardherramientasusadas{
+.cardherramientasusadas {
   width: 30%;
 }
 
-@media (max-width:500px) {
-  #herramientasusadas{
+@media (max-width: 500px) {
+  #herramientasusadas {
     height: 700px;
   }
 
-  .cardherramientasusadas{
+  .cardherramientasusadas {
     width: 100%;
   }
 }
