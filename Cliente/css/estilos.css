@@ -929,8 +929,6 @@ Asi logras evadir lo de position y z index en los elementos*/
 @media (max-height: 800px) {
   #navmenualm .nav-link {
     height: 55px;
-    font-size: 1.8rem; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
-    width: 120%; /* Dependiendo de el tamaño de la letra el tamaño del width tendra que cambiar*/
   }
 }
 
