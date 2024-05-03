@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3310
--- Generation Time: Apr 22, 2024 at 08:39 AM
+-- Generation Time: May 03, 2024 at 07:13 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -56,7 +56,7 @@ CREATE TABLE `alumnos` (
 
 INSERT INTO `alumnos` (`id_alumno`, `id_usuario`, `id_grado`, `id_grupo`, `id_padre`, `id_docente`) VALUES
 (1, 12, 1, 1, 1, 1),
-(2, 13, 1, 3, 2, 1),
+(2, 13, 1, 1, 2, 1),
 (3, 14, 1, 2, 1, 1),
 (4, 15, 1, 1, 1, 1);
 
@@ -257,7 +257,29 @@ INSERT INTO `peticiones` (`id_peticion`, `id_tipo_ia`, `id_usuario`, `consulta`,
 (54, 2, 12, 'Como andas', '2024-04-16 06:08:14'),
 (122, 1, 13, 'Hola', '2024-04-22 01:15:15'),
 (123, 3, 13, 'hoalalalal', '2024-04-22 01:49:35'),
-(124, 4, 14, 'Como bajar de peso', '2024-04-22 05:12:32');
+(124, 4, 14, 'Como bajar de peso', '2024-04-22 05:12:32'),
+(125, 1, 1, 'Hola como andas', '2024-05-01 04:30:23'),
+(126, 1, 9, 'Como puedo ayudar a mi hijo', '2024-05-01 04:32:44'),
+(127, 1, 9, 'Como superó ansiedad', '2024-05-01 05:17:01'),
+(128, 1, 1, 'Hola', '2024-05-01 09:00:44'),
+(129, 1, 1, 'Como puedo aprender ecuaciones', '2024-05-01 09:00:57'),
+(130, 1, 1, 'Como puedes ayudarme', '2024-05-01 09:01:10'),
+(131, 2, 2, 'Hola como estas', '2024-05-01 09:26:09'),
+(132, 1, 1, 'Como me puedes ayudar', '2024-05-01 09:34:33'),
+(133, 4, 12, 'Hola que puedo comer en recreo para no tener mucha grasa', '2024-05-01 09:47:35'),
+(134, 2, 12, 'Como puedes ayudarme', '2024-05-01 22:48:21'),
+(135, 1, 1, 'Hola, como puedes ayudarme', '2024-05-02 01:30:33'),
+(136, 1, 1, 'Como podría hacer conexión con otros directores', '2024-05-02 01:30:54'),
+(137, 4, 12, 'Hola, que puedo comer el dia de hoy', '2024-05-02 02:48:30'),
+(138, 4, 12, 'Que puedo comer en recreo', '2024-05-02 02:48:43'),
+(139, 4, 12, 'Como puedo bajar de peso', '2024-05-02 02:49:24'),
+(140, 4, 12, 'Como puedo mantenerme más en forma', '2024-05-02 02:49:35'),
+(141, 4, 12, 'Con nutricion', '2024-05-02 02:49:45'),
+(142, 4, 12, 'Que puedo comer en la semana de recreo ', '2024-05-02 02:50:02'),
+(143, 4, 12, 'Martes?', '2024-05-02 02:50:12'),
+(144, 2, 2, 'Hola', '2024-05-03 02:16:31'),
+(145, 2, 2, 'Como puedo hacer que mis ninos puedan tener mas contacto entre ellos y conmigo', '2024-05-03 02:16:56'),
+(146, 1, 1, 'Hola como estas', '2024-05-03 03:35:35');
 
 -- --------------------------------------------------------
 
@@ -310,7 +332,19 @@ INSERT INTO `reportes` (`id_reporte`, `id_tipo_reporte`, `id_usuario`, `id_usuar
 (145, 1, 12, 2, '2024-04-21 23:53:19', 1, NULL, NULL),
 (146, 1, 12, 2, '2024-04-21 23:53:34', 4, NULL, NULL),
 (147, 1, 12, 2, '2024-04-21 23:53:34', 4, NULL, NULL),
-(148, 3, 1, 2, '2024-04-22 08:36:38', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_1_el_2024-04-22 08_36_38.mp3');
+(150, 1, 2, 12, '2024-05-01 03:57:00', 1, NULL, NULL),
+(151, 2, 2, 12, '2024-05-01 04:01:27', 2, 'me cae mal\n', NULL),
+(152, 1, 12, 13, '2024-05-01 04:09:34', 1, NULL, NULL),
+(153, 1, 1, 12, '2024-05-01 06:22:12', 5, NULL, NULL),
+(154, 1, 2, 12, '2024-05-01 08:25:18', 2, NULL, NULL),
+(155, 1, 1, 13, '2024-05-01 09:16:22', 2, NULL, NULL),
+(156, 2, 1, 13, '2024-05-01 09:33:31', 2, 'Dhaaaa', NULL),
+(157, 1, 12, 13, '2024-05-01 21:28:25', 1, NULL, NULL),
+(158, 2, 1, 12, '2024-05-02 01:33:21', 2, 'Me pego el muy... malo', NULL),
+(159, 2, 12, 2, '2024-05-02 01:37:45', 2, 'No me dijo que me engaño', NULL),
+(160, 1, 1, 12, '2024-05-03 02:14:46', 1, NULL, NULL),
+(161, 1, 1, 12, '2024-05-03 04:09:12', 1, NULL, NULL),
+(162, 2, 1, 12, '2024-05-03 04:09:25', 2, 'Hola', NULL);
 
 -- --------------------------------------------------------
 
@@ -444,16 +478,16 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidop`, `apellidom`, `correo`, `telefono`, `contraseña`, `id_estatus`, `id_tipo_usuario`, `avatar`, `fondo`) VALUES
-(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-bmobano.gif'),
+(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-finn.gif', ''),
 (2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
 (3, 'Ivan', 'Sanchez', 'Juarez', 'Ivan@gmail.com', '2461234588', '12345678', 2, 2, '', ''),
 (4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
 (6, 'Raymundo', 'Montiel', 'Lira', 'ray@gmail.com', '2467854849', '12345678', 2, 2, '', ''),
-(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
+(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondorosadulceprincesa.gif'),
 (10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', ''),
 (11, 'Moises', 'Guarneros', 'Ramirez', 'moi@gmail.com', '2481754645', '12345678', 2, 3, '', ''),
-(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-gatoblanco.gif', '../imagenes/fondos/fondo-gusano.gif'),
-(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', '../imagenes/fondos/fondo-bmobaraba.gif'),
+(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-jakfin.gif', ''),
+(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', ''),
 (14, 'Daniel', 'Guarneros', 'Martinez', 'guar98953@gmail.com', '2441875082', 'tetenegra', 1, 4, '', ''),
 (15, 'Uriel', 'Cabello', 'Sosa', 'urisosa@gmail.com', '2485084578', '12345678', 1, 4, '', '');
 
@@ -675,7 +709,7 @@ ALTER TABLE `periodos`
 -- AUTO_INCREMENT for table `peticiones`
 --
 ALTER TABLE `peticiones`
-  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `proyectos`
@@ -687,7 +721,7 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT for table `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT for table `sensaciones`
