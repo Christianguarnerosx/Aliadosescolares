@@ -16,6 +16,11 @@
   <link href="Cliente/css/estilos.css" rel="stylesheet">
 
   <title>Inicio</title>
+
+  <?php
+  session_start();
+  include_once("./Servidor/Verificarlogininiciado.php");
+  ?>
 </head>
 
 <body>
