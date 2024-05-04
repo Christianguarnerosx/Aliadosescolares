@@ -181,6 +181,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const contenedorchattutoria = document.getElementById('contenedorchattutoria');
             contenedorchattutoria.style.display = "flex";
 
+            const creditosgoogle = document.querySelector('.creditogoogleia');
+            creditosgoogle.style.opacity = 1;
+
             /* Obtenemos el nombre del usuario mediante los label que los obtienen con php desde la session*/
             nombreusuario = document.getElementById('nombreusuario').textContent;
 

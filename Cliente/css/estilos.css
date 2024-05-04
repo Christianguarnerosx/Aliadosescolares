@@ -1378,7 +1378,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 @media (max-width: 500px) {
   /* Contenedor donde estaran los tipos de tutoria quer quiere, psico, tut, depor, nutri. se asigna un id para despues con js cambiarle el tipo display y desaparecerlo */
   #contenedorcardsia {
-    left: 14px;
+    left: 20px;
   }
 }
 
@@ -1396,14 +1396,6 @@ Asi logras evadir lo de position y z index en los elementos*/
   border-radius: 15px;
   margin: 0; /* hace que las cards parecieran que estan unidas*/
   cursor: pointer; /* Cambia de cursor para que parezca seleccionable*/
-}
-
-/* si es para telefonos. Card/opcion seleccionable entre que tipo de ia sera mas pequeña */
-@media (max-width: 500px) {
-  .cardtutoria {
-    height: 60vh;
-    width: 70px;
-  }
 }
 
 /* Es el imagen/cuadro que sale y al principio tiene un personaje  (preview del personaje de la card)*/
@@ -1436,14 +1428,6 @@ Asi logras evadir lo de position y z index en los elementos*/
   ); /* Puedes ajustar el tamaño y el color del borde según tus preferencias */
 }
 
-@media (max-width: 700px) {
-  /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
-  .cardtutoria:hover .indicardorcardtutoria {
-    height: 400px;
-    bottom: 10px;
-  }
-}
-
 /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
 .cardtutoria:hover ~ #subtituloeligetutorias {
   opacity: 0;
@@ -1472,13 +1456,38 @@ Asi logras evadir lo de position y z index en los elementos*/
   z-index: 1;
 }
 
+/* si es para telefonos. Card/opcion seleccionable entre que tipo de ia sera mas pequeña */
+@media (max-width: 500px) {
+  .cardtutoria {
+    height: 28vh;
+    width: 150px;
+    margin: 10px;
+  }
+}
+
 /*Para telefono Si se sobrepone, se abrira/expandera la card a lo ancho en mas pequeño que el normal y se sobre pondra a las demas */
 @media (max-width: 700px) {
   .cardtutoria:hover {
-    position: absolute;
-    height: 70vh;
-    width: 70vw;
+    height: 35vh;
+    width: 38vw;
     z-index: 1;
+  }
+
+  /* Si se abrea la card para el titulo de la card seleccionable se rotara y quedara de vertical a horizontal*/
+  .cardtutoria:hover .titulocardia {
+    transform: rotate(0deg);
+  }
+
+  /* Si se abrea la card para el contenido de la card seleccionable se rotara y quedara de vertical a horizontal*/
+  .cardtutoria:hover .contenidocardtutoria {
+    display: inline;
+    transform: rotate(0deg);
+  }
+
+  /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
+  .cardtutoria:hover .indicardorcardtutoria {
+    height: 300px;
+    bottom: 10px;
   }
 }
 
@@ -1612,6 +1621,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 }
 
 .creditogoogleia {
+  opacity: 0;
   font-size: 0.5rem;
 }
 
@@ -1853,8 +1863,4 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   .cardherramientasusadas {
     width: 100%;
   }
-}
-
-.hdsfs1{
-  background-color: #1fc286;
 }
