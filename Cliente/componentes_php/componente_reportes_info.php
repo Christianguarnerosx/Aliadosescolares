@@ -312,7 +312,7 @@
 ?>
 
     <!-- Contenido administrador -->
-    <div class="row espacio-top-g" id="contenedorcardsusogrados">
+    <div class="row espacio-top-g centrar" id="contenedorcardsusogrados">
         <div class="row centrar">
             <h1 class=" alinear-center">Uso por salones</h1>
             <select name="opciones" class="selectinfo" id="selectgradosinfo">
