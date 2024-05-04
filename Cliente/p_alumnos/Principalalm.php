@@ -111,7 +111,7 @@
                     <div id="principalalm-barra-busqueda" class="row"> <!--(al estar el form se centra en el ya que es el "contenedor padre")Centra los elementos tomando como referencia al contenedor/fila padre la fila que los contiene-->
                         <form class="row centrar" action="" method="post"> <!-- Hacer la connexion para mandar donde diga el action -->
                             <div class="col">
-                                <input class="form-control text-m borde-r-c" id="principalalm-input-busqueda" type="text" placeholder="Escribe lo que estas buscando" aria-label="">
+                                <input class="form-control text-m borde-r-c" id="principalalm-input-busqueda" type="text" placeholder="Pregúntame alguna cosa">
                             </div>
                             <div class="col-1 centrar espacio-right-c">
                                 <button class="btn-transparente hover-btn" type="submit">
