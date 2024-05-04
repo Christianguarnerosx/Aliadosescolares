@@ -79,7 +79,7 @@
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Reportealm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
                                     <div class="row cardcontenido"><!--Fila de texto de la card-->
-                                        <h1 class="text-m">Alido Reportar</h1>
+                                        <h1 class="text-m">Reportar Aliado</h1>
                                         <p class="text-c">Reportes img, textoy y sonido</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/cards/comunidadblanco.png" alt="">
                                     </div>
