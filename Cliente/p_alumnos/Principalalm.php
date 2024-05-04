@@ -70,23 +70,23 @@
                             <div class="row espacio-top-c espacio-left-c"> <!--Seccion de card de opciones principalalm-->
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Tutoriasalm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
-                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
-                                        <h1 class="text-m">Tutor IA's</h1>
-                                        <p class="text-c">Inteligencias artificiales y sistemas expertos</p>
+                                    <div class="row cardcontenido"><!--Fila de texto de la card-->
+                                        <h1 class="text-m">TutorIAs</h1>
+                                        <p class="text-c">IA´s y sistemas expertos</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/cards/iachipblanco.png" alt="">
                                     </div>
                                 </a>
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Reportealm.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
-                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
-                                        <h1 class="text-m">Comunidad</h1>
-                                        <p class="text-c">Reporte aliado</p>
+                                    <div class="row cardcontenido"><!--Fila de texto de la card-->
+                                        <h1 class="text-m">Alido Reportar</h1>
+                                        <p class="text-c">Reportes img, textoy y sonido</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/cards/comunidadblanco.png" alt="">
                                     </div>
                                 </a>
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Desarrolloestadisticas.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
-                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
+                                    <div class="row cardcontenido"><!--Fila de texto de la card-->
                                         <h1 class="text-m">Rendimiento</h1>
                                         <p class="text-c">Estadisticas</p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/cards/graficosblanco.png" alt="">
@@ -94,8 +94,8 @@
                                 </a>
                                 <!--Tarjeta de opciones de inicio/ en inetrfaz principal-->
                                 <a href="Reportesestadistica.php" class="card-principalalm decoracion-no borde-r-c"> <!-- Esta Es la tarjeta tipo a, para que sea un link cuando le den click, el espacion parq ue existan entre ellas no funciona si le pones la class espacio top, se agrego al class card perosnalizado-->
-                                    <div class="row espacio-top-m"><!--Fila de texto de la card-->
-                                        <h1 class="text-m"> Aportes </h1>
+                                    <div class="row cardcontenido"><!--Fila de texto de la card-->
+                                        <h1 class="text-m"> Mis reportes </h1>
                                         <p class="text-c"> Tus reportes generados </p>
                                         <img class="icono-card-rb" src="../imagenes/iconos/cards/reporteblanco.png" alt="">
                                     </div>

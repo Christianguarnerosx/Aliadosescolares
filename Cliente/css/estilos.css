@@ -336,8 +336,19 @@ haciendo mas reciclabe el codigo*/
   /*Para que funcione es necesario que el contenedor padre tenga una position relative*/
   position: absolute;
   width: 80px;
-  right: 0vw;
-  bottom: 14px;
+  right: -2px;
+  bottom: 10px;
+}
+
+/*Icono que lleva una card abajo derecha*/
+@media (max-width: 500px) {
+  .icono-card-rb {
+    /*Para que funcione es necesario que el contenedor padre tenga una position relative*/
+    position: absolute;
+    width: 60px;
+    right: -2px;
+    bottom: 10px;
+  }
 }
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Avatares +++++++++++++++++++++*/
@@ -846,6 +857,16 @@ Asi logras evadir lo de position y z index en los elementos*/
     /*Las tarjetas para  resolucion telefono se haran mas delgadas y altas*/
     width: 130px;
     height: 200px;
+  }
+}
+
+.cardcontenido {
+  margin-top: 50px;
+}
+
+@media (max-width: 500px) {
+  .cardcontenido {
+    margin-top: 15px;
   }
 }
 
