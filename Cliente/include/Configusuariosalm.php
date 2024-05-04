@@ -24,13 +24,13 @@
                 <div class="row alinear-center"> <!--Deja todo alineado para que este centrado de manera correcta-->
                     <!--La calse de opcionconfigusu de los elementos 'a' es para asignar el mismo contenedor/"layout" de todas las opciones abiertas-->
                     <a href="" id="configavataralm" class="opcionconfigusu centrar decoracion-no txt-blanco hover-btn">
-                        <h1 class="text-g"><img src="../imagenes/iconos/avatarblanco.png" alt=""> Avatar</h1>
+                        <h1 class="text-g tituloopcionesextra"><img src="../imagenes/iconos/avatarblanco.png" alt=""> Avatar</h1>
                     </a>
                     <a href="" id="confifondoalm" class="opcionconfigusu centrar decoracion-no txt-blanco hover-btn">
-                        <h1 class="text-g"><img src="../imagenes/iconos/fondoblanco.png" alt="">Fondo</h1>
+                        <h1 class="text-g tituloopcionesextra"><img src="../imagenes/iconos/fondoblanco.png" alt="">Fondo</h1>
                     </a>
                     <a href="" id="confiapodoalm" class="opcionconfigusu centrar decoracion-no txt-blanco hover-btn">
-                        <h1 class="text-g"><img src="../imagenes/iconos/tema.png" alt="">Tema</h1>
+                        <h1 class="text-g tituloopcionesextra"><img src="../imagenes/iconos/tema.png" alt="">Tema</h1>
                     </a>
                 </div>
                 <div class="row">
