@@ -1577,7 +1577,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Si las pantallas son como de telefono*/
 @media (max-width: 500px) {
   .textareaconversacion {
-    max-width: 75%; /* Tamaño del textarea sera siempre el mismo (hace que sea un cuadro) no tiene la animacion como de pc*/
+    max-width: 90%; /* Tamaño del textarea sera siempre el mismo (hace que sea un cuadro) no tiene la animacion como de pc*/
     padding-left: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
     padding-right: 20px; /* Hace que hay un espacio entre la orilla y el texto aparezca mas al centro */
   }
