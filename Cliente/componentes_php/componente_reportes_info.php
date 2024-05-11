@@ -278,82 +278,81 @@
                     ?>
                 </div>
             </div>
-</div>
 
-<!-- El nav que tiene los enlaces de los 2 contenedores (si es telefono se convierte en btn omvorguesa)-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary" id="navreportesdocentes">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Opciones</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse centrar espacio-right-m" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#tablamisreportes"> Mis reportes </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#tablareportesalumnos" id=""> Reportes alumnos </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#alumnotarget" id=""> Alumno Target </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#alumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<?php
+            <!-- El nav que tiene los enlaces de los 2 contenedores (si es telefono se convierte en btn omvorguesa)-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navreportesdocentes">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Opciones</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse centrar espacio-right-m" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tablamisreportes"> Mis reportes </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tablareportesalumnos" id=""> Reportes alumnos </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#alumnotarget" id=""> Alumno Target </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#alumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        <?php
         }
 
         if ($tipousuario == 1) {
-?>
+        ?>
 
-    <!-- Contenido administrador -->
-    <div class="row espacio-top-g centrar" id="contenedorcardsusogrados">
-        <div class="row centrar">
-            <h1 class=" alinear-center">Uso por salones</h1>
-            <select name="opciones" class="selectinfo" id="selectgradosinfo">
-                <option value="0" selected>Grados</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-            </select>
-        </div>
+            <!-- Contenido administrador -->
+            <div class="row espacio-top-g centrar" id="contenedorcardsusogrados">
+                <div class="row centrar">
+                    <h1 class=" alinear-center">Uso por salones</h1>
+                    <select name="opciones" class="selectinfo" id="selectgradosinfo">
+                        <option value="0" selected>Grados</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
 
-        <div class="cardadmininfo cardiainfo">
-            <h1 class="alinear-center espacio-top-c" id="gradopeticioniainfo"></h1>
-            <canvas class="espacio-top-c" id="graficainfoia"></canvas>
-        </div>
+                <div class="cardadmininfo cardiainfo">
+                    <h1 class="alinear-center espacio-top-c" id="gradopeticioniainfo"></h1>
+                    <canvas class="espacio-top-c" id="graficainfoia"></canvas>
+                </div>
 
-        <div class="cardadmininfo cardreportesinfo">
-            <h1 class="alinear-center espacio-top-c" id="gradoreporteiainfo"></h1>
-            <canvas class="espacio-top-c" id="graficainforeportes"></canvas>
-        </div>
+                <div class="cardadmininfo cardreportesinfo">
+                    <h1 class="alinear-center espacio-top-c" id="gradoreporteiainfo"></h1>
+                    <canvas class="espacio-top-c" id="graficainforeportes"></canvas>
+                </div>
 
-    </div>
+            </div>
 
-    <div class="row centrar" id="herramientasusadas">
-        <h1 class="text-g txt-blanco alinear-center"> Uso de toda la escuela</h1>
-        <div class="cardherramientasusadas">
-            <h1 class="text-m txt-blanco alinear-center"> Utilización Tutorias </h1>
-            <canvas id="herramientapeticionia"></canvas>
-        </div>
-        <div class="cardherramientasusadas">
-            <h1 class="text-m txt-blanco alinear-center"> Utilización Reportes </h1>
-            <canvas id="herramientareportes"></canvas>
-        </div>
-    </div>
+            <div class="row centrar" id="herramientasusadas">
+                <h1 class="text-g txt-blanco alinear-center"> Uso de toda la escuela</h1>
+                <div class="cardherramientasusadas">
+                    <h1 class="text-m txt-blanco alinear-center"> Utilización Tutorias </h1>
+                    <canvas id="herramientapeticionia"></canvas>
+                </div>
+                <div class="cardherramientasusadas">
+                    <h1 class="text-m txt-blanco alinear-center"> Utilización Reportes </h1>
+                    <canvas id="herramientareportes"></canvas>
+                </div>
+            </div>
 
-    <div class="row centrar espacio-top-g alinear-center" id='alumnostopreportes'>
-        <h1> Top 5 más reportados de la escuela</h1>
-        <?php
-            $query4 = "SELECT r.id_usuario_reportado, 
+            <div class="row centrar espacio-top-g alinear-center" id='alumnostopreportes'>
+                <h1> Top 5 más reportados de la escuela</h1>
+                <?php
+                $query4 = "SELECT r.id_usuario_reportado, 
                                 COUNT(id_usuario_reportado) AS numreportes,
                                 u.nombre,
                                 u.apellidop,
@@ -379,56 +378,54 @@
                 ORDER BY numreportes DESC
                 LIMIT 5"; /* Cuantos usuarios quieres */
 
-            $consulta4 = mysqli_query($conexion, $query4);
+                $consulta4 = mysqli_query($conexion, $query4);
 
-            if (mysqli_num_rows($consulta4) > 0) {
-                while ($row = mysqli_fetch_array($consulta4)) {
-                    echo "<div class='cardtopalumnostarget centrar borde-r-c' id='cardsalumnostopreportes'>";
-                    echo "<div>";
-                    echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
-                    echo "<h1 class='text-m txt-blanco'>" . $row['nombre_tipo_usuario'] . "</h1>";
-                    echo "<h1 class='txt-blanco'>" . $row['nombre'] . "</h1>";
-                    echo "<h1 class='text-c'>" . "Con " . $row['numreportes'] . " Reportes" . "</h1>";
-                    echo "</div>";
-                    echo "</div>";
+                if (mysqli_num_rows($consulta4) > 0) {
+                    while ($row = mysqli_fetch_array($consulta4)) {
+                        echo "<div class='cardtopalumnostarget centrar borde-r-c' id='cardsalumnostopreportes'>";
+                        echo "<div>";
+                        echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
+                        echo "<h1 class='text-m txt-blanco'>" . $row['nombre_tipo_usuario'] . "</h1>";
+                        echo "<h1 class='txt-blanco'>" . $row['nombre'] . "</h1>";
+                        echo "<h1 class='text-c'>" . "Con " . $row['numreportes'] . " Reportes" . "</h1>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
                 }
-            }
-        ?>
-    </div>
-
-    </div>
-    </div>
-
-    <!-- El nav para admins que tiene los enlaces de los contenedores (si es telefono se convierte en btn omvorguesa)-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navreportesadministradores">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Opciones</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse centrar espacio-right-m" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tablamisreportes"> Mis reportes </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contenedorcardsusogrados" id=""> Uso Salones </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#herramientasusadas" id=""> Tipos herramientas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cardsalumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
-                    </li>
-                </ul>
+                ?>
             </div>
-        </div>
-    </nav>
-<?php
+
+            <!-- El nav para admins que tiene los enlaces de los contenedores (si es telefono se convierte en btn omvorguesa)-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navreportesadministradores">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Opciones</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse centrar espacio-right-m" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tablamisreportes"> Mis reportes </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contenedorcardsusogrados" id=""> Uso Salones </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#herramientasusadas" id=""> Tipos herramientas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cardsalumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    <?php
         }
     }
     mysqli_close($conexion);
-?>
+    ?>
+</div>
 
 <!-- JQuery para utilizar en jsestructura_reportes_dinamico las funciones/ajax de jquery en js -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
