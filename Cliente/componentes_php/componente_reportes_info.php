@@ -350,7 +350,7 @@
         </div>
     </div>
 
-    <div class="row centrar espacio-top-g alinear-center" id="alumnostopreportes">
+    <div class="row centrar espacio-top-g alinear-center" id='alumnostopreportes'>
         <h1> Top 5 más reportados de la escuela</h1>
         <?php
             $query4 = "SELECT r.id_usuario_reportado, 
@@ -383,7 +383,7 @@
 
             if (mysqli_num_rows($consulta4) > 0) {
                 while ($row = mysqli_fetch_array($consulta4)) {
-                    echo "<div class='cardtopalumnostarget centrar borde-r-c'>";
+                    echo "<div class='cardtopalumnostarget centrar borde-r-c' id='cardsalumnostopreportes'>";
                     echo "<div>";
                     echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
                     echo "<h1 class='text-m txt-blanco'>" . $row['nombre_tipo_usuario'] . "</h1>";
@@ -418,7 +418,7 @@
                         <a class="nav-link" href="#herramientasusadas" id=""> Tipos herramientas </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#alumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
+                        <a class="nav-link" href="#cardsalumnostopreportes" id=""> Más reportados </a> <!-- Para mandar al contenedor se hace referencia a con '#'+'id el elemento (contenedor)' -->
                     </li>
                 </ul>
             </div>

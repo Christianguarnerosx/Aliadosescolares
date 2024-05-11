@@ -1827,6 +1827,10 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   display: none;
 }
 
+#contenedorcardsusogrados{
+  width: 95%;
+}
+
 /* Cards infogeneral admin */
 .cardadmininfo {
   width: 50%;
