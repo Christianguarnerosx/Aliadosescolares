@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 /* Vas a https://aistudio.google.com/app/apikey (guardar esta pagina por que no se encuentra facil) */
 /* y creas una api o bien en este caso delde la nuve de google creamos un proyecto y obtenemos una api
 (ojo) para la api no se llama gemini La API es:  ----Generative Language API---- */
-const API_KEY = "AIzaSyCa54X3pUQV7zuUMZyLoYIUmZLrBQQgDgQ";
+const API_KEY = "AIzaSyC_QrUjx5pRFN8MQXrNEAGKXRlKZSe8HRE";
 
 // autenticacion con el api (como iniciar sesion y el api es nuestra unica credencial)
 const genAI = new GoogleGenerativeAI(API_KEY);
