@@ -843,12 +843,16 @@ Asi logras evadir lo de position y z index en los elementos*/
   transition: 0.2s ease;
   background-color: rgba(31, 155, 238, 0.884);
   color: aliceblue;
+  border: 4px solid transparent;
 }
 
 /*Hover para las cards que tienen las opciones al inicio de principalalm*/
 .card-principalalm:hover {
   transform: scale(1.05);
+  margin-top: -0.1px;
   box-shadow: 0px 5px 10px rgba(39, 39, 39, 0.295);
+  background-color: rgb(31, 155, 238);
+  animation: latido 3s infinite; /* animación de respiración al hacer hover */
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -857,6 +861,24 @@ Asi logras evadir lo de position y z index en los elementos*/
     /*Las tarjetas para  resolucion telefono se haran mas delgadas y altas*/
     width: 130px;
     height: 200px;
+  }
+}
+
+@keyframes latido {
+  0% {
+    border-bottom-color: rgb(0, 162, 255); /* color inicial */
+  }
+  25% {
+    border-bottom-color: #26b9e2; /* color final */
+  }
+  50% {
+    border-bottom-color: #02e1e1; /* color final */
+  }
+  75% {
+    border-bottom-color: #1f8aa5; /* color final */
+  }
+  100% {
+    border-bottom-color: rgb(0, 162, 255); /* color final */
   }
 }
 
@@ -1827,7 +1849,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   display: none;
 }
 
-#contenedorcardsusogrados{
+#contenedorcardsusogrados {
   width: 95%;
 }
 
