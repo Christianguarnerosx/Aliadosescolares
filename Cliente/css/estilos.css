@@ -1584,6 +1584,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   max-height: 69vh; /* El contenedor/textarea comienza comprimido y se expande hasta este alto */
   max-width: 70%; /* El contenedor/textarea comienza comprimido y se expande hasta este ancho */
   height: 1.5px; /* El contenedor/textarea comienza comprimido (como si fuera una linea/subrayado del titulo) con un alto pequeño */
+  z-index: 5;
   overflow-y: auto; /* Permite que aparezca un scroll a lo vertical si se besborda el texto*/
   overflow-x: hidden; /* No permite que aparezca un scroll a lo horizontal y que se desborde el texto mas alla de el ancho indicado */
   background-color: rgba(236, 246, 255, 0.959);
