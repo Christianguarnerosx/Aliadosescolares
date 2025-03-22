@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 /* Vas a https://aistudio.google.com/app/apikey (guardar esta pagina por que no se encuentra facil) */
 /* y creas una api o bien en este caso delde la nuve de google creamos un proyecto y obtenemos una api
 (ojo) para la api no se llama gemini La API es:  ----Generative Language API---- */
-const API_KEY = "AIzaSyC_QrUjx5pRFN8MQXrNEAGKXRlKZSe8HRE";
+const API_KEY = "AIzaSyCma7cH-bAc3zOYECrJY7dJ8irNP4Gcqxw";
 
 // autenticacion con el api (como iniciar sesion y el api es nuestra unica credencial)
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -48,7 +48,7 @@ function ejecutargemini() {
     /* Metodo importado/obtenido de la API Gemini (Aqui se hace la magia con la api) */
     async function gemini(geminipromp) {
         // Este es el meodo que solo acepta texto, pero hay otro de imagen y texto
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" }); /* conectamos con el modelo generativo (IA/Gemini) */
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); /* conectamos con el modelo generativo (IA/Gemini) */
 
         /* En chat se ira guardando la historia del usuario y la ia (el contexto que tendra) ademas de su configuracion de como genmerar texto*/
         const chat = model.startChat({
