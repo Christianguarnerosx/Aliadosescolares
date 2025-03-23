@@ -1883,6 +1883,8 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 /* Desaparece el espan que tiene la letra del boton para que solo aparezca el content asignado en el hover after*/
 #btnimprimirreportes:hover #spancontenidobtnreportes {
   display: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 #contenedorcardsusogrados {

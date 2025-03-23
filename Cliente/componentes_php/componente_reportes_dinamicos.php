@@ -231,7 +231,7 @@
                     echo    "<div class='opcion-reporte sensaciones hover-btn borde-r-c centrar' data-id='" . $id_sensacion . "'>        
                                 <div class='row'>
                                     <div class='col'>
-                                        <img class='icono-g' src='" . $img_sensacion . "'>
+                                        <img class='icono-g' src='../imagenes/iconos/emojis/" . $img_sensacion . "'>
                                     </div>
                                 </div>
                             </div>";

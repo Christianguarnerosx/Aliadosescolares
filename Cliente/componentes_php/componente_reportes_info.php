@@ -4,7 +4,7 @@
 <!-- Row que posiciona la tabla dentro de su contenedor padre el cuadro blanco transparente -->
 <div class="row contenedortablareportes espacio-top-c centrar">
     <!-- Contenido para alumno -->
-    <table class="tablareportes" id="tablamisreportes"> <!-- Se crea una tabla -->
+    <table class="table tablareportes table-hover" id="tablamisreportes"> <!-- Se crea una tabla -->
         <thead class="tablatituloreportes"> <!-- Maneja donde iran los titulos de las columnas de la tabla se asigna color de fondo y letra -->
             <tr>
                 <th>Mis Reportes</th>
@@ -50,11 +50,11 @@
                     if ($tiporeporte == 1) {
                         $contenido = $row['nombre_sensacion'];
                         echo "<tr class='filatablareportes'>
-                        <td> <img class='imagentablareportes' src='$imagensensacion' alt=''>  $contenido </td>
+                        <td> <img class='imagentablareportes' src='../imagenes/iconos/emojis/$imagensensacion' alt=''>  $contenido </td>
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
+                        <td>
+                            <button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "'> <span id='spancontenidobtnreportes'> Imprimir </span> </button>
                         </td>
                     </tr>";
                     } else if ($tiporeporte == 2) { /* Si es tipo texto el contenido sera un texto simple */
@@ -63,8 +63,8 @@
                         <td> $contenido </td>
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
+                        <td>
+                            <button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "' > <span id='spancontenidobtnreportes'> Imprimir </span> </button>
                         </td>
                     </tr>";
                     } else if ($tiporeporte == 3) { /* Si es tipo audio, el contenido es la ruta de el audio y lo mandamos a mostrar con un elemento html tipo audio */
@@ -75,11 +75,12 @@
                         </audio> </td>
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>";
+                        <td>";
                         if ($tiporeporte != 3) {
-                            echo "<button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>";
+                            echo "<button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "' > <span id='spancontenidobtnreportes'> Imprimir </span> </button>";
                         }
                         echo "</td>
+
                     </tr>";
                     }
                 }
@@ -166,11 +167,11 @@
                                 $contenido = $row['nombre_sensacion'];
                                 echo "<tr class='filatablareportes'>
                         <td> $nombrealumno </td>
-                        <td> <img class='imagentablareportes' src='$imagensensacion' alt=''>  $contenido </td>
+                        <td> <img class='imagentablareportes' src='../imagenes/iconos/emojis/$imagensensacion' alt=''>  $contenido </td>
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
                         <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
+                            <button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "'> <span id='spancontenidobtnreportes'> Imprimir </span> </button>
                         </td>
                     </tr>";
                             } else if ($tiporeporte == 2) { /* Si es tipo texto el contenido sera un texto simple */
@@ -181,7 +182,7 @@
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
                         <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
+                            <button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "'> <span id='spancontenidobtnreportes'> Imprimir </span> </button>
                         </td>
                     </tr>";
                             } else if ($tiporeporte == 3) { /* Si es tipo audio, el contenido es la ruta de el audio y lo mandamos a mostrar con un elemento html tipo audio */
@@ -194,7 +195,7 @@
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
                         <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
+                            <button type='button' id='btnimprimirreportes' class='btn-acciones btnimprimirreporte btn-azul borde-r-c txt-blanco centrar' data-id='" . $row['id_reporte'] . "'> <span id='spancontenidobtnreportes'> Imprimir </span> </button>
                         </td>
                     </tr>";
                             }
@@ -436,3 +437,4 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script src="../js/JSEstructuras/estructura_estadisticas.js"></script>
+<script src="../js/JSEstructuras/imprimir_reporte.js"></script>
