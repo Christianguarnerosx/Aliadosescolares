@@ -75,9 +75,11 @@
                         </audio> </td>
                         <td> $nombretiporeporte </td>
                         <td> $fechareporte </td>
-                        <td class='columnaaccionesreportes centrar espacio-top-c'>
-                            <button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>
-                        </td>
+                        <td class='columnaaccionesreportes centrar espacio-top-c'>";
+                        if ($tiporeporte != 3) {
+                            echo "<button type='button' id='btnimprimirreportes' class='btn-acciones btn-azul borde-r-c txt-blanco centrar'> <span id='spancontenidobtnreportes'> Ver </span> </button>";
+                        }
+                        echo "</td>
                     </tr>";
                     }
                 }
