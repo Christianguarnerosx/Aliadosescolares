@@ -47,7 +47,7 @@
             }
             ?>
             <div class="row">
-                <h1 class="text-c espacio-top-c">Tipo de reporte</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
+                <h1 class="text-c espacio-top-c txt-titulo">Tipo de reporte</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
             }
             ?>
             <div class="row">
-                <h1 class="text-c espacio-top-c">¿Que usuario?</h1> <!-- opciones para dezplegar lista de tipos de usuarios -->
+                <h1 class="text-c espacio-top-c txt-titulo">¿Que usuario?</h1> <!-- opciones para dezplegar lista de tipos de usuarios -->
             </div>
         </div>
     </div>
@@ -161,7 +161,7 @@
             }
             ?>
             <div class="row">
-                <h1 class="text-c espacio-top-c">Su grado</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
+                <h1 class="text-c espacio-top-c txt-titulo">Su grado</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
             </div>
         </div>
     </div>
@@ -197,7 +197,7 @@
             }
             ?>
             <div class="row">
-                <h1 class="text-c espacio-top-c">Su grupo</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
+                <h1 class="text-c espacio-top-c txt-titulo">Su grupo</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
             </div>
         </div>
     </div>
@@ -241,7 +241,7 @@
             }
             ?>
             <div class="row">
-                <h1 class="text-c espacio-top-c">¿Como te sientes?</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
+                <h1 class="text-c espacio-top-c txt-titulo">¿Como te sientes?</h1> <!-- opciones para dezplegar lista de tipos de reportes -->
             </div>
         </div>
     </div>
@@ -267,7 +267,7 @@
         <!-- Componentes btn's,select -->
         <div class="row centrar alinear-center espacio-top-c">
             <h1 class="txt-blanco titulo-m" id="contadorgrabando"></h1>
-            <button class="btn-reporte-submit btn-azul borde-r-c text-g txt-blanco hover-btn" id="btngrabarreporteaudio">Grabar</button>
+            <button class="btn-reporte-submit btn-azul borde-r-c text-g txt-blanco hover-btn " id="btngrabarreporteaudio">Grabar</button>
         </div>
     </div>
 

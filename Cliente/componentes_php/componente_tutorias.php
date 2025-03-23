@@ -1,43 +1,56 @@
 <div class="container-fluid"> <!-- contenedor de todo el componente (para solo traerlo y no configurar nada) -->
     <div class="row centrar"> <!-- Este es el row que contendra las cards verticales -->
         <div class="row centrar" id="contenedorcardsia">
-            <!-- Esta es la card vertical de psicologia la cual hace la animacion de expanderse -->
-            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
-            <div class="cardtutoria centrar" id="cardpsicologia" data-id="2" href="">
-                <img src="../imagenes/personajes/Psicologa.png" class="indicardorcardtutoria">
-                <div class="row">
-                    <h1 class="titulocardia">Psicologia</h1>
-                    <h1 class="contenidocardtutoria text-c"> Tu Psicologa especializado en brindar apoyo en problemas basicos</h1>
-                    <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
-                </div>
-            </div>
-            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
-            <div class="cardtutoria centrar" id="cardtutoria" data-id="1" href="">
-                <img src="../imagenes/personajes/Tutora.png" class="indicardorcardtutoria">
-                <div class="row">
-                    <h1 class="titulocardia">Tutoria</h1>
-                    <h1 class="contenidocardtutoria text-c"> Su Tutora personal especializada en enseñar de la manera mas facil</h1>
-                    <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
-                </div>
-            </div>
-            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
-            <div class="cardtutoria centrar" id="cardentrenador" data-id="3" href="">
-                <img src="../imagenes/personajes/Entrenador.png" class="indicardorcardtutoria">
-                <div class="row">
-                    <h1 class="titulocardia">Entrenador</h1>
-                    <h1 class="contenidocardtutoria text-c"> Tu Entrenador personal especializado en bienestar fisico</h1>
-                    <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
-                </div>
-            </div>
-            <!-- Para mandar y saber que card fue seleccionada en el js se utiliza el data-id que se le asigna a cada una Asi se logra guradar y mandar a traer la configuracion adecuada de el tipo ia que elegiste -->
-            <div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
-                <img src="../imagenes/personajes/Nutriologa.png" class="indicardorcardtutoria">
-                <div class="row">
-                    <h1 class="titulocardia">Nutriología</h1>
-                    <h1 class="contenidocardtutoria text-c"> Tu Nutriologa especializada en brindar formas sanas de comer</h1>
-                    <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
-                </div>
-            </div>
+            <?php
+
+            if (!isset($_SESSION)) {
+                session_start();
+            }
+
+            include("../../Servidor/Conexion.php");
+
+            $id_usuario = $_SESSION['id_usuario'];
+            $consulta = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
+            $resultado = mysqli_query($conexion, $consulta);
+
+
+            $fila = mysqli_fetch_array($resultado);
+            $tipo_usuario = $fila['id_tipo_usuario'];
+            if ($tipo_usuario != 4) {
+                echo '<div class="cardtutoria centrar" id="cardpsicologia" data-id="2" href="">
+                        <img src="../imagenes/personajes/Psicologa.png" class="indicardorcardtutoria">
+                        <div class="row">
+                            <h1 class="titulocardia">Psicología</h1>
+                            <h1 class="contenidocardtutoria text-c"> Tu Psicóloga especializado en brindar apoyo en problemas básicos (Solo para adultos)</h1>
+                            <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
+                        </div>
+                    </div>';
+            }
+            echo '<div class="cardtutoria centrar" id="cardtutoria" data-id="1" href="">
+                        <img src="../imagenes/personajes/Tutora.png" class="indicardorcardtutoria">
+                        <div class="row">
+                            <h1 class="titulocardia">Tutoria</h1>
+                            <h1 class="contenidocardtutoria text-c"> Su Tutora personal especializada en enseñar de la manera mas fácil</h1>
+                            <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
+                        </div>
+                    </div>';
+            echo '<div class="cardtutoria centrar" id="cardentrenador" data-id="3" href="">
+                        <img src="../imagenes/personajes/Entrenador.png" class="indicardorcardtutoria">
+                        <div class="row">
+                            <h1 class="titulocardia">Entrenador</h1>
+                            <h1 class="contenidocardtutoria text-c"> Tu Entrenador personal especializado en bienestar físico</h1>
+                            <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
+                        </div>
+                    </div>';
+            echo '<div class="cardtutoria centrar" id="cardentrenador" data-id="4" href="">
+                        <img src="../imagenes/personajes/Nutriologa.png" class="indicardorcardtutoria">
+                        <div class="row">
+                            <h1 class="titulocardia">Nutriología</h1>
+                            <h1 class="contenidocardtutoria text-c"> Tu Nutriologa especializada en brindar formas sanas de comer</h1>
+                            <img class="contenidocardtutoria iconocardtutoria" src="../imagenes/iconos/iconoplay.png" alt="">
+                        </div>
+                    </div>';
+            ?>
 
             <h1 id="subtituloeligetutorias" class="alinear-center text-c espacio-top-c">Elige una TutorIA</h1>
         </div>

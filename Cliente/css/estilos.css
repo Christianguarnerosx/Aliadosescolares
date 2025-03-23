@@ -19,11 +19,11 @@ haciendo mas reciclabe el codigo*/
 ::-webkit-scrollbar {
   width: 5px; /* Grosor de la barra */
   height: 10px; /* Grosor de la barra */
-  background-color: #dfffdb; /* Color de la pista */
+  background-color: #ffffff; /* Color de la pista */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: aliceblue; /* Color del thumb */
+  background-color: rgba(0, 138, 140, 0.171); /* Color del thumb */
 }
 
 /* Aplicar un estilo diferente cuando el ancho de la pantalla para movil */
@@ -280,6 +280,10 @@ haciendo mas reciclabe el codigo*/
   color: black;
 }
 
+/*colores predeterminados de las interfaces*/
+.txt-titulo {
+  color: #1fc2a735;
+}
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Logos +++++++++++++++++++++*/
 /*clase que asigna el tamaño de una img.. comumente los logos*/
 .logo-g {
@@ -724,6 +728,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   width: 300px; /*Este tamano solo se utilizara provisionlamnete mientras se desarrolla para pon tener que estra abre y cierra el menu, se pone ya que si no abre de mas el menu, y asi mantiene la coherencia con el tamano asignado en el js logica menu*/
   transition: 0.25s ease-in;
   background-color: aliceblue;
+  box-shadow: 0px 0.5px 10px #1fc2a7;
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -760,7 +765,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   left: 5px; /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   /*Cuando se cambia el valor de aqui, tambien se debera cambiar en la logica del menu pues van de la mano*/
   top: calc(45vh - 30px);
-  transition: 0.4s ease-out;
+  transition: 0.2s ease-out;
 }
 
 /*Asignado par ser responsivo a que tipo de resolucion de pantalla tenga, para que en telefono sea mas alto*/
@@ -780,6 +785,7 @@ Asi logras evadir lo de position y z index en los elementos*/
   height: 55px;
   background-color: aliceblue;
   border-radius: 50%;
+  border: 1.5px solid #1fc2a715;
   transition: 0.35s;
 }
 
@@ -953,15 +959,17 @@ Asi logras evadir lo de position y z index en los elementos*/
   position: absolute;
   left: 17.5px;
   top: 245px;
+  width: 100%;
 }
 
 /* Maneja el diseño de las pill (opciones del nav del menu desplegable izq) */
 #navmenualm .nav-link {
   display: flex;
   align-items: center;
-  width: 110%;
+  width: 104.8%;
   height: 65px;
-  margin-top: 1px;
+  margin-top: 0.5px;
+  margin-left: -5px;
   background-color: #1fc2a7;
   color: aliceblue;
   transition: 0.4s ease;
@@ -1105,7 +1113,14 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Asigna al text area de todas las interfaces que lo manden a traer el mismo tamaño (modificando este modificas todos)*/
 .textarea-reporte {
   height: 150px;
-  width: 300px;
+  width: 500px;
+}
+
+@media (max-width: 600px) {
+  .textarea-reporte {
+    height: 250px;
+    width: 500px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -1159,11 +1174,12 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 #personajereportes {
   position: absolute;
-  height: 70%;
+  height: 60%;
   bottom: 0;
   right: 5px;
   z-index: 10;
   transition: 0.5s ease;
+  opacity: 0.7;
 }
 
 @media (max-width: 1300px) {
@@ -1181,18 +1197,18 @@ Asi logras evadir lo de position y z index en los elementos*/
 .cardreporte {
   position: absolute; /*Se utiliza absolute para poder tomara como refrencia el relative y ubicar las cards una sobre otra (con los zindices)*/
   height: 75vh;
-  width: 60vw;
+  width: 100%;
   border-radius: 10px;
   overflow-x: hidden;
   overflow-y: auto;
   transition: 1s ease;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   /*Asigna tamaño y posicion a las cards que muestran las opciones y elecciones de reportes en telefono*/
   .cardreporte {
     height: 80vh;
-    width: 70vw;
+    width: 90vw;
   }
 }
 
@@ -1213,6 +1229,8 @@ Asi logras evadir lo de position y z index en los elementos*/
 #card3 {
   z-index: 2; /*Indica en que posicion de la baraja de cards estara*/
   background-color: aliceblue;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 /*Card opcion4 (grupo) parte del tarjetero de reportes*/
@@ -1254,7 +1272,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 /*Asigna (cards/opciones seleccionables) a todas las opciones seleccionables que van dentro de las cards el mismo formato*/
 .opcion-reporte {
   background-color: #1fc2a7;
-  width: 100px;
+  width: 150px;
   height: 60vh;
   cursor: pointer;
   transition: 0.4s ease;
@@ -1265,9 +1283,17 @@ Asi logras evadir lo de position y z index en los elementos*/
   /*Asigna a todas las cards/opciones seleccionables en modo telefono un tamaño diferente*/
   .opcion-reporte {
     width: 80px;
-    height: 30vh;
+    height: 20vh;
   }
 }
+
+.opcion-reporte.grados {
+  width: 80px;
+} 
+
+.opcion-reporte.grados:hover {
+  width: 110px;
+} 
 
 /* card/opcion de usuarios (que usuario ¿quien?) */
 /* Es unicamente para los usuarios (donde aparecen los nombres de usuarios) */
@@ -1433,7 +1459,7 @@ Asi logras evadir lo de position y z index en los elementos*/
 .cardtutoria {
   position: relative; /* Es relative para que se pueda utilizar como referencia para posicionar con absolute los elementos dentro de la card */
   height: 60vh;
-  width: 100px;
+  width: 200px;
   background-color: #1fc2a7;
   text-decoration: none;
   color: aliceblue;
@@ -1473,6 +1499,10 @@ Asi logras evadir lo de position y z index en los elementos*/
   filter: drop-shadow(
     4px 0px 0px #dafff9
   ); /* Puedes ajustar el tamaño y el color del borde según tus preferencias */
+}
+
+#subtituloeligetutorias {
+  color: #2c6a6041;
 }
 
 /* Hace que se valla a la mitad de la card, crezca y ahora si se haga visible */
@@ -1750,6 +1780,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   width: 100%;
   height: 89vh;
   margin-top: 20px;
+  padding: 0px 50px 0px 50px;
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -1812,7 +1843,7 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   height: 60px;
   background-color: rgba(240, 248, 255, 0.849);
   border-bottom: 1px solid rgba(241, 241, 241, 0.911);
-  color: darkblue;
+  color: #4c4c4c;
 }
 
 /* Maneja el tamaño de las imagenes en el contenido de los reportes tipo img */
@@ -1824,12 +1855,13 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 .btn-acciones {
   font-size: 0.7rem;
   width: 70px;
+  height: 30px;
   transition: 0.3s;
 }
 
 /* Si se sobre pone que el boton a los botones de la clase acciones creezca */
 .btn-acciones:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Para el caso de l btn de imprimir cambiara de color, asigaremos un borde y crecera */

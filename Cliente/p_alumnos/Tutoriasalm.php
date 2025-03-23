@@ -8,6 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- icono de la pagina -->
+    <link rel="icon" type="image/x-icon" href="../imagenes/logos/logoaliados.png">
     <!--Estilos propios CSS -->
     <link rel="stylesheet" href="../css/estilos.css">
 
@@ -56,7 +58,7 @@
                     <!-- A este main se le aplicara un scroll en y cuando el contenido se deborde, solo se oculta el scroll x y se asigna un tama;o-->
                     <main class="row"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
                         <div class="col"> <!-- AQUI LLEVA EL CONTENIDO QUE lleva la interfaz-->
-                            <?php include("../componentes_php/componente_tutorias.php");?>
+                            <?php include("../componentes_php/componente_tutorias.php"); ?>
                         </div>
                     </main>
 

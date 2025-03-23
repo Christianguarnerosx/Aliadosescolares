@@ -23,6 +23,8 @@ if (!empty($_SESSION['active'])) { //Si es diferente de vacia
 
             if ($resultado > 0) { //Si devuelve algun resultado es que si existe la informacion entonces realizas:
 
+                $_SESSION['id_usuario'] = $resultado['id_usuario']; //Se guarda lo que recibimos de la pagina iniciar en una variable de session
+
                 if ($resultado['avatar'] != "") {
                     header("Location: ../Cliente/p_alumnos/Principalalm.php");
                 } else {
