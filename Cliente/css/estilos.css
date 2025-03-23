@@ -1777,6 +1777,9 @@ Asi logras evadir lo de position y z index en los elementos*/
 /* Ubica a la tabla dentro del contenedor padre (el cuadro blanco) lo centramos y le asignamos un espacio arriba
 Asi como un tamaño de alto determinado opara que se pueda realizar los scroll al desbordarse de ese tamaño */
 .contenedortablareportes {
+  position: absolute;
+  left: 0px;
+  top: 30px;
   width: 100%;
   height: 89vh;
   margin-top: 20px;
