@@ -10,7 +10,7 @@
             <input type="text" class="form-control inputbusquedareportes" id="inputbusquedareportes" placeholder="Ingresar búsqueda">
 
             <!-- Botón de buscar -->
-            <button type="button" class="btn btn-primary btnbusquedareportes centrar">
+            <button type="button" class="btn btn-primary btnbusquedareportes centrar" id="btnbusquedareportes">
                 <span class="text-m ">Aplicar</span>
             </button>
 
@@ -22,40 +22,32 @@
                         <!-- Filtros -->
                         <h1 class="text-c">Estados</h1>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesenespera" name="reportesenespera">
-                            <label class="form-check-label" for="reportesenespera">Pendiente</label>
+                            <input class="form-check-input" type="checkbox" id="usuarioscanalizados" name="usuarioscanalizados">
+                            <label class="form-check-label" for="usuarioscanalizados">Canalizados</label>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesenproceso" name="reportesenproceso">
-                            <label class="form-check-label" for="reportesenproceso">En proceso</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesretroceso" name="reportesretroceso">
-                            <label class="form-check-label" for="reportesretroceso">Retroceso</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesfinalizados" name="reportesfinalizados">
-                            <label class="form-check-label" for="reportesfinalizados">Finalizado</label>
+                            <input class="form-check-input" type="checkbox" id="usuariostodos" name="usuariostodos">
+                            <label class="form-check-label" for="usuariostodos">Todos</label>
                         </div>
 
                         <h1 class="text-c">Estatus</h1>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesactivos" name="reportesactivos">
-                            <label class="form-check-label" for="reportesactivos">Activos</label>
+                            <input class="form-check-input" type="checkbox" id="usuariossactivos" name="usuariossactivos">
+                            <label class="form-check-label" for="usuariossactivos">Activos</label>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesinactivos" name="reportesinactivos">
-                            <label class="form-check-label" for="reportesinactivos">Inactivos</label>
+                            <input class="form-check-input" type="checkbox" id="usuariosinactivos" name="usuariosinactivos">
+                            <label class="form-check-label" for="usuariosinactivos">Inactivos</label>
                         </div>
 
                         <h1 class="text-c">Registros</h1>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesmas50registros" name="reportesmas50registros">
-                            <label class="form-check-label" for="reportesmas50registros">+50</label>
+                            <input class="form-check-input" type="checkbox" id="usuariosmas50registros" name="usuariosmas50registros">
+                            <label class="form-check-label" for="usuariosmas50registros">Más de 50</label>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportestodosregistros" name="reportestodosregistros">
-                            <label class="form-check-label" for="reportestodosregistros">Todos</label>
+                            <input class="form-check-input" type="checkbox" id="usuariostodosregistros" name="usuariostodosregistros">
+                            <label class="form-check-label" for="usuariostodosregistros">Todos</label>
                         </div>
                     </div>
                 </div>
@@ -68,12 +60,12 @@
                     <div class="contendorcheckboxesordenesbusquedareportes alinear-left" id="contendorcheckboxesordenesbusquedareportes">
                         <!-- Órdenes -->
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesmasrecientes" name="reportesmasrecientes">
-                            <label class="form-check-label" for="reportesmasrecientes">Más recientes</label>
+                            <input class="form-check-input" type="checkbox" id="usuariosmasrecientes" name="usuariosmasrecientes">
+                            <label class="form-check-label" for="usuariosmasrecientes">Más recientes</label>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="reportesmenosrecientes" name="reportesmenosrecientes">
-                            <label class="form-check-label" for="reportesmenosrecientes">Más antiguos</label>
+                            <input class="form-check-input" type="checkbox" id="usuariosmenosrecientes" name="usuariosmenosrecientes">
+                            <label class="form-check-label" for="usuariosmenosrecientes">Más antiguos</label>
                         </div>
                     </div>
                 </div>

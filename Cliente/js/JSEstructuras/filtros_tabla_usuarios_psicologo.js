@@ -122,52 +122,20 @@ btnBuscarReportes.addEventListener('click', function () {
 });
 
 function filtrar() {
-    // Obtener los filtros de búsqueda
     const busqueda = document.getElementById('inputbusquedareportes').value;
 
     const datos = {
-        busqueda
+        busqueda,
+        usuarioscanalizados: document.getElementById('usuarioscanalizados').checked,
+        usuariostodos: document.getElementById('usuariostodos').checked,
+        usuariossactivos: document.getElementById('usuariossactivos').checked,
+        usuariosinactivos: document.getElementById('usuariosinactivos').checked,
+        usuariosmas50registros: document.getElementById('usuariosmas50registros').checked,
+        usuariostodosregistros: document.getElementById('usuariostodosregistros').checked,
+        usuariosmasrecientes: document.getElementById('usuariosmasrecientes').checked,
+        usuariosmenosrecientes: document.getElementById('usuariosmenosrecientes').checked
     };
 
-    if (document.getElementById('reportesenespera').checked) {
-        datos.reportesenespera = true;
-    }
-
-    if (document.getElementById('reportesenproceso').checked) {
-        datos.reportesenproceso = true;
-    }
-
-    if (document.getElementById('reportesretroceso').checked) {
-        datos.reportesretroceso = true;
-    }
-
-    if (document.getElementById('reportesfinalizados').checked) {
-        datos.reportesfinalizados = true;
-    }
-
-    if (document.getElementById('reportesactivos').checked) {
-        datos.reportesactivos = true;
-    }
-
-    if (document.getElementById('reportesinactivos').checked) {
-        datos.reportesinactivos = true;
-    }
-
-    if (document.getElementById('reportesmas50registros').checked) {
-        datos.reportesmas50registros = true;
-    }
-
-    if (document.getElementById('reportestodosregistros').checked) {
-        datos.reportestodosregistros = true;
-    }
-
-    if (document.getElementById('reportesmasrecientes').checked) {
-        datos.reportesmasrecientes = true;
-    }
-
-    if (document.getElementById('reportesmenosrecientes').checked) {
-        datos.reportesmenosrecientes = true;
-    }
 
     // Enviar los filtros al servidor
     $.ajax({

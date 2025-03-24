@@ -1,7 +1,7 @@
 <?php 
 /*si utilizas otro servidor tendras que poner el purto en el que esta ":3310" */
 /*Datos de la conexion*/
-$hostname="localhost:3310";
+$hostname="localhost";
 $username="root";
 $password="";
 $database="escuela";
