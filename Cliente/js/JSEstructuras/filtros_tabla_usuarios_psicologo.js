@@ -124,17 +124,41 @@ btnBuscarReportes.addEventListener('click', function () {
 function filtrar() {
     const busqueda = document.getElementById('inputbusquedareportes').value;
 
-    const datos = {
-        busqueda,
-        usuarioscanalizados: document.getElementById('usuarioscanalizados').checked,
-        usuariostodos: document.getElementById('usuariostodos').checked,
-        usuariossactivos: document.getElementById('usuariossactivos').checked,
-        usuariosinactivos: document.getElementById('usuariosinactivos').checked,
-        usuariosmas50registros: document.getElementById('usuariosmas50registros').checked,
-        usuariostodosregistros: document.getElementById('usuariostodosregistros').checked,
-        usuariosmasrecientes: document.getElementById('usuariosmasrecientes').checked,
-        usuariosmenosrecientes: document.getElementById('usuariosmenosrecientes').checked
-    };
+    const datos = {};
+
+    if (document.getElementById('usuarioscanalizados').checked) {
+        datos.usuarioscanalizados = true;
+    }
+
+    if (document.getElementById('usuariostodos').checked) {
+        datos.usuariostodos = true;
+    }
+
+    if (document.getElementById('usuariossactivos').checked) {
+        datos.usuariossactivos = true;
+    }
+
+    if (document.getElementById('usuariosinactivos').checked) {
+        datos.usuariosinactivos = true;
+    }
+
+    if (document.getElementById('usuariosmas50registros').checked) {
+        datos.usuariosmas50registros = true;
+    }
+
+    if (document.getElementById('usuariostodosregistros').checked) {
+        datos.usuariostodosregistros = true;
+    }
+
+    if (document.getElementById('usuariosmasrecientes').checked) {
+        datos.usuariosmasrecientes = true;
+    }
+
+    if (document.getElementById('usuariosmenosrecientes').checked) {
+        datos.usuariosmenosrecientes = true;
+    }
+
+    datos.busqueda = busqueda;
 
 
     // Enviar los filtros al servidor

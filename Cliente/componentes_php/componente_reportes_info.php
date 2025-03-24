@@ -3,84 +3,93 @@
 
 <!-- Row que posiciona la tabla dentro de su contenedor padre el cuadro blanco transparente -->
 <div class="row contenedortablareportes espacio-top-c centrar">
-    <div class="contenedorseguimientosbusquedafiltrosordenes">
-        <!-- Buscador (donde estará la barra de búsqueda, filtros y el botón de buscar) -->
-        <div class="contenedorbusquedareportes">
-            <label class="text-c tituloinputbusquedareportes">¿Qué alumno estás buscando?</label>
-            <input type="text" class="form-control inputbusquedareportes" id="inputbusquedareportes" placeholder="Ingresar búsqueda">
 
-            <!-- Botón de buscar -->
-            <button type="button" class="btn btn-primary btnbusquedareportes centrar" id="btnbusquedareportes">
-                <span class="text-m ">Aplicar</span>
-            </button>
+    <?php
 
-            <!-- Botón de filtros -->
-            <div class="contenedorfiltrosbusquedareportes cursor-mano alinear-center" id="contenedorfiltrosbusquedareportes">
-                <div class="row centrar">
-                    <p class="alinear-center" id="btnfiltrosbusquedareportes"><img class="icono-m iconofiltrobtnfiltrarreporte" src="" alt=""> Filtros </p>
-                    <div class="contendorcheckboxesfiltrosbusquedareportes alinear-left" id="contendorcheckboxesfiltrosbusquedareportes">
-                        <!-- Filtros -->
-                        <h1 class="text-c">Estados</h1>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuarioscanalizados" name="usuarioscanalizados">
-                            <label class="form-check-label" for="usuarioscanalizados">Canalizados</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariostodos" name="usuariostodos">
-                            <label class="form-check-label" for="usuariostodos">Todos</label>
-                        </div>
+    if ($_SESSION['tipo_usuario'] == 6) {
 
-                        <h1 class="text-c">Estatus</h1>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariossactivos" name="usuariossactivos">
-                            <label class="form-check-label" for="usuariossactivos">Activos</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariosinactivos" name="usuariosinactivos">
-                            <label class="form-check-label" for="usuariosinactivos">Inactivos</label>
-                        </div>
+    ?>
 
-                        <h1 class="text-c">Registros</h1>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariosmas50registros" name="usuariosmas50registros">
-                            <label class="form-check-label" for="usuariosmas50registros">Más de 50</label>
+        <div class="contenedorseguimientosbusquedafiltrosordenes">
+            <!-- Buscador (donde estará la barra de búsqueda, filtros y el botón de buscar) -->
+            <div class="contenedorbusquedareportes">
+                <label class="text-c tituloinputbusquedareportes">¿Qué alumno estás buscando?</label>
+                <input type="text" class="form-control inputbusquedareportes" id="inputbusquedareportes" placeholder="Ingresar búsqueda">
+
+                <!-- Botón de buscar -->
+                <button type="button" class="btn btn-primary btnbusquedareportes centrar" id="btnbusquedareportes">
+                    <span class="text-m ">Aplicar</span>
+                </button>
+
+                <!-- Botón de filtros -->
+                <div class="contenedorfiltrosbusquedareportes cursor-mano alinear-center" id="contenedorfiltrosbusquedareportes">
+                    <div class="row centrar">
+                        <p class="alinear-center" id="btnfiltrosbusquedareportes"><img class="icono-m iconofiltrobtnfiltrarreporte" src="" alt=""> Filtros </p>
+                        <div class="contendorcheckboxesfiltrosbusquedareportes alinear-left" id="contendorcheckboxesfiltrosbusquedareportes">
+                            <!-- Filtros -->
+                            <h1 class="text-c">Estados</h1>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuarioscanalizados" name="usuarioscanalizados">
+                                <label class="form-check-label" for="usuarioscanalizados">Canalizados</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariostodos" name="usuariostodos">
+                                <label class="form-check-label" for="usuariostodos">Todos</label>
+                            </div>
+
+                            <h1 class="text-c">Estatus</h1>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariossactivos" name="usuariossactivos">
+                                <label class="form-check-label" for="usuariossactivos">Activos</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariosinactivos" name="usuariosinactivos">
+                                <label class="form-check-label" for="usuariosinactivos">Inactivos</label>
+                            </div>
+
+                            <h1 class="text-c">Registros</h1>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariosmas50registros" name="usuariosmas50registros">
+                                <label class="form-check-label" for="usuariosmas50registros">Más de 50</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariostodosregistros" name="usuariostodosregistros">
+                                <label class="form-check-label" for="usuariostodosregistros">Todos</label>
+                            </div>
                         </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariostodosregistros" name="usuariostodosregistros">
-                            <label class="form-check-label" for="usuariostodosregistros">Todos</label>
+                    </div>
+                </div>
+
+                <!-- Botón de ordenar por -->
+                <div class="contenedorordenesbusquedareportes cursor-mano alinear-center" id="contenedorordenesbusquedareportes">
+                    <div class="row centrar">
+                        <p class="alinear-center" id="btnordenesbusquedareportes"><img class="icono-m iconofiltrobtnordenarreporte" src="" alt="">Ordenar</p>
+                        <div class="contendorcheckboxesordenesbusquedareportes alinear-left" id="contendorcheckboxesordenesbusquedareportes">
+                            <!-- Órdenes -->
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariosmasrecientes" name="usuariosmasrecientes">
+                                <label class="form-check-label" for="usuariosmasrecientes">Más recientes</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="usuariosmenosrecientes" name="usuariosmenosrecientes">
+                                <label class="form-check-label" for="usuariosmenosrecientes">Más antiguos</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Botón de ordenar por -->
-            <div class="contenedorordenesbusquedareportes cursor-mano alinear-center" id="contenedorordenesbusquedareportes">
-                <div class="row centrar">
-                    <p class="alinear-center" id="btnordenesbusquedareportes"><img class="icono-m iconofiltrobtnordenarreporte" src="" alt="">Ordenar</p>
-                    <div class="contendorcheckboxesordenesbusquedareportes alinear-left" id="contendorcheckboxesordenesbusquedareportes">
-                        <!-- Órdenes -->
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariosmasrecientes" name="usuariosmasrecientes">
-                            <label class="form-check-label" for="usuariosmasrecientes">Más recientes</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="usuariosmenosrecientes" name="usuariosmenosrecientes">
-                            <label class="form-check-label" for="usuariosmenosrecientes">Más antiguos</label>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Tabla de reportes -->
+            <h1 class="text-m m-1 mt-4 txt-titulo">Usuarios canalizados</h1>
+
+            <div class="contendortablareportes" id="contendortablareportes">
+                <?php include("../componentes_php/tabla_usuarios_canalizados.php"); ?>
             </div>
         </div>
-
-
-        <!-- Tabla de reportes -->
-        <h1 class="text-m m-1 mt-4 txt-titulo">Usuarios canalizados</h1>
-
-        <div class="contendortablareportes" id="contendortablareportes">
-            <?php include("../componentes_php/tabla_usuarios_canalizados.php"); ?>
-        </div>
-
-    </div>
+    <?php
+    };
+    ?>
 
     <h2 class="text-m m-1 mt-3 txt-titulo">Mis Reportes</h2>
     <!-- Contenido para alumno -->

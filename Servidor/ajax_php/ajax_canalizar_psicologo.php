@@ -10,7 +10,7 @@ if (isset($_POST['idusuario'])) {
     $query2 = "SELECT id_usuario_canalizado FROM asignar_psicologo_usuarios WHERE id_usuario_canalizado = $idusuario";
     $resultado2 = mysqli_query($conexion, $query2);
     if (mysqli_num_rows($resultado2) == 0) {
-        $query = "INSERT INTO asignar_psicologo_usuarios (id_asignar_psicologo_usuarios, id_usuario_psicologo, id_usuario_canalizado) VALUES (NULL, 16, $idusuario)";
+        $query = "INSERT INTO asignar_psicologo_usuarios (id_asignar_psicologo_usuarios, id_usuario_psicologo, id_usuario_canalizado, fecha_canalizacion) VALUES (NULL, 16, $idusuario, now())";
     } else {
         $query = "UPDATE asignar_psicologo_usuarios SET id_usuario_psicologo = 16 WHERE id_usuario_canalizado = $idusuario";
     }
