@@ -50,6 +50,7 @@
                     include("../../Servidor/Conexion.php"); /*Incluimos la conexion (OJOOOO se debe calcular la ruta desde donde se manda atraer no desde aqui) */
                     /* Para que se importe bien la conexion es necesario que sea SOLO include() porqueeeee si utilizas include_once() marca error*/
 
+                    $tipousuario = 0;
                     $id = $_SESSION['usuario']; /*Mandamos a llamar a la variable sesion y la asignamos a una nieva variable (id)*/
                     $query = "SELECT id_tipo_usuario FROM usuarios WHERE id_usuario = $id"; /*Declaramos la consulta*/
                     $consulta = mysqli_query($conexion, $query); /* ejecutamos la consulta mandando la conexion y la consulta*/
@@ -65,15 +66,18 @@
                             echo "<li><a class='dropdown-item' href='Reportesestadistica.php'>Estadisticas Aliados</a></li>";
                         }
                     }
+
+                    echo "</ul>
+                </div>";
+                    if ($tipousuario == 6) {
+                        echo '<a class="nav-link" href="Psicologos.php">Psicologo</a>';
+                    }
                     mysqli_close($conexion);
-
                     ?>
-                </ul>
-            </div>
 
-            <a class="nav-link" href="Desarrolloestadisticas.php">Mi desarrollo</a>
-            <a class="nav-link" href="Generarqr.php">Generar QR</a>
-            <a class="nav-link" id="btncerrarsesion" href="../../Servidor/Cerrarsesion.php">Salir</a>
+                    <a class="nav-link" href="Desarrolloestadisticas.php">Mi desarrollo</a>
+                    <a class="nav-link" href="Generarqr.php">Generar QR</a>
+                    <a class="nav-link" id="btncerrarsesion" href="../../Servidor/Cerrarsesion.php">Salir</a>
         </nav>
     </div>
 
