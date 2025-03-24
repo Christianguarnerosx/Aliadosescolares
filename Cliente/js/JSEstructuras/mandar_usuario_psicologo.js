@@ -4,17 +4,29 @@ document.addEventListener('DOMContentLoaded', function () {
             let idusuario = event.target.dataset.id;
 
             console.log(idusuario);
-            Swal.fire({
-                title: 'Enviar a psic logo',
+            swal({
+                title: 'Enviar a psicologo',
                 text: "Realmente deseas enviar a este usuario a psicólogo?",
                 icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí',
-                cancelButtonText: 'Cancelar'
+                buttons: {
+                    cancel: {
+                        text: "Cancelar",
+                        value: null,
+                        visible: true,
+                        className: "btn btn-danger",
+                        closeModal: true
+                    },
+                    confirm: {
+                        text: "Sí",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary",
+                        closeModal: true
+                    }
+                }
             }).then((result) => {
-                if (result.isConfirmed) {
+                if (result) {
+                    console.log("Confirmado");
                     $.ajax({
                         type: "POST",
                         url: "../../Servidor/ajax_php/ajax_canalizar_psicologo.php",
@@ -24,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             if (response.includes("correctamente")) {
                                 window.location.href = "./Reportesestadistica.php?resultado=canalizadocorrectamente";
+                            } else {
+                                window.location.href = "./Reportesestadistica.php?resultado=noencontreusuario";
                             }
                         },
                     });
