@@ -3,6 +3,94 @@
 
 <!-- Row que posiciona la tabla dentro de su contenedor padre el cuadro blanco transparente -->
 <div class="row contenedortablareportes espacio-top-c centrar">
+    <div class="contenedorseguimientosbusquedafiltrosordenes">
+        <!-- Buscador (donde estará la barra de búsqueda, filtros y el botón de buscar) -->
+        <div class="contenedorbusquedareportes">
+            <label class="text-c tituloinputbusquedareportes">¿Qué alumno estás buscando?</label>
+            <input type="text" class="form-control inputbusquedareportes" id="inputbusquedareportes" placeholder="Ingresar búsqueda">
+
+            <!-- Botón de buscar -->
+            <button type="button" class="btn btn-primary btnbusquedareportes centrar">
+                <span class="text-m ">Aplicar</span>
+            </button>
+
+            <!-- Botón de filtros -->
+            <div class="contenedorfiltrosbusquedareportes cursor-mano alinear-center" id="contenedorfiltrosbusquedareportes">
+                <div class="row centrar">
+                    <p class="alinear-center" id="btnfiltrosbusquedareportes"><img class="icono-m iconofiltrobtnfiltrarreporte" src="" alt=""> Filtros </p>
+                    <div class="contendorcheckboxesfiltrosbusquedareportes alinear-left" id="contendorcheckboxesfiltrosbusquedareportes">
+                        <!-- Filtros -->
+                        <h1 class="text-c">Estados</h1>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesenespera" name="reportesenespera">
+                            <label class="form-check-label" for="reportesenespera">Pendiente</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesenproceso" name="reportesenproceso">
+                            <label class="form-check-label" for="reportesenproceso">En proceso</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesretroceso" name="reportesretroceso">
+                            <label class="form-check-label" for="reportesretroceso">Retroceso</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesfinalizados" name="reportesfinalizados">
+                            <label class="form-check-label" for="reportesfinalizados">Finalizado</label>
+                        </div>
+
+                        <h1 class="text-c">Estatus</h1>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesactivos" name="reportesactivos">
+                            <label class="form-check-label" for="reportesactivos">Activos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesinactivos" name="reportesinactivos">
+                            <label class="form-check-label" for="reportesinactivos">Inactivos</label>
+                        </div>
+
+                        <h1 class="text-c">Registros</h1>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesmas50registros" name="reportesmas50registros">
+                            <label class="form-check-label" for="reportesmas50registros">+50</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportestodosregistros" name="reportestodosregistros">
+                            <label class="form-check-label" for="reportestodosregistros">Todos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de ordenar por -->
+            <div class="contenedorordenesbusquedareportes cursor-mano alinear-center" id="contenedorordenesbusquedareportes">
+                <div class="row centrar">
+                    <p class="alinear-center" id="btnordenesbusquedareportes"><img class="icono-m iconofiltrobtnordenarreporte" src="" alt="">Ordenar</p>
+                    <div class="contendorcheckboxesordenesbusquedareportes alinear-left" id="contendorcheckboxesordenesbusquedareportes">
+                        <!-- Órdenes -->
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesmasrecientes" name="reportesmasrecientes">
+                            <label class="form-check-label" for="reportesmasrecientes">Más recientes</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="reportesmenosrecientes" name="reportesmenosrecientes">
+                            <label class="form-check-label" for="reportesmenosrecientes">Más antiguos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tabla de reportes -->
+        <h1 class="text-m m-1 mt-4 txt-titulo">Usuarios canalizados</h1>
+
+        <div class="contendortablareportes" id="contendortablareportes">
+            <?php include("../componentes_php/tabla_usuarios_canalizados.php"); ?>
+        </div>
+
+    </div>
+
+    <h2 class="text-m m-1 mt-3 txt-titulo">Mis Reportes</h2>
     <!-- Contenido para alumno -->
     <table class="table tablareportes table-hover" id="tablamisreportes"> <!-- Se crea una tabla -->
         <thead class="tablatituloreportes"> <!-- Maneja donde iran los titulos de las columnas de la tabla se asigna color de fondo y letra -->
@@ -17,7 +105,7 @@
             <!-- Creamos los componentes apartir de registros de la base de datos -->
             <?php
             include("../../Servidor/Conexion.php"); /* Nos conectamos a la bd */
-            $id = $_SESSION['usuario']; /* Detectamos que usuario esta conectado */
+            $id = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null; /* Verifica si el usuario está conectado */
 
             /* Consulta para obetener los datos de todo el reporte (fecha, contenido (texto/audio), contenido(ruta imagen) con un inner join con la tabla de sensaciones para saber la ruta) 
             Asi como ela union con la tabla de tiopo de reportes para saber el nombre pasando el id_tipo_reporte (la llave foranea)*/
@@ -423,6 +511,7 @@
             }
         ?>
     </div>
+
     </div>
 
 
@@ -452,6 +541,7 @@
         </div>
     </nav>
 
+
 <?php
         }
     }
@@ -465,4 +555,5 @@
 <script src="../js/JSEstructuras/estructura_estadisticas.js"></script>
 <script src="../js/JSEstructuras/imprimir_reporte.js"></script>
 <script src="../js/JSEstructuras/mandar_usuario_psicologo.js"></script>
+<script src="../js/JSEstructuras/filtros_tabla_usuarios_psicologo.js"></script>
 <script src="../js/alerta_autenticacion.js"></script>

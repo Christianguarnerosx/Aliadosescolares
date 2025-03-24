@@ -11,11 +11,7 @@ const urlParams = new URLSearchParams(window.location.search);
 //obtiene el valor del parámetro llamado "resultado" de la cadena de consulta de la URL.
 const resultado = urlParams.get("autres");
 const resultado2 = urlParams.get("resultado");
-
-console.log(resultado);
-console.log(resultado2);
-
-
+  
 //limpiar parametros de la url
 function limpiarParametrosUrl() {
   window.history.replaceState({}, document.title, window.location.pathname);

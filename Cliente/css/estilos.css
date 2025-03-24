@@ -1302,11 +1302,11 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 .opcion-reporte.grados {
   width: 80px;
-} 
+}
 
 .opcion-reporte.grados:hover {
   width: 110px;
-} 
+}
 
 /* card/opcion de usuarios (que usuario ¿quien?) */
 /* Es unicamente para los usuarios (donde aparecen los nombres de usuarios) */
@@ -1966,4 +1966,150 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   .cardherramientasusadas {
     width: 100%;
   }
+}
+
+/* --------------------------------------------------------- estilos para psicologo */
+.contenedorseguimientosbusquedafiltrosordenes {
+  min-width: 350px;
+}
+
+.contenedorbusquedareportes {
+  position: sticky;
+  top: 15px;
+  width: 100%;
+  height: 75px;
+  background-color: rgb(252, 255, 254);
+  border-radius: 10px;
+  box-shadow: 0.5px 0.5px 1px rgba(105, 105, 105, 0.267);
+  margin-bottom: 10px;
+  z-index: 6;
+  transition: 0.3s ease;
+}
+
+.tituloinputbusquedareportes {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  color: rgb(126, 126, 126);
+}
+
+.inputbusquedareportes {
+  position: absolute;
+  width: 45%;
+  height: 35px;
+  left: 10px;
+  top: 28px;
+}
+
+.btnbusquedareportes {
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  width: 10%;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 13px;
+  background-color: #cfcfcf;
+  border: 0px solid rgb(190, 190, 190);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* imagen del boton buscar */
+.btnconimagenmargintop {
+  margin-top: -7px;
+}
+
+/* Contenedor de los filtros de busqueda */
+.contenedorfiltrosbusquedareportes {
+  position: absolute;
+  right: 40%;
+  transform: translate(50%);
+  top: 25px;
+  width: 10%;
+  height: 30px;
+  padding-top: 2px;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 13px;
+  transition: 0.3s ease;
+  background-color: rgb(248, 255, 253);
+  color: rgb(134, 134, 134);
+  overflow: hidden;
+  z-index: 2;
+  padding-top: 1px;
+  padding-right: 5px;
+}
+
+/* mueve el icono de filtro para ajustar el icono a la derecha */
+.iconofiltrobtnfiltrarreporte {
+  margin: 5px;
+  margin-top: 3px;
+  width: 15px;
+  height: auto;
+}
+
+/* Contenedor de los checkboxes de busqueda */
+.contendorcheckboxesfiltrosbusquedareportes {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  transition: 0s ease;
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+/* Contenedor de las ordenes de busqueda */
+.contenedorordenesbusquedareportes {
+  position: absolute;
+  right: 29%;
+  transform: translate(50%);
+  top: 25px;
+  width: 10%;
+  height: 30px;
+  border: 1px solid rgb(190, 190, 190);
+  border-radius: 13px;
+  transition: 0.3s ease;
+  background-color: rgb(248, 255, 253);
+  color: rgb(134, 134, 134);
+  overflow: hidden;
+  z-index: 2;
+  padding-top: 1px;
+  padding-right: 5px;
+}
+
+/* Boton de orden de busqueda */
+#btnordenesbusquedareportes {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.377);
+}
+
+/* mueve el icono de ordenar para ajustar el icono a la derecha */
+.iconofiltrobtnordenarreporte {
+  margin: 5px;
+  margin-top: 3px;
+  width: 13px;
+  height: auto;
+}
+
+.contendortablaunidades {
+  width: 100%;
+  height: auto;
+  overflow-x: scroll;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* Boton de filtro de busqueda */
+#btnfiltrosbusquedareportes {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.377);
+}
+
+/* Boton de orden de busqueda */
+#btnordenesbusquedareportes {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.377);
 }
