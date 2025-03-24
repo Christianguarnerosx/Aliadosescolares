@@ -217,7 +217,8 @@
                     $query3 = "SELECT r.id_usuario_reportado, 
                                 COUNT(id_usuario_reportado) AS numreportes,
                                 u.nombre,
-                                u.apellidop
+                                u.apellidop,
+                                u.canalizado
                 FROM reportes as r
                 INNER JOIN usuarios as u
                 ON r.id_usuario_reportado = u.id_usuario
@@ -235,10 +236,19 @@
 
                     if (mysqli_num_rows($consulta3) > 0) {
                         while ($row = mysqli_fetch_array($consulta3)) {
-                            echo "<div class='cardalumnotarget centrar espacio-top-c txt-blanco borde-r-c'>";
+                            echo "<div class='cardalumnotarget rowcrg centrar espacio-top-c txt-blanco borde-r-c'>";
+                            echo "<div class='row centrar'>";
+                            echo "<div class='row w-100'>";
                             echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
                             echo "<h1>" . $row['nombre'] . " " . $row['apellidop'] . "</h1>";
                             echo "<h1 class=' text-m'>" . "Con " . $row['numreportes'] . " Reportes" . "</h1>";
+                            echo "</div>";
+                            echo "<div class='row w-100 centrar'>";
+                            if ($row['canalizado'] != 1) {
+                                echo "<button type='button' class='button btn-m btn-canalizarpeq btncanalizarusuario borde-r-c mt-5 hover-btn' data-id='" . $row['id_usuario_reportado'] . "'>Canalizar con la psicóloga</button>";
+                            }
+                            echo "</div>";
+                            echo "</div>";
                             echo "</div>";
                         }
                     }
@@ -251,7 +261,8 @@
                     $query4 = "SELECT r.id_usuario_reportado, 
                                 COUNT(id_usuario_reportado) AS numreportes,
                                 u.nombre,
-                                u.apellidop
+                                u.apellidop,
+                                u.canalizado
                 FROM reportes as r
                 INNER JOIN usuarios as u
                 ON r.id_usuario_reportado = u.id_usuario
@@ -269,11 +280,18 @@
 
                     if (mysqli_num_rows($consulta4) > 0) {
                         while ($row = mysqli_fetch_array($consulta4)) {
-                            echo "<div class='cardtopalumnostarget centrar borde-r-c'>";
-                            echo "<div>";
+                            echo "<div class='cardtopalumnostarget rowcrg centrar espacio-top-c txt-blanco borde-r-c'>";
+                            echo "<div class='row centrar'>";
+                            echo "<div class='row w-100'>";
                             echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
-                            echo "<h1 class='txt-blanco'>" . $row['nombre'] . "</h1>";
+                            echo "<h2 class='txt-blanco'>" . $row['nombre'] . " " . $row['apellidop'] . "</h2>";
                             echo "<h1 class='text-c'>" . "Con " . $row['numreportes'] . " Reportes" . "</h1>";
+                            echo "</div>";
+                            echo "<div class='row w-100 centrar'>";
+                            if ($row['canalizado'] != 1) {
+                                echo "<button type='button' class='button btn-canalizarpeq btncanalizarusuario borde-r-c mt-5 hover-btn' data-id='" . $row['id_usuario_reportado'] . "'>Canalizar</button>";
+                            }
+                            echo "</div>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -360,6 +378,7 @@
                                 COUNT(id_usuario_reportado) AS numreportes,
                                 u.nombre,
                                 u.apellidop,
+                                u.canalizado,
                                 ga.nombre_grado,
                                 gu.nombre_grupo,
                                 tu.nombre_tipo_usuario
@@ -386,17 +405,24 @@
 
             if (mysqli_num_rows($consulta4) > 0) {
                 while ($row = mysqli_fetch_array($consulta4)) {
-                    echo "<div class='cardtopalumnostarget centrar borde-r-c' id='cardsalumnostopreportes'>";
-                    echo "<div>";
+                    echo "<div class='cardtopalumnostarget rowcrg centrar espacio-top-c txt-blanco borde-r-c'>";
+                    echo "<div class='row centrar'>";
+                    echo "<div class='row w-100'>";
                     echo "<h1 hidden>" . $row['id_usuario_reportado'] . "</h1>";
-                    echo "<h1 class='text-m txt-blanco'>" . $row['nombre_tipo_usuario'] . "</h1>";
-                    echo "<h1 class='txt-blanco'>" . $row['nombre'] . "</h1>";
+                    echo "<h2 class='txt-blanco'>" . $row['nombre'] . " " . $row['apellidop'] . "</h2>";
                     echo "<h1 class='text-c'>" . "Con " . $row['numreportes'] . " Reportes" . "</h1>";
+                    echo "</div>";
+                    echo "<div class='row w-100 centrar'>";
+                    if ($row['canalizado'] != 1) {
+                        echo "<button type='button' class='button btn-canalizarpeq btncanalizarusuario borde-r-c mt-5 hover-btn' data-id='" . $row['id_usuario_reportado'] . "'>Canalizar</button>";
+                    }
+                    echo "</div>";
                     echo "</div>";
                     echo "</div>";
                 }
             }
         ?>
+    </div>
     </div>
 
 
@@ -438,3 +464,5 @@
 
 <script src="../js/JSEstructuras/estructura_estadisticas.js"></script>
 <script src="../js/JSEstructuras/imprimir_reporte.js"></script>
+<script src="../js/JSEstructuras/mandar_usuario_psicologo.js"></script>
+<script src="../js/alerta_autenticacion.js"></script>

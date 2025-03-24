@@ -10,7 +10,16 @@ var audioentrada = new Audio("../sonidos/audio/BienvenidaBob.mp3"); /* 1 */
 const urlParams = new URLSearchParams(window.location.search);
 //obtiene el valor del parámetro llamado "resultado" de la cadena de consulta de la URL.
 const resultado = urlParams.get("autres");
+const resultado2 = urlParams.get("resultado");
 
+console.log(resultado);
+console.log(resultado2);
+
+
+//limpiar parametros de la url
+function limpiarParametrosUrl() {
+  window.history.replaceState({}, document.title, window.location.pathname);
+}
 
 if (resultado === "fracaso") {
   audiofail.play();
@@ -19,12 +28,14 @@ if (resultado === "fracaso") {
     title: "Oh Oh...",
     text: "No existe ese usuario, revisa tu id/correo y contraseña",
   });
+  limpiarParametrosUrl();
 } else if (resultado === "vacio") {
   Swal.fire({
     icon: "warning",
     title: "Oops...",
     text: "No me diste ningun dato, ingresa tus datos",
   });
+  limpiarParametrosUrl();
 } else if (resultado === "noalumno") {
   audiofail.play();
   Swal.fire({
@@ -32,6 +43,7 @@ if (resultado === "fracaso") {
     title: "Oops...",
     text: "Solo alumnos pueden utilizarlo",
   });
+  limpiarParametrosUrl();
 } else if (resultado === "alumno") {
   audioentrada.play(); /* 2 */
   Swal.fire({
@@ -39,4 +51,5 @@ if (resultado === "fracaso") {
     title: "Para comenzar",
     text: "Presiona iniciar",
   });
+  limpiarParametrosUrl();
 }

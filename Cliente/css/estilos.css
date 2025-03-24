@@ -179,6 +179,19 @@ haciendo mas reciclabe el codigo*/
   transition: 0.2s ease;
 }
 
+/*Hace el tamano de un boton pequeno*/
+.btn-canalizarpeq {
+  width: auto;
+  height: 30px;
+  transition: 0.2s ease;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.408);
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+}
+
 /*Asigna a un elemento de boton/imagen fondo transparente y sin bordes*/
 .btn-transparente {
   background-color: rgba(240, 248, 255, 0);

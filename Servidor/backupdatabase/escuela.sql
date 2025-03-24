@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3310
--- Generation Time: May 03, 2024 at 07:13 AM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 23, 2025 at 09:09 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -63,6 +63,27 @@ INSERT INTO `alumnos` (`id_alumno`, `id_usuario`, `id_grado`, `id_grupo`, `id_pa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `asignar_psicologo_usuarios`
+--
+
+CREATE TABLE `asignar_psicologo_usuarios` (
+  `id_asignar_psicologo_usuarios` int(11) NOT NULL,
+  `id_usuario_psicologo` int(11) NOT NULL,
+  `id_usuario_canalizado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `asignar_psicologo_usuarios`
+--
+
+INSERT INTO `asignar_psicologo_usuarios` (`id_asignar_psicologo_usuarios`, `id_usuario_psicologo`, `id_usuario_canalizado`) VALUES
+(1, 16, 15),
+(2, 16, 12),
+(3, 16, 13);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `calificaciones`
 --
 
@@ -85,6 +106,21 @@ INSERT INTO `calificaciones` (`id_calificacion`, `id_alumno`, `id_grado`, `id_pe
 (15, 1, 1, 1, 2, 8.5),
 (16, 1, 1, 1, 4, 9),
 (17, 1, 1, 1, 5, 9.5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `citas_psicologo_usuarios`
+--
+
+CREATE TABLE `citas_psicologo_usuarios` (
+  `id_citas_psicologo_usuario` int(11) NOT NULL,
+  `id_usuario_psicologo` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `fecha_cita` date NOT NULL,
+  `anotaciones_psicologo` text NOT NULL,
+  `anotaciones_usuario` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -279,7 +315,22 @@ INSERT INTO `peticiones` (`id_peticion`, `id_tipo_ia`, `id_usuario`, `consulta`,
 (143, 4, 12, 'Martes?', '2024-05-02 02:50:12'),
 (144, 2, 2, 'Hola', '2024-05-03 02:16:31'),
 (145, 2, 2, 'Como puedo hacer que mis ninos puedan tener mas contacto entre ellos y conmigo', '2024-05-03 02:16:56'),
-(146, 1, 1, 'Hola como estas', '2024-05-03 03:35:35');
+(146, 1, 1, 'Hola como estas', '2024-05-03 03:35:35'),
+(147, 4, 1, 'hola', '2025-03-22 22:52:01'),
+(148, 2, 1, 'Hola', '2025-03-22 22:54:31'),
+(149, 2, 1, 'hola', '2025-03-22 23:01:41'),
+(150, 2, 1, 'sd', '2025-03-22 23:05:36'),
+(151, 2, 1, 'd', '2025-03-22 23:14:47'),
+(152, 4, 1, 'ds', '2025-03-22 23:15:16'),
+(153, 2, 1, 'f', '2025-03-22 23:17:34'),
+(154, 2, 1, 'c', '2025-03-22 23:22:12'),
+(155, 2, 1, 'h', '2025-03-22 23:24:07'),
+(156, 3, 1, 'd', '2025-03-22 23:24:28'),
+(157, 2, 1, 'ae', '2025-03-22 23:36:48'),
+(158, 2, 1, 'a', '2025-03-22 23:43:01'),
+(159, 2, 1, '', '2025-03-22 23:43:43'),
+(160, 1, 1, 'Hola', '2025-03-22 23:45:14'),
+(161, 2, 2, 'holaaaa', '2025-03-23 07:42:12');
 
 -- --------------------------------------------------------
 
@@ -344,7 +395,9 @@ INSERT INTO `reportes` (`id_reporte`, `id_tipo_reporte`, `id_usuario`, `id_usuar
 (159, 2, 12, 2, '2024-05-02 01:37:45', 2, 'No me dijo que me engaño', NULL),
 (160, 1, 1, 12, '2024-05-03 02:14:46', 1, NULL, NULL),
 (161, 1, 1, 12, '2024-05-03 04:09:12', 1, NULL, NULL),
-(162, 2, 1, 12, '2024-05-03 04:09:25', 2, 'Hola', NULL);
+(162, 2, 1, 12, '2024-05-03 04:09:25', 2, 'Hola', NULL),
+(163, 3, 1, 2, '2025-03-23 01:10:48', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_1_el_2025-03-23 01_10_48.mp3'),
+(164, 3, 2, 13, '2025-03-23 07:40:47', 2, NULL, '../../Cliente/sonidos/reportes/Reporte_de_2_el_2025-03-23 07_40_47.mp3');
 
 -- --------------------------------------------------------
 
@@ -363,11 +416,11 @@ CREATE TABLE `sensaciones` (
 --
 
 INSERT INTO `sensaciones` (`id_sensacion`, `nombre_sensacion`, `imagen_sensacion`) VALUES
-(1, 'Miedo', '../imagenes/iconos/emojis/miedo.png'),
-(2, 'Incomodidad', '../imagenes/iconos/emojis/incomodidad.png'),
-(3, 'Tristeza', '../imagenes/iconos/emojis/tristeza.png'),
-(4, 'Enfado', '../imagenes/iconos/emojis/enfado.png'),
-(5, 'Vergüenza', '../imagenes/iconos/emojis/verguenza.png');
+(1, 'Miedo', 'miedo.png'),
+(2, 'Incomodidad', 'incomodidad.png'),
+(3, 'Tristeza', 'tristeza.png'),
+(4, 'Enfado', 'enfado.png'),
+(5, 'Vergüenza', 'verguenza.png');
 
 -- --------------------------------------------------------
 
@@ -451,7 +504,8 @@ INSERT INTO `tipo_usuarios` (`id_tipo_usuario`, `nombre_tipo_usuario`, `imagen_t
 (1, 'Administrador', '../imagenes/iconos/usuarios/adminblanco.png'),
 (2, 'Docente', '../imagenes/iconos/usuarios/docentesblanco.png'),
 (3, 'Padre', '../imagenes/iconos/usuarios/padresblanco.png'),
-(4, 'Alumno', '../imagenes/iconos/usuarios/alumnosblanco.png');
+(4, 'Alumno', '../imagenes/iconos/usuarios/alumnosblanco.png'),
+(6, 'Psicólogo', '../imagenes/iconos/usuarios/docentesblanco.png');
 
 -- --------------------------------------------------------
 
@@ -470,26 +524,28 @@ CREATE TABLE `usuarios` (
   `id_estatus` int(11) NOT NULL,
   `id_tipo_usuario` int(11) NOT NULL,
   `avatar` varchar(55) NOT NULL,
-  `fondo` varchar(60) NOT NULL
+  `fondo` varchar(60) NOT NULL,
+  `canalizado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidop`, `apellidom`, `correo`, `telefono`, `contraseña`, `id_estatus`, `id_tipo_usuario`, `avatar`, `fondo`) VALUES
-(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-finn.gif', ''),
-(2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
-(3, 'Ivan', 'Sanchez', 'Juarez', 'Ivan@gmail.com', '2461234588', '12345678', 2, 2, '', ''),
-(4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', ''),
-(6, 'Raymundo', 'Montiel', 'Lira', 'ray@gmail.com', '2467854849', '12345678', 2, 2, '', ''),
-(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondorosadulceprincesa.gif'),
-(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', ''),
-(11, 'Moises', 'Guarneros', 'Ramirez', 'moi@gmail.com', '2481754645', '12345678', 2, 3, '', ''),
-(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 4, '../imagenes/avatares/avatar-jakfin.gif', ''),
-(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', ''),
-(14, 'Daniel', 'Guarneros', 'Martinez', 'guar98953@gmail.com', '2441875082', 'tetenegra', 1, 4, '', ''),
-(15, 'Uriel', 'Cabello', 'Sosa', 'urisosa@gmail.com', '2485084578', '12345678', 1, 4, '', '');
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellidop`, `apellidom`, `correo`, `telefono`, `contraseña`, `id_estatus`, `id_tipo_usuario`, `avatar`, `fondo`, `canalizado`) VALUES
+(1, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '12345678', 1, 1, '../imagenes/avatares/avatar-finn.gif', '', 0),
+(2, 'Vianney', 'Morales', 'Zamora', 'Vianney@gmail.com', '2225847475', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', '', 0),
+(3, 'Ivan', 'Sanchez', 'Juarez', 'Ivan@gmail.com', '2461234588', '12345678', 2, 2, '', '', 0),
+(4, 'Maria Petra', 'Paredes', 'Xochihua', 'Petra@gmail.com', '2461472535', '12345678', 1, 2, '../imagenes/avatares/avatar-gato.gif', '', 0),
+(6, 'Raymundo', 'Montiel', 'Lira', 'ray@gmail.com', '2467854849', '12345678', 2, 2, '', '', 0),
+(9, 'Cecilia', 'Guarneros', 'Ramirez', 'Ceciliaguarneros1983@gmail.com', '2481332000', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '../imagenes/fondos/fondorosadulceprincesa.gif', 0),
+(10, 'Rocio', 'Roldan', 'Rodriguez', 'Rocio@gmail.com', '2461234545', '12345678', 1, 3, '../imagenes/avatares/avatar-dulceprincesa.gif', '', 0),
+(11, 'Moises', 'Guarneros', 'Ramirez', 'moi@gmail.com', '2481754645', '12345678', 2, 3, '', '', 0),
+(12, 'Christian', 'Reyes', 'Guarneros', 'cris.guarners.joker777@gmail.com', '2481714022', '123456789', 1, 4, '../imagenes/avatares/avatar-jakfin.gif', '', 1),
+(13, 'Dayra', 'Coraza', 'Roldan', 'dayraroldan1@gmail.com', '2461858586', '12345678', 1, 4, '../imagenes/avatares/avatar-gato.gif', '', 1),
+(14, 'Daniel', 'Guarneros', 'Martinez', 'guar98953@gmail.com', '2441875082', 'tetenegra', 1, 4, '', '', 0),
+(15, 'Uriel', 'Cabello', 'Sosa', 'urisosa@gmail.com', '2485084578', '12345678', 1, 4, '', '', 1),
+(16, 'Norma', 'Velasquez', 'Zamora', 'norma.zamora@gmail.com', '5561486352', '12345678', 1, 6, '', '', 0);
 
 --
 -- Indexes for dumped tables
@@ -514,6 +570,12 @@ ALTER TABLE `alumnos`
   ADD KEY `id_docente` (`id_docente`);
 
 --
+-- Indexes for table `asignar_psicologo_usuarios`
+--
+ALTER TABLE `asignar_psicologo_usuarios`
+  ADD PRIMARY KEY (`id_asignar_psicologo_usuarios`);
+
+--
 -- Indexes for table `calificaciones`
 --
 ALTER TABLE `calificaciones`
@@ -522,6 +584,12 @@ ALTER TABLE `calificaciones`
   ADD KEY `boleta_periodo` (`id_periodo`),
   ADD KEY `boleta_materias` (`id_materia`),
   ADD KEY `boleta_grado` (`id_grado`);
+
+--
+-- Indexes for table `citas_psicologo_usuarios`
+--
+ALTER TABLE `citas_psicologo_usuarios`
+  ADD PRIMARY KEY (`id_citas_psicologo_usuario`);
 
 --
 -- Indexes for table `consejos`
@@ -658,10 +726,22 @@ ALTER TABLE `alumnos`
   MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `asignar_psicologo_usuarios`
+--
+ALTER TABLE `asignar_psicologo_usuarios`
+  MODIFY `id_asignar_psicologo_usuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `calificaciones`
 --
 ALTER TABLE `calificaciones`
   MODIFY `id_calificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `citas_psicologo_usuarios`
+--
+ALTER TABLE `citas_psicologo_usuarios`
+  MODIFY `id_citas_psicologo_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `consejos`
@@ -709,7 +789,7 @@ ALTER TABLE `periodos`
 -- AUTO_INCREMENT for table `peticiones`
 --
 ALTER TABLE `peticiones`
-  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `proyectos`
@@ -721,7 +801,7 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT for table `reportes`
 --
 ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
 -- AUTO_INCREMENT for table `sensaciones`
@@ -751,13 +831,13 @@ ALTER TABLE `tipo_reportes`
 -- AUTO_INCREMENT for table `tipo_usuarios`
 --
 ALTER TABLE `tipo_usuarios`
-  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
