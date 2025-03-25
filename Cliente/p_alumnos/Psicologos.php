@@ -8,6 +8,9 @@
     <!-- icono de la pagina -->
     <link rel="icon" type="image/x-icon" href="../imagenes/logos/logoaliados.png">
 
+    <!-- CDN para poder utilizar los toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!--Estilos propios CSS -->
@@ -57,7 +60,7 @@
                     <!-- A este main se le aplicara un scroll en y cuando el contenido se deborde, solo se oculta el scroll x y se asigna un tama;o-->
                     <main class="row scroll-no"> <!--Para que pueda funcionar el centrar y evitar otro juego de col y row, se convierte el main en row y centramos su contenido-->
                         <div class="col"> <!-- AQUI LLEVA EL CONTENIDO QUE lleva la interfaz-->
-                            <?php include("../componentes_php/componente_reportes_info.php");?>
+                            <?php include("../componentes_php/componente_reportes_info.php"); ?>
                         </div>
                     </main>
                 </section>
@@ -70,6 +73,24 @@
         </div>
     </div>
 
+    <!-- Modal bootstrap-->
+    <div class="modal fade" id="modalseguimientos" tabindex="-1" aria-labelledby="titulomodalseguimientos" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="titulomodalseguimientos">Seguimientos</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body rowcrg" id="cuerpomodalseguimientosregistrados">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Nota solo dejar un link que mande a traer bootstrap para que la clase collapse funcione-->
     <!-- Option 1: Bootstrap Bundle with Popper ideal para funciones js de bootstrap y hacer funcionar y activar acciones-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -77,10 +98,16 @@
     <!-- CDN para poder utilizar las Sweet Alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <!-- Incluir el script de Toastify después de sus CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+
     <!--js de menu-->
     <script src="../js/alertas.js"></script> <!--Sirve para que llegue y muestre la alerta de iniciado sesion con exito//avatarconfirm/fondo confirm-->
     <script src="../js/JSPlantillas/logica_menu_plantilla.js"></script> <!--Sirve para poder hacer funcionar las col como menus-->
     <script src="../js/hover_drops.js"></script> <!--Sirve para que los las flechas de los drops se abran automaticamente al sobreponer el mouse-->
+    <script src="../js/JSEstructuras/seguimiento_psicologo.js"></script> <!--Sirve para que los las flechas de los drops se abran automaticamente al sobreponer el mouse-->
+    <script src="../js/JSEstructuras/registrar_seguimiento_psicologo.js"></script> <!--Sirve para que los las flechas de los drops se abran automaticamente al sobreponer el mouse-->
+    <script src="../js/JSEstructuras/actualizar_seguimiento.js"></script> <!--Sirve para que los las flechas de los drops se abran automaticamente al sobreponer el mouse-->
 
     <!--Js de esta interfaz-->
 </body>

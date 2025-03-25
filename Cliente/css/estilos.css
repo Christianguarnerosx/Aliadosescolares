@@ -82,6 +82,19 @@ haciendo mas reciclabe el codigo*/
   justify-content: center;
 }
 
+/*Utilzado para poder acomodar todos los elementos y se vayan recorriendo para abajo si es que se excede del contenedor*/
+.rowcrg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rowcrg-nocentrar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Fondo de todas las interfaces +++++++++++++++++++++*/
 .fondo {
   background-image: url("../imagenes/fondos/fondo-gusano.gif");
@@ -295,7 +308,7 @@ haciendo mas reciclabe el codigo*/
 
 /*colores predeterminados de las interfaces*/
 .txt-titulo {
-  color: #1fc2a735;
+  color: #1fc2a752;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  Logos +++++++++++++++++++++*/
 /*clase que asigna el tamaño de una img.. comumente los logos*/
@@ -1750,8 +1763,8 @@ Asi logras evadir lo de position y z index en los elementos*/
 
 /* Contenedor que contiene 1 grafica de chartjs se utilizan el mismo tamaño en todas las cards (que lo asigna esta clase) */
 .contenedorgraficadesarrollo {
-  height: 320px;
-  width: 320px;
+  width: 500px;
+  height: auto;
   background-color: rgba(178, 190, 230, 0.897);
   margin: 5px;
   border-radius: 15px;
@@ -2084,6 +2097,10 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
   border-bottom: 1px solid rgba(151, 151, 151, 0.377);
 }
 
+.contendortablareportes{
+  overflow-x: auto;
+}
+
 /* mueve el icono de ordenar para ajustar el icono a la derecha */
 .iconofiltrobtnordenarreporte {
   margin: 5px;
@@ -2116,4 +2133,125 @@ Asi como un tamaño de alto determinado opara que se pueda realizar los scroll a
 
 .btndarseguimiento {
   width: 100px;
+}
+
+/* psicologo citas/seguimiento */
+.cardsitasusuariopsico {
+  position: relative;
+  width: 540px;
+  height: 250px;
+  background-color: #1f8aa5;
+  border-radius: 10px;
+  box-shadow: 0.5px 0.5px 1px rgba(105, 105, 105, 0.267);
+  margin: 10px;
+  padding: 30px;
+  transition: 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .cardsitasusuariopsico {
+    width: 400px;
+  }
+}
+
+/* psicologo citas/seguimiento */
+.cardsitasusuariopsico:hover {
+  height: 300px;
+  background-color: #1f8aa5;
+  border-radius: 10px;
+  box-shadow: 0.5px 0.5px 1px rgba(105, 105, 105, 0.267);
+  margin: 10px;
+  padding: 30px;
+  transition: 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0.5px 5px 5px rgba(105, 105, 105, 0.267);
+}
+
+.tiutlocita {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.fechacita {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.nombreusuariocita {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.anotacionespsicologo {
+  position: absolute;
+  top: 90px;
+  left: 30px;
+  right: 30px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.anotacionespsicologosubtitulo {
+  font-weight: bold;
+}
+
+.anotacionesusuariocita {
+  position: absolute;
+  top: 220px;
+  left: 30px;
+  right: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* si se le hace hover al card a los elementos se mueven de la siguiente manera */
+.cardsitasusuariopsico:hover .anotacionesusuariocita {
+  top: 220px;
+  /* quitar limitacion de lineas (mostrar todas)*/
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+/* quitar limitacion de lineas (mostrar todas)*/
+.cardsitasusuariopsico:hover .anotacionespsicocita {
+  top: 220px;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+/* quitar limitacion de lineas (mostrar todas)*/
+.cardsitasusuariopsico:hover .textareacitaspsic {
+  width: 100%;
+  height: 130px;
+}
+
+.cuerpomodalseguimientosformulario{
+  width: 100%;
+  margin-top: 0px;
+  padding-left: 30px;
+  padding-right: 100px;
+  padding-bottom: 30px;
+}
+
+.btncrearseguimiento{
+  width: auto;
+}
+
+.anotaciones_psicologo {
+  transition: 0.3s ease;
 }

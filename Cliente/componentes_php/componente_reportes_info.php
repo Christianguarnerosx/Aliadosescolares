@@ -542,7 +542,6 @@
         </div>
     </nav>
 
-
 <?php
         }
     }
@@ -557,4 +556,7 @@
 <script src="../js/JSEstructuras/imprimir_reporte.js"></script>
 <script src="../js/JSEstructuras/mandar_usuario_psicologo.js"></script>
 <script src="../js/JSEstructuras/filtros_tabla_usuarios_psicologo.js"></script>
+<script src="../js/JSEstructuras/seguimiento_psicologo.js"></script>
+<script src="../js/JSEstructuras/registrar_seguimiento_psicologo.js"></script>
+<script src="../js/JSEstructuras/actualizar_seguimiento.js"></script>
 <script src="../js/alerta_autenticacion.js"></script>
