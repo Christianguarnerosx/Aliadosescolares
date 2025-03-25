@@ -9,7 +9,7 @@
 
             include("../../Servidor/Conexion.php");
 
-            $id_usuario = $_SESSION['id_usuario'];
+            $id_usuario = $_SESSION['usuario'];
             $consulta = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
             $resultado = mysqli_query($conexion, $consulta);
 

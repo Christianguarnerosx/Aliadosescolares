@@ -22,7 +22,7 @@ if (mysqli_num_rows($consulta) > 0) {
     /*Ruta completa del archivo en la carpeta "Downloads"*/
     $rutaArchivo = '../imagenes/qrs/' . $nombreArchivo;
     /*Genera el código QR*/
-    QRcode::png($usuario, $rutaArchivo, QR_ECLEVEL_L, 10);
+    QRcode::png($usuario, $rutaArchivo);
 
     /*Muestra el código QR en la página*/
     echo '<img src="' . $rutaArchivo . '" alt="Código QR">';
